@@ -12,5 +12,8 @@ public interface IInteractable
     /// </summary>
     /// <returns></returns>
     string GetInteractText();
+
+    Outline GetOutline();
+
     Transform GetTransform();
 }
