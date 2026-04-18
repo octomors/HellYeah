@@ -45,6 +45,10 @@ public class PlayerInteractor : MonoBehaviour
         currentInteractable = newInteractable;
 
         UIManager.Instance.ShowTextHint(currentInteractable.GetInteractText());
+
+        Outline outline = currentInteractable.GetOutline();
+        if (outline != null)
+            outline.enabled = true;
     }
 
     void ClearInteractable()
@@ -52,6 +56,10 @@ public class PlayerInteractor : MonoBehaviour
         if (currentInteractable == null) return;
 
         UIManager.Instance.HideTextHint();
+
+        Outline outline = currentInteractable.GetOutline();
+        if (outline != null)
+            outline.enabled = false;
 
         currentInteractable = null;
     }
