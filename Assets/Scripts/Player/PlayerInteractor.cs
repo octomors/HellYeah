@@ -4,9 +4,17 @@ public class PlayerInteractor : MonoBehaviour
 {
     public float interactDistance = 3f;
     public LayerMask interactLayer;
-    public Camera playerCamera;
+    private Camera playerCamera;
 
     private IInteractable currentInteractable;
+
+    void Awake()
+    {
+        if (playerCamera == null)
+        {
+            playerCamera = Camera.main;
+        }
+    }
 
     void Update()
     {
@@ -44,7 +52,8 @@ public class PlayerInteractor : MonoBehaviour
         ClearInteractable();
         currentInteractable = newInteractable;
 
-        UIManager.Instance.ShowTextHint(currentInteractable.GetInteractText());
+        if (UIManager.Instance != null)
+            UIManager.Instance.ShowTextHint(currentInteractable.GetInteractText());
 
         Outline outline = currentInteractable.GetOutline();
         if (outline != null)
@@ -55,7 +64,8 @@ public class PlayerInteractor : MonoBehaviour
     {
         if (currentInteractable == null) return;
 
-        UIManager.Instance.HideTextHint();
+        if (UIManager.Instance != null)
+            UIManager.Instance.HideTextHint();
 
         Outline outline = currentInteractable.GetOutline();
         if (outline != null)

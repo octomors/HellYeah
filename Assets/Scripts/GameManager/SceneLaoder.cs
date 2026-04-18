@@ -23,6 +23,7 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadScene(string sceneName, string spawnPointName)
     {
+        Debug.Log($"Loading scene '{sceneName}' with spawn point '{spawnPointName}'");
         targetSpawnPointName = spawnPointName;
 
         SceneManager.sceneLoaded += OnSceneLoaded;

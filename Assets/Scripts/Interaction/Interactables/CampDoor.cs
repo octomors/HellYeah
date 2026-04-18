@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DungeonDoor : MonoBehaviour, IInteractable
+public class CampDoor : MonoBehaviour, IInteractable
 {
     public string sceneToLoad;
     public string spawnPointName;
@@ -16,13 +16,13 @@ public class DungeonDoor : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        Debug.Log($"Loading scene '{sceneToLoad}' with spawn point '{spawnPointName}'");
+        UIManager.Instance.ShowTextHint("Загрузка...");
         SceneLoader.Instance.LoadScene(sceneToLoad, spawnPointName);
     }
 
     public string GetInteractText()
     {
-        return "Нажмите E, чтобы войти";
+        return "Нажмите E, чтобы выйти";
     }
 
     public Outline GetOutline()
