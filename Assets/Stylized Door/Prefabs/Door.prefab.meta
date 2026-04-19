@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d11cbcf1bd1e5f346839e2f676d89830
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 345072
+  packageName: Stylized door
+  packageVersion: 1.0
+  assetPath: Assets/Stylized Door/Prefabs/Door.prefab
+  uploadId: 820394
