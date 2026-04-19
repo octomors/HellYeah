@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c75dd344674859b4c87a8f21a6364433
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 345072
+  packageName: Stylized door
+  packageVersion: 1.0
+  assetPath: Assets/Stylized Door/Materials/m_door.mat
+  uploadId: 820394
