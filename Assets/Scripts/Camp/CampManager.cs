@@ -4,10 +4,11 @@ public class CampManager : MonoBehaviour
 {
 	[SerializeField] private Transform campSpawnPoint;
 
-	private void Awake()
+	private void Start()
 	{
 		SpawnPlayerInCamp();
 	}
+	
 
 	public void SpawnPlayerInCamp()
 	{
