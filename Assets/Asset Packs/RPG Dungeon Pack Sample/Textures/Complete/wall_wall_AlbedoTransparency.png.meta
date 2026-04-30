@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: bf408bc85104e8f4188748e37158506f
+AssetOrigin:
+  serializedVersion: 1
+  productId: 348672
+  packageName: RPG Dungeon Kit DEMO
+  packageVersion: 1.0
+  assetPath: Assets/RPG Dungeon Pack Sample/Textures/Complete/wall_wall_AlbedoTransparency.png
+  uploadId: 829346
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -128,10 +135,3 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 348672
-  packageName: RPG Dungeon Kit DEMO
-  packageVersion: 1.0
-  assetPath: Assets/RPG Dungeon Pack Sample/Textures/Complete/wall_wall_AlbedoTransparency.png
-  uploadId: 829346
