@@ -10,7 +10,6 @@ public class InventoryManager : MonoBehaviour
 
     [Header("Test Settings")]
     [SerializeField] private bool addTestIngredients = true;
-    [SerializeField] private List<Ingredient> testIngredients = new List<Ingredient>();
     [SerializeField] private int testAmount = 10;
 
     private void Awake()
@@ -26,7 +25,6 @@ public class InventoryManager : MonoBehaviour
             return;
         }
         
-        // Добавляем тестовые ингредиенты
         if (addTestIngredients)
         {
             AddTestIngredients();
@@ -35,29 +33,14 @@ public class InventoryManager : MonoBehaviour
     
     private void AddTestIngredients()
     {
-        // Способ 1: Загрузить ВСЕ ингредиенты из папки Resources
+        // Загружаем все ингредиенты из папки Resources
         Ingredient[] allIngredients = Resources.LoadAll<Ingredient>("Ingredients");
         
         foreach (Ingredient ing in allIngredients)
         {
             ingredients[ing] = testAmount;
-            Debug.Log($"Добавлен тестовый ингредиент: {ing.ingredientName} x{testAmount}");
         }
         
-        /* Способ 2: Использовать список из инспектора
-        foreach (Ingredient ing in testIngredients)
-        {
-            if (ing != null)
-            {
-                ingredients[ing] = testAmount;
-                Debug.Log($"Добавлен ингредиент из списка: {ing.ingredientName} x{testAmount}");
-            }
-        }
-        */
-        
-        Debug.Log($"Всего добавлено {ingredients.Count} ингредиентов");
-        
-        // Вызываем событие обновления
         OnInventoryChanged?.Invoke();
     }
 
@@ -78,7 +61,6 @@ public class InventoryManager : MonoBehaviour
             
         ingredients[ingredient] -= amount;
         
-        // Вызываем событие обновления
         OnInventoryChanged?.Invoke();
         return true;
     }
