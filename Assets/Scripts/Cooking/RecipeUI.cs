@@ -30,10 +30,7 @@ public class RecipeUI : MonoBehaviour
     public void Setup(Recipe recipe)
     {
         Recipe = recipe;
-        
-        Debug.Log($"Setting up recipe: {recipe.recipeName}");
-        Debug.Log($"Ingredients count: {recipe.ingredients.Count}");
-        
+                
         if (iconImage != null)
             iconImage.sprite = recipe.recipeIcon;
         if (nameText != null)
@@ -67,9 +64,7 @@ public class RecipeUI : MonoBehaviour
                 Debug.LogError("Ingredient requirement has null ingredient!");
                 continue;
             }
-            
-            Debug.Log($"Creating icon for: {requirement.ingredient.ingredientName} x{requirement.amount}");
-            
+                        
             GameObject iconObj = Instantiate(ingredientIconPrefab, ingredientsContainer);
             RecipeIngredientIconUI iconUI = iconObj.GetComponent<RecipeIngredientIconUI>();
             
