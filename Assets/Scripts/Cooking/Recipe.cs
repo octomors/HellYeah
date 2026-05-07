@@ -8,10 +8,10 @@ public class Recipe : ScriptableObject
     public Sprite recipeIcon;
     [TextArea(3, 5)]
     public string description;
-    public List<IngredientRequirement> ingredients; // Список ингредиентов
+    public List<IngredientRequirement> ingredients;
     [TextArea(2, 4)]
-    public string buffDescription; // Описание баффа
-    public CookingResult cookingResult; // Ссылка на результат приготовления
+    public string buffDescription;
+    public CookingResult cookingResult;
 }
 
 [System.Serializable]

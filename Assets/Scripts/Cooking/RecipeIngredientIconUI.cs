@@ -18,16 +18,13 @@ public class RecipeIngredientIconUI : MonoBehaviour
     {
         Ingredient = ingredient;
         RequiredAmount = amount;
-        
-        Debug.Log($"RecipeIngredientIconUI.Setup called: {ingredient.ingredientName} x{amount}");
-        
+                
         if (iconImage != null)
         {
             if (ingredient.icon != null)
             {
                 iconImage.sprite = ingredient.icon;
                 iconImage.color = availableColor;
-                Debug.Log($"Sprite set to: {ingredient.icon.name}");
             }
             else
             {
@@ -42,7 +39,6 @@ public class RecipeIngredientIconUI : MonoBehaviour
         if (amountText != null)
         {
             amountText.text = amount.ToString();
-            Debug.Log($"Amount set to: {amount}");
         }
         else
         {

@@ -22,7 +22,6 @@ public class IngredientUI : MonoBehaviour
 
     private void HandleClick()
     {
-        // Вызываем событие клика
         OnClicked?.Invoke(this);
     }
 
@@ -41,13 +40,8 @@ public class IngredientUI : MonoBehaviour
         currentAmount = newAmount;
         UpdateAmountDisplay();
         
-        // Если количество стало 0, можно либо скрыть, либо показать "0"
         if (currentAmount <= 0)
         {
-            // Вариант 1: Скрыть ингредиент
-            // gameObject.SetActive(false);
-            
-            // Вариант 2: Показать 0 и сделать неактивным
             button.interactable = false;
         }
     }
