@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 45b3e819d6067e84e9263d7b52eabdfd
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 18364
+  packageName: Breadcrumb Ai
+  packageVersion: 1.2.2
+  assetPath: Assets/BreadcrumbAi/Examples/Demo/Materials/Sewer.mat
+  uploadId: 42648

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d7d6b6ca1ec9fa84c9e1b995301ee870
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 18364
+  packageName: Breadcrumb Ai
+  packageVersion: 1.2.2
+  assetPath: Assets/BreadcrumbAi/Examples/Demo/Materials/Chain.mat
+  uploadId: 42648

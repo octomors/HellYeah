@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 521b2856eb9e51b41bd9a125bc548c29
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 18364
+  packageName: Breadcrumb Ai
+  packageVersion: 1.2.2
+  assetPath: Assets/BreadcrumbAi/Examples/Demo/Prefabs/ParticlePrefabs/MuzFlash.prefab
+  uploadId: 42648

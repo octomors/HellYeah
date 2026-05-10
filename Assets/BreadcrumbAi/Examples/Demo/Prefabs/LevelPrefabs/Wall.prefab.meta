@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: cd800f4b0198a0044a043323e1b923fd
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 18364
+  packageName: Breadcrumb Ai
+  packageVersion: 1.2.2
+  assetPath: Assets/BreadcrumbAi/Examples/Demo/Prefabs/LevelPrefabs/Wall.prefab
+  uploadId: 42648

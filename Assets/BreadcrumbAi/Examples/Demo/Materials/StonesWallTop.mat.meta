@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8c9b14f2865f0704cb954e5dc4d42c0c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 18364
+  packageName: Breadcrumb Ai
+  packageVersion: 1.2.2
+  assetPath: Assets/BreadcrumbAi/Examples/Demo/Materials/StonesWallTop.mat
+  uploadId: 42648
