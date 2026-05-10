@@ -8,6 +8,7 @@ public class InventoryUI : MonoBehaviour
 {
     [Header("Окно инвентаря")]
     public GameObject inventoryPanel;
+    public bool IsOpen => _isOpen;
 
     [Header("Сетка слотов")]
     public Transform slotsContainer;
@@ -80,6 +81,8 @@ public class InventoryUI : MonoBehaviour
 
     private void Update()
     {
+        if (Time.timeScale == 0f) return; //игра на паузе
+
         if (Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.Tab))
         {
             if (_isOpen) Close();
