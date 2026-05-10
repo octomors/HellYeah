@@ -31,6 +31,28 @@ public class FirstPersonAudio : MonoBehaviour
 
     AudioSource[] MovingAudios => new AudioSource[] { stepAudio, runningAudio, crouchedAudio };
 
+    void OnEnable()
+    {
+        SubscribeToEvents();
+        // Подписываемся на паузу
+        PauseMenu.OnPauseChanged += OnPauseChanged;
+    }
+
+    void OnDisable()
+    {
+        UnsubscribeToEvents();
+        PauseMenu.OnPauseChanged -= OnPauseChanged;
+    }
+
+    private void OnPauseChanged(bool isPaused)
+    {
+        if (isPaused)
+        {
+            // Останавливаем все звуки движения
+            foreach (var audio in MovingAudios)
+                if (audio != null) audio.Pause();
+        }
+    }
 
     void Reset()
     {
@@ -57,10 +79,6 @@ public class FirstPersonAudio : MonoBehaviour
             crouchStartAudio = GetOrCreateAudioSource("Crouch End Audio");
         }
     }
-
-    void OnEnable() => SubscribeToEvents();
-
-    void OnDisable() => UnsubscribeToEvents();
 
     void FixedUpdate()
     {

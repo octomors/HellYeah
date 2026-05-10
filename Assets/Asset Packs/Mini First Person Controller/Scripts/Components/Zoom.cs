@@ -23,6 +23,7 @@ public class Zoom : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0f) return; //пауза - не зумируем
         // Update the currentZoom and the camera's fieldOfView.
         currentZoom += Input.mouseScrollDelta.y * sensitivity * .05f;
         currentZoom = Mathf.Clamp01(currentZoom);
