@@ -90,7 +90,7 @@ public class FirstPersonAudio : MonoBehaviour
             {
                 SetPlayingMovingAudio(crouchedAudio);
             }
-            else if (character.IsRunning)
+            else if (character.IsDashing)
             {
                 SetPlayingMovingAudio(runningAudio);
             }

@@ -3,7 +3,7 @@
 public class Jump : MonoBehaviour
 {
     Rigidbody rigidbody;
-    public float jumpStrength = 2;
+    public BasePlayerStats playerStats;
     public event System.Action Jumped;
 
     [SerializeField, Tooltip("Prevents jumping when the transform is in mid-air.")]
@@ -20,6 +20,10 @@ public class Jump : MonoBehaviour
     {
         // Get rigidbody.
         rigidbody = GetComponent<Rigidbody>();
+        if (playerStats == null)
+        {
+            playerStats = GetComponent<BasePlayerStats>();
+        }
     }
 
     void LateUpdate()
@@ -27,6 +31,7 @@ public class Jump : MonoBehaviour
         // Jump when the Jump button is pressed and we are on the ground.
         if (Input.GetButtonDown("Jump") && (!groundCheck || groundCheck.isGrounded))
         {
+            float jumpStrength = playerStats.JumpStrength;
             rigidbody.AddForce(Vector3.up * 100 * jumpStrength);
             Jumped?.Invoke();
         }

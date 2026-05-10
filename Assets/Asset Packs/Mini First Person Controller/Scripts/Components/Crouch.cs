@@ -7,8 +7,6 @@ public class Crouch : MonoBehaviour
     [Header("Slow Movement")]
     [Tooltip("Movement to slow down when crouched.")]
     public FirstPersonMovement movement;
-    [Tooltip("Movement speed when crouched.")]
-    public float movementSpeed = 2;
 
     [Header("Low Head")]
     [Tooltip("Head to lower when crouched.")]
@@ -25,7 +23,13 @@ public class Crouch : MonoBehaviour
     public bool IsCrouched { get; private set; }
     public event System.Action CrouchStart, CrouchEnd;
 
+    // BasePlayerStats reference (on same GameObject)
+    public BasePlayerStats basePlayerStats;
 
+    void Awake()
+    {
+        basePlayerStats = GetComponent<BasePlayerStats>();
+    }
     void Reset()
     {
         // Try to get components.
@@ -138,6 +142,6 @@ public class Crouch : MonoBehaviour
         }
     }
 
-    float SpeedOverride() => movementSpeed;
+    float SpeedOverride() => basePlayerStats.CrouchSpeed;
     #endregion
 }
