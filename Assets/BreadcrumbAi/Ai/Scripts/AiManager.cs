@@ -32,7 +32,7 @@ namespace BreadcrumbAi{
 											"You can find the right Tags and Layers in the ReadMe file\n" +
 											"Go to BreadcrumbAi > Ai > Documentation > ReadMe\n\n");
 				}
-				yield return new WaitForSeconds(0.2f);
+				yield return new WaitForSeconds(1.0f);
 			}
 		}
 		
