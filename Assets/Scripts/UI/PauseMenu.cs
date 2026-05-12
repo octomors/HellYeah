@@ -78,6 +78,9 @@ public class PauseMenu : MonoBehaviour
     {
         _isPaused = true;
         pausePanel.SetActive(true);
+        HUDController.Instance?.Hide();
+        if (UIManager.Instance != null) UIManager.Instance.HideTextHint();
+        
         Time.timeScale = 0f; //замораживает всю игру
 
         Cursor.lockState = CursorLockMode.None;
@@ -89,6 +92,8 @@ public class PauseMenu : MonoBehaviour
     {
         _isPaused = false;
         pausePanel.SetActive(false);
+        HUDController.Instance?.Show();
+        
         Time.timeScale = 1f; //возобновляет игру
 
         Cursor.lockState = CursorLockMode.Locked;

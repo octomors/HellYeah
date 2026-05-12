@@ -73,7 +73,6 @@ public class CookingUIManager : MonoBehaviour
     private void Start()
     {
         Initialize();
-        gameObject.SetActive(false);
     }
 
     // Инициализация — вызывается один раз
@@ -642,10 +641,10 @@ public class CookingUIManager : MonoBehaviour
     // Открывает экран готовки. Вызывается из CampfireInteractable после перехода камеры
     public void OpenCookingScreen()
     {
-        // На случай если объект был неактивен при старте
         Initialize();
-
         gameObject.SetActive(true);
+
+        HUDController.Instance?.Hide();
 
         if (cookingScreenCanvasGroup != null)
             cookingScreenCanvasGroup.alpha = 1f;
@@ -659,6 +658,7 @@ public class CookingUIManager : MonoBehaviour
     public void CloseCookingScreen()
     {
         if (_isCooking) return;
+        HUDController.Instance?.Show();
         
         gameObject.SetActive(false);
         
