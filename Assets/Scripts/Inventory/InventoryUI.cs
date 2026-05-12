@@ -8,6 +8,7 @@ public class InventoryUI : MonoBehaviour
 {
     [Header("Окно инвентаря")]
     public GameObject inventoryPanel;
+    public bool IsOpen => _isOpen;
 
     [Header("Сетка слотов")]
     public Transform slotsContainer;
@@ -80,6 +81,8 @@ public class InventoryUI : MonoBehaviour
 
     private void Update()
     {
+        if (Time.timeScale == 0f) return; //игра на паузе
+
         if (Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.Tab))
         {
             if (_isOpen) Close();
@@ -95,6 +98,9 @@ public class InventoryUI : MonoBehaviour
     {
         _isOpen = true;
         inventoryPanel.SetActive(true);
+        HUDController.Instance?.Hide();
+        if (UIManager.Instance != null) UIManager.Instance.HideTextHint();
+        
         RefreshSlots();
 
         Cursor.lockState = CursorLockMode.None;
@@ -106,6 +112,7 @@ public class InventoryUI : MonoBehaviour
     {
         _isOpen = false;
         inventoryPanel.SetActive(false);
+        HUDController.Instance?.Show();
 
         if (detailPanel != null)
             detailPanel.SetActive(false);

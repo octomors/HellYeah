@@ -31,6 +31,28 @@ public class FirstPersonAudio : MonoBehaviour
 
     AudioSource[] MovingAudios => new AudioSource[] { stepAudio, runningAudio, crouchedAudio };
 
+    void OnEnable()
+    {
+        SubscribeToEvents();
+        // Подписываемся на паузу
+        PauseMenu.OnPauseChanged += OnPauseChanged;
+    }
+
+    void OnDisable()
+    {
+        UnsubscribeToEvents();
+        PauseMenu.OnPauseChanged -= OnPauseChanged;
+    }
+
+    private void OnPauseChanged(bool isPaused)
+    {
+        if (isPaused)
+        {
+            // Останавливаем все звуки движения
+            foreach (var audio in MovingAudios)
+                if (audio != null) audio.Pause();
+        }
+    }
 
     void Reset()
     {
@@ -58,10 +80,6 @@ public class FirstPersonAudio : MonoBehaviour
         }
     }
 
-    void OnEnable() => SubscribeToEvents();
-
-    void OnDisable() => UnsubscribeToEvents();
-
     void FixedUpdate()
     {
         // Play moving audio if the character is moving and on the ground.
@@ -72,7 +90,7 @@ public class FirstPersonAudio : MonoBehaviour
             {
                 SetPlayingMovingAudio(crouchedAudio);
             }
-            else if (character.IsRunning)
+            else if (character.IsDashing)
             {
                 SetPlayingMovingAudio(runningAudio);
             }
