@@ -32,6 +32,40 @@ public class FirstPersonMovement : MonoBehaviour
             basePlayerStats = GetComponent<BasePlayerStats>();
         }
         currentDashCharges = basePlayerStats.DashCharges;
+
+        // Инициализируем HUD
+        if (HUDController.Instance != null)
+        {
+            currentDashCharges = basePlayerStats.DashCharges;
+        }
+    }
+
+    void Start()
+    {
+        if (HUDController.Instance != null)
+        {
+            HUDController.Instance.DashCharges = basePlayerStats.DashCharges;
+            HUDController.Instance.CurrentCharges = currentDashCharges;
+            HUDController.Instance.DashChargeRecoveryTime = basePlayerStats.DashChargeRecoveryTime;
+        }
+        else
+        {
+            // HUD ещё не готов - попробуем позже
+            StartCoroutine(InitHUDDelayed());
+        }
+    }
+
+    private System.Collections.IEnumerator InitHUDDelayed()
+    {
+        // Ждём один кадр - к этому моменту все Awake уже отработали
+        yield return null;
+
+        if (HUDController.Instance != null)
+        {
+            HUDController.Instance.DashCharges  = basePlayerStats.DashCharges;
+            HUDController.Instance.CurrentCharges = currentDashCharges;
+            HUDController.Instance.DashChargeRecoveryTime = basePlayerStats.DashChargeRecoveryTime;
+        }
     }
 
     void Update()
@@ -50,6 +84,11 @@ public class FirstPersonMovement : MonoBehaviour
             isDashing = true;
             currentDashCharges--;
             dashTimer = basePlayerStats.DashTime;
+
+            // Обновляем HUD
+            if (HUDController.Instance != null)
+                HUDController.Instance.CurrentCharges = currentDashCharges;
+
             cachedDashInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
             if (cachedDashInput == Vector2.zero)
@@ -116,10 +155,19 @@ public class FirstPersonMovement : MonoBehaviour
         {
             currentDashCharges++;
             dashRecoveryTimer = 0;
+
+            if (HUDController.Instance != null)
+            {
+                HUDController.Instance.CurrentCharges = currentDashCharges;
+                HUDController.Instance.CurrentDashRecoveryTime = 0f;
+            }
         }
         else
         {
             dashRecoveryTimer += Time.fixedDeltaTime;
+
+            if (HUDController.Instance != null)
+                HUDController.Instance.CurrentDashRecoveryTime = dashRecoveryTimer;
         }
     }
 }

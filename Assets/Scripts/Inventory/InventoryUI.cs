@@ -98,6 +98,9 @@ public class InventoryUI : MonoBehaviour
     {
         _isOpen = true;
         inventoryPanel.SetActive(true);
+        HUDController.Instance?.Hide();
+        if (UIManager.Instance != null) UIManager.Instance.HideTextHint();
+        
         RefreshSlots();
 
         Cursor.lockState = CursorLockMode.None;
@@ -109,6 +112,7 @@ public class InventoryUI : MonoBehaviour
     {
         _isOpen = false;
         inventoryPanel.SetActive(false);
+        HUDController.Instance?.Show();
 
         if (detailPanel != null)
             detailPanel.SetActive(false);
