@@ -14,6 +14,9 @@ public class BasePlayerStats : MonoBehaviour
     public float DashChargeRecoveryTime;
     public float DashSpeed;
     public float DashTime;
+
+    [Header("Combat")]
+    public float Health = 100f;
    
     [Header("Limits")]
     public float MaxSpeed;
@@ -21,4 +24,5 @@ public class BasePlayerStats : MonoBehaviour
     public float MaxCrouchSpeed;
     public int MaxDashCharges;
     public float MinDashChargeRecoveryTime;
+    public float MaxHealth = 400f;
 }

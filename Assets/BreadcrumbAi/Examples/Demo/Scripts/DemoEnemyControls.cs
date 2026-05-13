@@ -95,8 +95,9 @@ public class DemoEnemyControls : MonoBehaviour {
 							audioSource.clip = audioClips.audio_melee_attack_2;
 						}
 						audioSource.PlayOneShot(audioSource.clip);
-						player.GetComponent<DemoPlayerControls>()._isHit = true;
-						player.GetComponent<DemoPlayerControls>().Bleed(transform.rotation);
+						// player.GetComponent<DemoPlayerControls>()._isHit = true;
+						// player.GetComponent<DemoPlayerControls>().Bleed(transform.rotation);
+						player.GetComponent<PlayerCombatManager>().TakeDamage(5);
 						_animAttack = true;
 					} else {
 						_animAttack = false;
