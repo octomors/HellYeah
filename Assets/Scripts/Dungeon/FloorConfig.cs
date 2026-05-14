@@ -26,18 +26,16 @@ public class FloorConfig : ScriptableObject
     /// <summary>
     /// O(1) runtime cache for PrefabGroups
     /// </summary>
-    /// 
-    private Dictionary<RoomType, List<GameObject>> RoomPrefabs
+    public Dictionary<RoomType, List<GameObject>> RoomPrefabs
     {
         get
         {
             if (!cacheBuilded)
             {
                 prefabs = RoomPrefabGroups.ToDictionary(g => g.type, g => g.prefabs);
+                cacheBuilded = true;
             }
             return prefabs;
         }
-
-        set => prefabs = value; 
     }
 }

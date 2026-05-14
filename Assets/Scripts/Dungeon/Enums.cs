@@ -14,8 +14,8 @@ public enum RoomType
 
 public enum GenerationType
 {
-    sausage,
-    waffle
+    Sausage,
+    Waffle
 }
 
 public enum Direction

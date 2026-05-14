@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class DungeonManager : MonoBehaviour
 {
-    [SerializeField] private IDungeonGenerator dungeonGenerator;
     [SerializeField] private FloorConfig[] floorConfigs = new FloorConfig[3];
 
     private void Start()
@@ -13,17 +12,30 @@ public class DungeonManager : MonoBehaviour
             return;
         }
 
-        if (dungeonGenerator == null)
-        {
-            Debug.LogError("DungeonGenerator is not assigned in DungeonManager.");
-            return;
-        }
-
         InitFloor();
     }
 
     public void InitFloor()
     {
+        int floor = RunManager.Instance.CurrentFloor;
+        FloorConfig config = ResolveConfigForFloor(floor);
+        if (config == null)
+        {
+            Debug.LogError($"FloorConfig not found for floor {floor}.");
+            return;
+        }
+        IDungeonGenerator dungeonGenerator;
+        switch (config.GenerationType)
+        {
+            case GenerationType.Sausage:
+                dungeonGenerator = new SausageDungeonGenerator();
+                break;
+            default:
+                Debug.LogError($"Unsupported GenerationType.");
+                return;
+        }
+        Map map = dungeonGenerator.Generate(config);
+        RoomSpawner.SpawnRooms(config, map);
     }
 
     private FloorConfig ResolveConfigForFloor(int floor)
