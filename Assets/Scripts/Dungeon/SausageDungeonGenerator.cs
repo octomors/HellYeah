@@ -6,8 +6,8 @@ using UnityEngine;
 public class SausageDungeonGenerator : IDungeonGenerator
 {
     #region Settings
-    private float SausageSizeSettings = 0.6f;
-    private float MaxBranchSizeSettings = 0.3f;
+    private float SausageSizeSettings = 0.666f;
+    private float MaxBranchSizeSettings = 0.333f;
     #endregion
 
     private Map map;
@@ -26,10 +26,13 @@ public class SausageDungeonGenerator : IDungeonGenerator
         GenerateSausage();
 
         Dictionary<(int x, int y), int> Branches = new Dictionary<(int x, int y), int>();
-        var candidates = map.roomCoords.OrderBy(_ => UnityEngine.Random.value).ToList();
+        var candidates = map.roomCoords
+            .Except(new[] { map.EntranceRoomCoords, map.ExitRoomCoords })
+            .OrderBy(coords => UnityEngine.Random.value)
+            .ToList();
         foreach (var branchStart in candidates)
         {
-            if (roomsToGenerate <= 0)
+            if (roomsToGenerate == 0)
             {
                 break;
             }
@@ -38,13 +41,14 @@ public class SausageDungeonGenerator : IDungeonGenerator
             Branches[branchStart] = branchLength;
             roomsToGenerate -= branchLength;
         }
-        
+
         foreach (var branch in Branches)
         {
+            Debug.Log($"Generating branch at {branch.Key} with length {branch.Value}");
             var direction = UnityEngine.Random.value > 0.5f ? Direction.Left : Direction.Right;
             GenerateBranch(branch.Key, direction, branch.Value);
         }
-
+        Debug.Log($"Sausage size: {sausageSize}, Branches count: {Branches.Count}, Total rooms: {map.roomCoords.Count}");
         return map;
     }
 
@@ -55,6 +59,7 @@ public class SausageDungeonGenerator : IDungeonGenerator
     {
         var walker = new Walker((0, 0), Direction.Up, 0.6f, 0.2f, 0.2f);
 
+        map.EntranceRoomCoords = (0, 0);
         for (int i = 0; i < sausageSize; i++)
         {
             var nextPoint = walker.GetNextPoint();
@@ -63,8 +68,14 @@ public class SausageDungeonGenerator : IDungeonGenerator
                 i--;
                 continue;
             }
+            if(i == sausageSize - 1)
+            {
+                map.ExitRoomCoords = nextPoint;
+            }
             map.roomCoords.Add(nextPoint);
         }
+
+        roomsToGenerate -= sausageSize;
     }
 
     /// <summary>

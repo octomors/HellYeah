@@ -30,12 +30,18 @@ public class FloorConfig : ScriptableObject
     {
         get
         {
-            if (!cacheBuilded)
+            if (!cacheBuilded || prefabs == null)
             {
                 prefabs = RoomPrefabGroups.ToDictionary(g => g.type, g => g.prefabs);
                 cacheBuilded = true;
             }
             return prefabs;
         }
+    }
+
+    private void OnEnable()
+    {
+        cacheBuilded = false;
+        prefabs = null;
     }
 }
