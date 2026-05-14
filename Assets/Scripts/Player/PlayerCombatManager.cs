@@ -6,7 +6,7 @@ public class PlayerCombatManager : MonoBehaviour
 {
     [Header("Attack Settings")]
     public float attackRange = 1.4f;
-    public float attackDamage = 25f;
+    private float attackDamage = 25f;
     public float attackCooldown = 0.5f;
     public float attackRadius = 0.6f;
     
@@ -29,7 +29,10 @@ public class PlayerCombatManager : MonoBehaviour
         {
             Debug.LogError("PlayerCombatManager requires BasePlayerStats on the same GameObject!");
         }
-        RestoreHealth();
+        else{
+            RestoreHealth();
+            attackDamage = stats.AttackDamage;
+        }
     }
     
     public void RestoreHealth()

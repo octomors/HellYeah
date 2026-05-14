@@ -12,7 +12,7 @@
 //     public float projectileForce = 500f;
     
 //     [Header("Death Settings")]
-//     public float destroyDelay = 3f;
+//     public float destroyDelay = 1f;
     
 //     private Ai ai;
 //     private float nextAttackTime;
