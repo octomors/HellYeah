@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 31375be77f2eb8e46aeb7139c14ca7a1
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 18364
+  packageName: Breadcrumb Ai
+  packageVersion: 1.2.2
+  assetPath: Assets/BreadcrumbAi/Examples/Demo/Scripts/DemoSpawnerControl.cs
+  uploadId: 42648

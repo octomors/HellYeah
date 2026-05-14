@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: fc597c58eb91b384aa04ee2d82bcdd1b
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 18364
+  packageName: Breadcrumb Ai
+  packageVersion: 1.2.2
+  assetPath: Assets/BreadcrumbAi/Examples/Demo/Prefabs/EnemyPrefabs/EnemyMelee.prefab
+  uploadId: 42648

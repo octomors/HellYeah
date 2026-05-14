@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 15b76e96be089e94fa1dbe5dabd79d6d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 18364
+  packageName: Breadcrumb Ai
+  packageVersion: 1.2.2
+  assetPath: Assets/BreadcrumbAi/Ai/Scripts/Extras/BA_BasicFPS.cs
+  uploadId: 42648
