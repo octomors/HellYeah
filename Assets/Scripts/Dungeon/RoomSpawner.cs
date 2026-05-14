@@ -30,7 +30,6 @@ public static class RoomSpawner
         if (map.roomCoords.Count == 0)
         {
             Debug.LogWarning("RoomSpawner: Map has no room coordinates.");
-            return;
         }
 
         float spacing = (config.DoorsToRoomOriginLength * 2) + config.CorridorLength;
@@ -38,137 +37,8 @@ public static class RoomSpawner
 
         Dictionary<(int y, int x), DoorDir> specialDoors = BuildSpecialDoorMap(map, map.roomCoords);
         SpawnSpecialRooms(map, prefabMap, spacing, specialDoors);
-        SpawnRoomPrefabs(map, prefabMap, spacing, specialDoors);
-        SpawnCorridors(map, prefabMap, spacing, specialDoors);
-    }
-
-    private static void SpawnRoomPrefabs(
-        Map map,
-        Dictionary<RoomType, List<GameObject>> prefabMap,
-        float spacing,
-        Dictionary<(int y, int x), DoorDir> specialDoors)
-    {
-        foreach (var coord in map.roomCoords)
-        {
-            if (specialDoors != null && specialDoors.ContainsKey(coord))
-            {
-                continue;
-            }
-
-            HashSet<DoorDir> neighborDirs = GetNeighborDirs(coord, map.roomCoords, specialDoors, map);
-            if (!TryGetRoomType(neighborDirs, out RoomType roomType))
-            {
-                Debug.LogWarning($"RoomSpawner: Unsupported neighbor count at {coord}.");
-                continue;
-            }
-
-            if (!TryGetRoomRotation(neighborDirs, roomType, out Quaternion rotation))
-            {
-                Debug.LogWarning($"RoomSpawner: No rotation match for {roomType} at {coord}.");
-                continue;
-            }
-
-            if (!TryGetRandomPrefab(prefabMap, roomType, out GameObject prefab))
-            {
-                Debug.LogWarning($"RoomSpawner: No prefab for room type {roomType}.");
-                continue;
-            }
-
-            Vector3 worldPos = ToWorldPosition(coord, spacing);
-            UnityEngine.Object.Instantiate(prefab, worldPos, rotation);
-        }
-    }
-
-    private static void SpawnCorridors(
-        HashSet<(int y, int x)> coords,
-        Dictionary<RoomType, List<GameObject>> prefabMap,
-        float spacing,
-        Dictionary<(int y, int x), DoorDir> specialDoors)
-    {
-        if (!TryGetRandomPrefab(prefabMap, RoomType.Corridor, out GameObject corridorPrefab))
-        {
-            Debug.LogWarning("RoomSpawner: No corridor prefab found.");
-            return;
-        }
-
-        foreach (var coord in coords)
-        {
-            var right = (coord.y, coord.x + 1);
-            if (coords.Contains(right))
-            {
-                Vector3 a = ToWorldPosition(coord, spacing);
-                Vector3 b = ToWorldPosition(right, spacing);
-                Vector3 mid = (a + b) * 0.5f;
-                Quaternion rot = Quaternion.Euler(0f, 90f, 0f);
-                UnityEngine.Object.Instantiate(corridorPrefab, mid, rot);
-            }
-
-            var up = (coord.y + 1, coord.x);
-            if (coords.Contains(up))
-            {
-                Vector3 a = ToWorldPosition(coord, spacing);
-                Vector3 b = ToWorldPosition(up, spacing);
-                Vector3 mid = (a + b) * 0.5f;
-                Quaternion rot = Quaternion.identity;
-                UnityEngine.Object.Instantiate(corridorPrefab, mid, rot);
-            }
-
-            if (specialDoors != null && specialDoors.Count > 0)
-            {
-                TrySpawnSpecialCorridor(coord, specialDoors, corridorPrefab, spacing, DoorDir.PosZ);
-                TrySpawnSpecialCorridor(coord, specialDoors, corridorPrefab, spacing, DoorDir.NegZ);
-                TrySpawnSpecialCorridor(coord, specialDoors, corridorPrefab, spacing, DoorDir.PosX);
-                TrySpawnSpecialCorridor(coord, specialDoors, corridorPrefab, spacing, DoorDir.NegX);
-            }
-        }
-    }
-
-    private static Vector3 ToWorldPosition((int y, int x) coord, float spacing)
-    {
-        return new Vector3(coord.x * spacing, 0f, coord.y * spacing);
-    }
-
-    private static HashSet<DoorDir> GetNeighborDirs(
-        (int y, int x) coord,
-        HashSet<(int y, int x)> coords,
-        Dictionary<(int y, int x), DoorDir> specialDoors,
-        Map map)
-    {
-        HashSet<DoorDir> dirs = new HashSet<DoorDir>();
-        if (coords.Contains((coord.y + 1, coord.x)))
-        {
-            dirs.Add(DoorDir.PosZ);
-        }
-
-        if (coords.Contains((coord.y - 1, coord.x)))
-        {
-            dirs.Add(DoorDir.NegZ);
-        }
-
-        if (coords.Contains((coord.y, coord.x + 1)))
-        {
-            dirs.Add(DoorDir.PosX);
-        }
-
-        if (coords.Contains((coord.y, coord.x - 1)))
-        {
-            dirs.Add(DoorDir.NegX);
-        }
-
-        if (specialDoors != null && map != null)
-        {
-            TryAddSpecialNeighbor(map.EntranceRoomCoords, coord, specialDoors, DoorDir.PosZ, dirs);
-            TryAddSpecialNeighbor(map.EntranceRoomCoords, coord, specialDoors, DoorDir.NegZ, dirs);
-            TryAddSpecialNeighbor(map.EntranceRoomCoords, coord, specialDoors, DoorDir.PosX, dirs);
-            TryAddSpecialNeighbor(map.EntranceRoomCoords, coord, specialDoors, DoorDir.NegX, dirs);
-
-            TryAddSpecialNeighbor(map.ExitRoomCoords, coord, specialDoors, DoorDir.PosZ, dirs);
-            TryAddSpecialNeighbor(map.ExitRoomCoords, coord, specialDoors, DoorDir.NegZ, dirs);
-            TryAddSpecialNeighbor(map.ExitRoomCoords, coord, specialDoors, DoorDir.PosX, dirs);
-            TryAddSpecialNeighbor(map.ExitRoomCoords, coord, specialDoors, DoorDir.NegX, dirs);
-        }
-
-        return dirs;
+        SpawnNormalRooms(map.roomCoords, prefabMap, spacing, specialDoors);
+        SpawnCorridors(map.roomCoords, prefabMap, spacing, specialDoors);
     }
 
     private static Dictionary<(int y, int x), DoorDir> BuildSpecialDoorMap(
@@ -278,13 +148,88 @@ public static class RoomSpawner
         }
     }
 
-        bool isEntrance = coord.Equals(map.EntranceRoomCoords);
-        bool isExit = coord.Equals(map.ExitRoomCoords);
-        if (!isEntrance && !isExit)
+    private static void SpawnNormalRooms(
+        HashSet<(int y, int x)> coords,
+        Dictionary<RoomType, List<GameObject>> prefabMap,
+        float spacing,
+        Dictionary<(int y, int x), DoorDir> specialDoors)
+    {
+        foreach (var coord in coords)
         {
-            return dirs;
+            HashSet<DoorDir> neighborDirs = GetNeighborDirs(coord, coords, specialDoors);
+            if (!TryGetRoomType(neighborDirs, out RoomType roomType))
+            {
+                Debug.LogWarning($"RoomSpawner: Unsupported neighbor count at {coord}.");
+                continue;
+            }
+
+            if (!TryGetRoomRotation(neighborDirs, roomType, out Quaternion rotation))
+            {
+                Debug.LogWarning($"RoomSpawner: No rotation match for {roomType} at {coord}.");
+                continue;
+            }
+
+            if (!TryGetRandomPrefab(prefabMap, roomType, out GameObject prefab))
+            {
+                Debug.LogWarning($"RoomSpawner: No prefab for room type {roomType}.");
+                continue;
+            }
+
+            Vector3 worldPos = ToWorldPosition(coord, spacing);
+            UnityEngine.Object.Instantiate(prefab, worldPos, rotation);
+        }
+    }
+
+    private static void SpawnCorridors(
+        HashSet<(int y, int x)> coords,
+        Dictionary<RoomType, List<GameObject>> prefabMap,
+        float spacing,
+        Dictionary<(int y, int x), DoorDir> specialDoors)
+    {
+        if (!TryGetRandomPrefab(prefabMap, RoomType.Corridor, out GameObject corridorPrefab))
+        {
+            Debug.LogWarning("RoomSpawner: No corridor prefab found.");
+            return;
         }
 
+        foreach (var coord in coords)
+        {
+            var right = (coord.y, coord.x + 1);
+            if (coords.Contains(right))
+            {
+                Vector3 a = ToWorldPosition(coord, spacing);
+                Vector3 b = ToWorldPosition(right, spacing);
+                Vector3 mid = (a + b) * 0.5f;
+                Quaternion rot = Quaternion.Euler(0f, 90f, 0f);
+                UnityEngine.Object.Instantiate(corridorPrefab, mid, rot);
+            }
+
+            var up = (coord.y + 1, coord.x);
+            if (coords.Contains(up))
+            {
+                Vector3 a = ToWorldPosition(coord, spacing);
+                Vector3 b = ToWorldPosition(up, spacing);
+                Vector3 mid = (a + b) * 0.5f;
+                Quaternion rot = Quaternion.identity;
+                UnityEngine.Object.Instantiate(corridorPrefab, mid, rot);
+            }
+
+            if (specialDoors != null && specialDoors.Count > 0)
+            {
+                TrySpawnSpecialCorridor(coord, specialDoors, corridorPrefab, spacing, DoorDir.PosZ);
+                TrySpawnSpecialCorridor(coord, specialDoors, corridorPrefab, spacing, DoorDir.NegZ);
+                TrySpawnSpecialCorridor(coord, specialDoors, corridorPrefab, spacing, DoorDir.PosX);
+                TrySpawnSpecialCorridor(coord, specialDoors, corridorPrefab, spacing, DoorDir.NegX);
+            }
+        }
+    }
+
+    private static HashSet<DoorDir> GetNeighborDirs(
+        (int y, int x) coord,
+        HashSet<(int y, int x)> coords,
+        Dictionary<(int y, int x), DoorDir> specialDoors)
+    {
+        HashSet<DoorDir> dirs = new HashSet<DoorDir>();
         if (coords.Contains((coord.y + 1, coord.x)))
         {
             dirs.Add(DoorDir.PosZ);
@@ -305,43 +250,18 @@ public static class RoomSpawner
             dirs.Add(DoorDir.NegX);
         }
 
-        DoorDir? chosen = ChooseSingleDoor(dirs);
-        HashSet<DoorDir> result = new HashSet<DoorDir>();
-        if (chosen.HasValue)
+        if (specialDoors != null)
         {
-            result.Add(chosen.Value);
+            TryAddSpecialNeighbor(coord, specialDoors, DoorDir.PosZ, dirs);
+            TryAddSpecialNeighbor(coord, specialDoors, DoorDir.NegZ, dirs);
+            TryAddSpecialNeighbor(coord, specialDoors, DoorDir.PosX, dirs);
+            TryAddSpecialNeighbor(coord, specialDoors, DoorDir.NegX, dirs);
         }
 
-        return result;
-    }
-
-    private static DoorDir? ChooseSingleDoor(HashSet<DoorDir> dirs)
-    {
-        if (dirs.Contains(DoorDir.PosZ))
-        {
-            return DoorDir.PosZ;
-        }
-
-        if (dirs.Contains(DoorDir.NegZ))
-        {
-            return DoorDir.NegZ;
-        }
-
-        if (dirs.Contains(DoorDir.PosX))
-        {
-            return DoorDir.PosX;
-        }
-
-        if (dirs.Contains(DoorDir.NegX))
-        {
-            return DoorDir.NegX;
-        }
-
-        return null;
+        return dirs;
     }
 
     private static void TryAddSpecialNeighbor(
-        (int y, int x) specialCoord,
         (int y, int x) coord,
         Dictionary<(int y, int x), DoorDir> specialDoors,
         DoorDir dirFromCoord,
@@ -353,12 +273,7 @@ public static class RoomSpawner
         }
 
         (int y, int x) expected = AddDir(coord, dirFromCoord);
-        if (!expected.Equals(specialCoord))
-        {
-            return;
-        }
-
-        if (!specialDoors.TryGetValue(specialCoord, out DoorDir specialDoor))
+        if (!specialDoors.TryGetValue(expected, out DoorDir specialDoor))
         {
             return;
         }
@@ -366,23 +281,6 @@ public static class RoomSpawner
         if (specialDoor == Opposite(dirFromCoord))
         {
             dirs.Add(dirFromCoord);
-        }
-    }
-
-    private static (int y, int x) AddDir((int y, int x) coord, DoorDir dir)
-    {
-        switch (dir)
-        {
-            case DoorDir.PosZ:
-                return (coord.y + 1, coord.x);
-            case DoorDir.NegZ:
-                return (coord.y - 1, coord.x);
-            case DoorDir.PosX:
-                return (coord.y, coord.x + 1);
-            case DoorDir.NegX:
-                return (coord.y, coord.x - 1);
-            default:
-                throw new ArgumentOutOfRangeException(nameof(dir), dir, "Invalid door direction");
         }
     }
 
@@ -416,6 +314,53 @@ public static class RoomSpawner
             ? Quaternion.Euler(0f, 90f, 0f)
             : Quaternion.identity;
         UnityEngine.Object.Instantiate(corridorPrefab, mid, rot);
+    }
+
+    private static (int y, int x) AddDir((int y, int x) coord, DoorDir dir)
+    {
+        switch (dir)
+        {
+            case DoorDir.PosZ:
+                return (coord.y + 1, coord.x);
+            case DoorDir.NegZ:
+                return (coord.y - 1, coord.x);
+            case DoorDir.PosX:
+                return (coord.y, coord.x + 1);
+            case DoorDir.NegX:
+                return (coord.y, coord.x - 1);
+            default:
+                throw new ArgumentOutOfRangeException(nameof(dir), dir, "Invalid door direction");
+        }
+    }
+
+    private static Vector3 ToWorldPosition((int y, int x) coord, float spacing)
+    {
+        return new Vector3(coord.x * spacing, 0f, coord.y * spacing);
+    }
+
+    private static DoorDir? ChooseSingleDoor(HashSet<DoorDir> dirs)
+    {
+        if (dirs.Contains(DoorDir.PosZ))
+        {
+            return DoorDir.PosZ;
+        }
+
+        if (dirs.Contains(DoorDir.NegZ))
+        {
+            return DoorDir.NegZ;
+        }
+
+        if (dirs.Contains(DoorDir.PosX))
+        {
+            return DoorDir.PosX;
+        }
+
+        if (dirs.Contains(DoorDir.NegX))
+        {
+            return DoorDir.NegX;
+        }
+
+        return null;
     }
 
     private static DoorDir Opposite(DoorDir dir)
@@ -494,9 +439,8 @@ public static class RoomSpawner
             case RoomType.OneDoor:
                 return new HashSet<DoorDir> { DoorDir.PosZ };
             case RoomType.EntranceRoom:
-                return new HashSet<DoorDir> { DoorDir.PosZ };
             case RoomType.ExitRoom:
-                return new HashSet<DoorDir> { DoorDir.NegZ };
+                return new HashSet<DoorDir> { DoorDir.PosZ };
             case RoomType.TwoDoorsAngle:
                 return new HashSet<DoorDir> { DoorDir.PosZ, DoorDir.NegX };
             case RoomType.TwoDoorsLine:
