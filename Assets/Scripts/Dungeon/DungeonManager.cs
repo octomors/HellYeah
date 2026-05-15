@@ -106,6 +106,9 @@ public class DungeonManager : MonoBehaviour
             case GenerationType.Sausage:
                 dungeonGenerator = new SausageDungeonGenerator();
                 break;
+            case GenerationType.Waffle:
+                dungeonGenerator = new WaffleDungeonGenerator();
+                break;
             default:
                 Debug.LogError($"Unsupported GenerationType.");
                 return;
