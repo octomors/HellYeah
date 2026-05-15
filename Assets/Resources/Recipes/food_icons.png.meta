@@ -1,0 +1,5898 @@
+fileFormatVersion: 2
+guid: bbbe202def7ad864fbc60d76d579a682
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: food_icons_0
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 6784
+        width: 186
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47cd9750f66647a46a58e40747461260
+      internalID: -1542012703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_1
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 6795
+        width: 185
+        height: 217
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1ae9c7e297590b49a512fe6fb241aab
+      internalID: 17265212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_2
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 6759
+        width: 277
+        height: 253
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 610b824b7369e02479403086a8af3cf1
+      internalID: 94434448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_4
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 6754
+        width: 265
+        height: 258
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a051c907632ce04493290cb4894298e
+      internalID: -1271535968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_5
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 6776
+        width: 199
+        height: 226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bc9fae61db4ac148863e1b0f28c4ac4
+      internalID: -499248067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_6
+      rect:
+        serializedVersion: 2
+        x: 1458
+        y: 6747
+        width: 274
+        height: 265
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 668d40c4f42bcaa4dad076701d8b1582
+      internalID: -306357231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_7
+      rect:
+        serializedVersion: 2
+        x: 1753
+        y: 6767
+        width: 246
+        height: 245
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69fbf761eea22b741b2bb946aae6c577
+      internalID: -346663129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_8
+      rect:
+        serializedVersion: 2
+        x: 2059
+        y: 6784
+        width: 234
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f11dedf30090404b8f4ba1827faaa74
+      internalID: -1783313994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_12
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 6469
+        width: 186
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 526155ff1a4592043b3ca1942e4e6c00
+      internalID: -1719546443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_14
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 6475
+        width: 169
+        height: 215
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de5d0b3a30e80af41985a4657b489589
+      internalID: 1124721472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_15
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 6447
+        width: 264
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f39cfb6039e507542a4519813c1d8755
+      internalID: 1138064857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_16
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 6439
+        width: 270
+        height: 265
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a33cb909c37b69947b7814eeabe9319e
+      internalID: 1978534647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_17
+      rect:
+        serializedVersion: 2
+        x: 1178
+        y: 6459
+        width: 208
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a7fa917a04018748a37d1e1c505e7da
+      internalID: -492557098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_18
+      rect:
+        serializedVersion: 2
+        x: 1458
+        y: 6432
+        width: 281
+        height: 268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7beaeb263c0407541959c636ee5b8597
+      internalID: -338273333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_19
+      rect:
+        serializedVersion: 2
+        x: 1746
+        y: 6449
+        width: 260
+        height: 238
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba879d425a8df144cab886682bfa78f4
+      internalID: -817884572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_20
+      rect:
+        serializedVersion: 2
+        x: 2059
+        y: 6469
+        width: 235
+        height: 218
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec8195e7a24cc584dab3a65b29239c9b
+      internalID: 926201119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_23
+      rect:
+        serializedVersion: 2
+        x: 1721
+        y: 1785
+        width: 286
+        height: 276
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54ac42ccdca760544b460cdc06bd0b2c
+      internalID: -719841880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_24
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 6137
+        width: 267
+        height: 242
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c34d8124b136daf4181bb7763b17670d
+      internalID: 565701777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_25
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 6141
+        width: 288
+        height: 241
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cd4d68e1fa1948448fa19f266b8a625
+      internalID: -1800636819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_26
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 6151
+        width: 233
+        height: 210
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63a5a974fa7274849b1a70b7a862d203
+      internalID: 1678185502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_27
+      rect:
+        serializedVersion: 2
+        x: 1188
+        y: 6127
+        width: 217
+        height: 255
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed7d062d109d1dd4c88499fbace39016
+      internalID: 1944382689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_28
+      rect:
+        serializedVersion: 2
+        x: 1457
+        y: 6129
+        width: 279
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53c99246e91150d408dcef9bd5280756
+      internalID: 489460058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_29
+      rect:
+        serializedVersion: 2
+        x: 1811
+        y: 6171
+        width: 140
+        height: 166
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd37dd8c42bfe40498905d9bca4f8047
+      internalID: -241912255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_30
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 5822
+        width: 270
+        height: 248
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 3, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5a58245161f8ba4db1753f5e79e739f
+      internalID: 1481693242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_31
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 5822
+        width: 288
+        height: 245
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eef4a28d23de68b4c9b38ecb124c1edb
+      internalID: -1520447863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_32
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 5833
+        width: 229
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28bd8e2b86d299e459f181d49d1acdcd
+      internalID: -410077942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_33
+      rect:
+        serializedVersion: 2
+        x: 1193
+        y: 5809
+        width: 217
+        height: 261
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 336f2dcd1406e8249942ca06980f7d08
+      internalID: 1891821074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_34
+      rect:
+        serializedVersion: 2
+        x: 1453
+        y: 5814
+        width: 283
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2516b03e97921ca42bc7dbda1d354732
+      internalID: 1450488592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_35
+      rect:
+        serializedVersion: 2
+        x: 1815
+        y: 5870
+        width: 129
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13992cdd173e97c41b8a6690db4e8338
+      internalID: -1582882572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_36
+      rect:
+        serializedVersion: 2
+        x: 2107
+        y: 5870
+        width: 125
+        height: 139
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a60c2317ef0efd24083aa38bbdb608c4
+      internalID: -1705533785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_37
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 5507
+        width: 256
+        height: 248
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 1, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4c167ee7f797c44ab0c670cd0082d09
+      internalID: -1655363977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_38
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 5507
+        width: 284
+        height: 245
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb978f69e0616254c966f6e7aa2c8344
+      internalID: 678526126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_39
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 5518
+        width: 226
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0413e3380b27fdb46a914d5c4a5d5a17
+      internalID: 752670266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_40
+      rect:
+        serializedVersion: 2
+        x: 1188
+        y: 5494
+        width: 220
+        height: 255
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b20f1cdae9cb647458a45448a7d49a25
+      internalID: 132194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_41
+      rect:
+        serializedVersion: 2
+        x: 1453
+        y: 5497
+        width: 279
+        height: 258
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a731b778e4786140ae33749dd4e8e57
+      internalID: 415170160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5192
+        width: 229
+        height: 231
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6df39c43a52f5e4419afa6e7f1060dcc
+      internalID: 1073595262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_43
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 5187
+        width: 243
+        height: 236
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2c841ad670fca3408bd430f9ef8f3c8
+      internalID: 832565032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_44
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 5187
+        width: 244
+        height: 236
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb74f19e7769c3e4983c8b1a2cd12e5a
+      internalID: -1411875665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_45
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 5187
+        width: 250
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 711dba482234bff4bafa1a69079543eb
+      internalID: -2112731850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_46
+      rect:
+        serializedVersion: 2
+        x: 1174
+        y: 5182
+        width: 264
+        height: 262
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 203f6888725d18842ba00ea28efe5d2c
+      internalID: -572088761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_47
+      rect:
+        serializedVersion: 2
+        x: 1455
+        y: 5182
+        width: 260
+        height: 245
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5849fd550a11c7748b6b355f92dab22c
+      internalID: 1514854904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_49
+      rect:
+        serializedVersion: 2
+        x: 2343
+        y: 5192
+        width: 238
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00f51c43c3e9f3b40bfef6e308d569e6
+      internalID: -1342479092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_50
+      rect:
+        serializedVersion: 2
+        x: 2616
+        y: 5196
+        width: 256
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 018c973f1afa261408fece6fff95c6ee
+      internalID: -903452698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_51
+      rect:
+        serializedVersion: 2
+        x: 2893
+        y: 5192
+        width: 294
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1b1ce500beabeb40908813c1d93f69e
+      internalID: -1079386554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_53
+      rect:
+        serializedVersion: 2
+        x: 3215
+        y: 5192
+        width: 202
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5530986617d83524c8fd1a4a3dc0e452
+      internalID: 165956207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_55
+      rect:
+        serializedVersion: 2
+        x: 3475
+        y: 5151
+        width: 277
+        height: 289
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 687014b072d5725459d5ac83c829c800
+      internalID: 573123660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_56
+      rect:
+        serializedVersion: 2
+        x: 1789
+        y: 5209
+        width: 181
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56ac39f2bea22104bb06f527cde44ca2
+      internalID: 164476793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_59
+      rect:
+        serializedVersion: 2
+        x: 2069
+        y: 5192
+        width: 204
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6652e6fcbf5e2bb4884fa5697da0fe15
+      internalID: 1727369810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_64
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 4874
+        width: 208
+        height: 231
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbb1b1b7ada72bf4a9772e8b20673e95
+      internalID: 1082091510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_65
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 4874
+        width: 243
+        height: 234
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a1dc87173015e64aae5bc54e2a4de77
+      internalID: 2024394505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_66
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 4872
+        width: 244
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ba1bbe10913ea44daa493abf2205461
+      internalID: -2141520721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_67
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 4874
+        width: 250
+        height: 234
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65a1192868e3c8b4da5523e0e2979e5f
+      internalID: 904820991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_68
+      rect:
+        serializedVersion: 2
+        x: 1174
+        y: 4867
+        width: 264
+        height: 262
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 216274f2d30f0484fb7f34280e01442b
+      internalID: 1930271012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_69
+      rect:
+        serializedVersion: 2
+        x: 1452
+        y: 4867
+        width: 263
+        height: 245
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fe3620f1a340094884c9671228198be
+      internalID: 1765107200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_71
+      rect:
+        serializedVersion: 2
+        x: 2338
+        y: 4877
+        width: 257
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ce7d3f352a23a44d9ae8a3450fac526
+      internalID: -933571860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_72
+      rect:
+        serializedVersion: 2
+        x: 2609
+        y: 4877
+        width: 263
+        height: 235
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6704a7f6309ff8f49b38110d795ae6c8
+      internalID: 1381934839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_73
+      rect:
+        serializedVersion: 2
+        x: 3216
+        y: 4877
+        width: 200
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60a99b97dbfcc084599a7166cf5bcd27
+      internalID: -1425931610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_74
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 4894
+        width: 190
+        height: 187
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6521c8c519af18146bdd13430992d77b
+      internalID: -1244138975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_76
+      rect:
+        serializedVersion: 2
+        x: 2069
+        y: 4877
+        width: 204
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25bdc49c6d5fecc4495eba7150c968c0
+      internalID: -1070087043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_80
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 4571
+        width: 195
+        height: 219
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82252366c399fe74993db64a4d536715
+      internalID: 430805325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_81
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 4540
+        width: 230
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5132a588200b2b047a5a79a9e4dc3e6f
+      internalID: 1593058910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_82
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 4557
+        width: 164
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47e52055b66b7d54ab803e1430bdc58d
+      internalID: 1429428390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_83
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 4554
+        width: 219
+        height: 236
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c41df9a47740ca4593b18456ec263a5
+      internalID: 41908379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_84
+      rect:
+        serializedVersion: 2
+        x: 1202
+        y: 4554
+        width: 219
+        height: 229
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df193b5d5a59dd64e8044c0aafac81e8
+      internalID: -1078055264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_85
+      rect:
+        serializedVersion: 2
+        x: 1494
+        y: 4530
+        width: 201
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99d6731ab98b0c74aa20899cbeb73dc7
+      internalID: 1402352151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_86
+      rect:
+        serializedVersion: 2
+        x: 1794
+        y: 4603
+        width: 161
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a016501dd0ed9a46b513ce8f1d2d319
+      internalID: 255468338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_87
+      rect:
+        serializedVersion: 2
+        x: 2040
+        y: 4559
+        width: 257
+        height: 238
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2297592509dea64299b7a48fd5499c7
+      internalID: 191156911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_88
+      rect:
+        serializedVersion: 2
+        x: 2372
+        y: 4583
+        width: 161
+        height: 207
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6e36c48a939d444b9846a950562b2fe
+      internalID: -1957385162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_90
+      rect:
+        serializedVersion: 2
+        x: 2670
+        y: 4603
+        width: 151
+        height: 163
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e6c9d37ea769124099564fac606fa73
+      internalID: 116443919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_92
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 4225
+        width: 232
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeacc1a39140f744cadcced91da5488c
+      internalID: 346165106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_93
+      rect:
+        serializedVersion: 2
+        x: 2041
+        y: 4242
+        width: 256
+        height: 236
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84e96e02300436040a407620431449df
+      internalID: -1261354249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_96
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 4261
+        width: 199
+        height: 207
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c5c916f60b7d374e896e6c1bb32ebba
+      internalID: 63557354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_97
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 4247
+        width: 161
+        height: 225
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f257b20d5e40cb24fa7f169ee2790224
+      internalID: -138986813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_98
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 4254
+        width: 205
+        height: 217
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d88fe9fe428bfd048974716798c04fbd
+      internalID: -1013291404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_99
+      rect:
+        serializedVersion: 2
+        x: 1205
+        y: 4239
+        width: 215
+        height: 229
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca78c13acf79cdd4dbc96b7967e73fb5
+      internalID: -2086929617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_100
+      rect:
+        serializedVersion: 2
+        x: 1494
+        y: 4220
+        width: 199
+        height: 252
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f13a8959969167478f3918818fc714a
+      internalID: 1091430018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_101
+      rect:
+        serializedVersion: 2
+        x: 2374
+        y: 4268
+        width: 160
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9346221d5af51234496c95a06770a279
+      internalID: 536041266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_103
+      rect:
+        serializedVersion: 2
+        x: 1797
+        y: 4288
+        width: 158
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9de5c5cfc7c4a16498dd75479141004c
+      internalID: 1780329381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_104
+      rect:
+        serializedVersion: 2
+        x: 2665
+        y: 4282
+        width: 159
+        height: 172
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ec9c369762cf074cac94a8e3298ee88
+      internalID: -169261107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_105
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 3910
+        width: 254
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caecc522985d8a24c82d58bdf38a3306
+      internalID: -360953306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_106
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 3910
+        width: 259
+        height: 251
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 759e1200a98945a4d847db071d6c4dbc
+      internalID: 1476807713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_108
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 3900
+        width: 294
+        height: 291
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d66a1b44c846b34c8955311845231b6
+      internalID: 1677969853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_109
+      rect:
+        serializedVersion: 2
+        x: 2020
+        y: 3905
+        width: 291
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e373d71cd7553b45a03a6d6591cab0e
+      internalID: -1368216520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_110
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 3927
+        width: 229
+        height: 226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0234083dbb798d5498485cb7bcb522be
+      internalID: 548116117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_111
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 3927
+        width: 229
+        height: 223
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5035a53c5980d56479f3729d65d90129
+      internalID: -2131875999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_112
+      rect:
+        serializedVersion: 2
+        x: 1475
+        y: 3929
+        width: 230
+        height: 217
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da7528d108a6d8a499e1576e3555d61a
+      internalID: -1042133137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_113
+      rect:
+        serializedVersion: 2
+        x: 1768
+        y: 3927
+        width: 228
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f17daeb45af49d240881142bd077fc88
+      internalID: -1496497237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_114
+      rect:
+        serializedVersion: 2
+        x: 2324
+        y: 3922
+        width: 267
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98171761a4e6ba642a51c190932ed874
+      internalID: 745145700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_115
+      rect:
+        serializedVersion: 2
+        x: 2616
+        y: 3922
+        width: 263
+        height: 227
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64f7f9465f8cbf646a10f97d1f264492
+      internalID: -319189964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_117
+      rect:
+        serializedVersion: 2
+        x: 2908
+        y: 3922
+        width: 253
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cd4c826a533af848a6d67f0e2312ceb
+      internalID: -1236953134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_118
+      rect:
+        serializedVersion: 2
+        x: 3203
+        y: 3922
+        width: 255
+        height: 229
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e12074cc93ed1d6479bc7cf3e1b7696a
+      internalID: -1705878454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_119
+      rect:
+        serializedVersion: 2
+        x: 3494
+        y: 3922
+        width: 254
+        height: 231
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23a95291ca2b44445a1a7d156e62f151
+      internalID: 1070532777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_122
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 3645
+        width: 178
+        height: 207
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0cd8aaebb453704f97f5093ef3d52b8
+      internalID: -921678772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_123
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 3645
+        width: 185
+        height: 207
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30c39af7c81f56e45a0b554e61377b80
+      internalID: -1650929260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_124
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 3619
+        width: 265
+        height: 243
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3b06922fdbfea742b20d58c81302065
+      internalID: -442570841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_125
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 3621
+        width: 273
+        height: 236
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: debb9b6b9e0a8ad4497d002e1afb158e
+      internalID: -395914427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_126
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 3622
+        width: 273
+        height: 237
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af692eb8f2a8cd544ba5fcb46825b683
+      internalID: 1668220783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_127
+      rect:
+        serializedVersion: 2
+        x: 1458
+        y: 3623
+        width: 264
+        height: 242
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4720395629280f8488e4c3add977db44
+      internalID: -306497949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_128
+      rect:
+        serializedVersion: 2
+        x: 1746
+        y: 3623
+        width: 267
+        height: 242
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75e21e0a4e800ab4cb5664086e90105a
+      internalID: 237713557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_129
+      rect:
+        serializedVersion: 2
+        x: 2037
+        y: 3622
+        width: 258
+        height: 243
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98659c8ed0a75fe468d64b166fa7d8d1
+      internalID: -556842256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_130
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 3304
+        width: 295
+        height: 267
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ea3a6dc2d908fc48aadba8ff62e86a5
+      internalID: 651947137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_131
+      rect:
+        serializedVersion: 2
+        x: 861
+        y: 3294
+        width: 296
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa059400861b2aa4ea8a923522197c55
+      internalID: 471395727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_132
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 3306
+        width: 208
+        height: 258
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e54e5cf6e951fec4a9a2738372179e9e
+      internalID: 26048861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_134
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 3311
+        width: 253
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0a7efcd933ae704ebf9420b7b892f68
+      internalID: -28924745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_136
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 3307
+        width: 266
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1d00f21e5489964f891da2f7a464232
+      internalID: 733424592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_138
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 3315
+        width: 218
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc66ab6eff868fe47a009e0703d38f33
+      internalID: 1106784859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_140
+      rect:
+        serializedVersion: 2
+        x: 1458
+        y: 3325
+        width: 264
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 504fcbc949dd605409892e349b91ef71
+      internalID: -656641932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_141
+      rect:
+        serializedVersion: 2
+        x: 1789
+        y: 3330
+        width: 176
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a35b43ea44705a4382ba0030cfc0473
+      internalID: -1246524457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_142
+      rect:
+        serializedVersion: 2
+        x: 2078
+        y: 3330
+        width: 178
+        height: 203
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5c8f471ac3bf974cbdd070059a59f42
+      internalID: -822816001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_143
+      rect:
+        serializedVersion: 2
+        x: 2015
+        y: 1778
+        width: 282
+        height: 283
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62e6c5e515b5fb94b932ab52c575b94a
+      internalID: 1720377300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_144
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 2991
+        width: 207
+        height: 258
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d850e92094d65d4eac3137c56965e23
+      internalID: 98764212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_147
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 3020
+        width: 262
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33cf8dfced03ef44ebfa19c7affa3fad
+      internalID: -1269962251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_148
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 3011
+        width: 294
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6487f8e75a31d7b45a57c72f770f40ae
+      internalID: -1882736651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_149
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 3018
+        width: 255
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 043f67b58173ccd4f9ea43118f949fb2
+      internalID: 1985294531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_150
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 3025
+        width: 277
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dedff99b91e57e4083b03a4e462bf21
+      internalID: -2026408381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_151
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 3018
+        width: 272
+        height: 204
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37e261dfceefd77479a1d4f09a8e5818
+      internalID: 1880820449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_152
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 3002
+        width: 294
+        height: 210
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bc30dc8984887b488b56d1d0b4fa1fe
+      internalID: 1211873050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_153
+      rect:
+        serializedVersion: 2
+        x: 1789
+        y: 3015
+        width: 176
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 132368740468fec469091d84310e1de6
+      internalID: -2067047984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_154
+      rect:
+        serializedVersion: 2
+        x: 2078
+        y: 3015
+        width: 178
+        height: 207
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c79349e6063b005489c3566cb57a020f
+      internalID: -1066540273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_155
+      rect:
+        serializedVersion: 2
+        x: 2306
+        y: 1789
+        width: 280
+        height: 272
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 368f76502ffface4b98be0ed67271da9
+      internalID: -1090251884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_156
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2676
+        width: 281
+        height: 227
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a1919624f7ffb541884c21716282c46
+      internalID: -158782179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_157
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 2672
+        width: 294
+        height: 255
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f10b688979826043a5b2746236317f5
+      internalID: -1904101866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_158
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 2672
+        width: 292
+        height: 245
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 4, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c92e82625f9a83845bc2362adcf1b4ed
+      internalID: 1426126461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_159
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 2672
+        width: 289
+        height: 242
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 840f047c661039a4581947edca5a08b7
+      internalID: 42703227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_160
+      rect:
+        serializedVersion: 2
+        x: 2323
+        y: 2672
+        width: 272
+        height: 262
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5d08d441e0722f4bb6d45081f7da653
+      internalID: -573675983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_161
+      rect:
+        serializedVersion: 2
+        x: 2612
+        y: 2683
+        width: 275
+        height: 207
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85c31cf8291918c438a0f6458a9ee44f
+      internalID: -1580193083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_162
+      rect:
+        serializedVersion: 2
+        x: 2900
+        y: 2689
+        width: 273
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7798f286fb912b47898e077ba6d8722
+      internalID: -1011745857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_163
+      rect:
+        serializedVersion: 2
+        x: 3196
+        y: 2686
+        width: 268
+        height: 193
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af913046e6855134c938ba89237dcd58
+      internalID: -1568560702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_166
+      rect:
+        serializedVersion: 2
+        x: 3483
+        y: 2686
+        width: 269
+        height: 187
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc649e949d1fe6344b89ce05a96fe84e
+      internalID: -532157384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_169
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2396
+        width: 273
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d2bdbc61d0e15447a1c0e5dd1ff6840
+      internalID: 502835593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_170
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 2388
+        width: 293
+        height: 252
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 105d2bcf2e3bff24eaa2eb60876a5236
+      internalID: -628762671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_171
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 2381
+        width: 264
+        height: 262
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dc49ccff9592124c87722477b3a34ab
+      internalID: 870457152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_173
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 2388
+        width: 301
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42bfd1bedb9fedd44a0c7308b30dd42d
+      internalID: 1928871942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_174
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 2392
+        width: 262
+        height: 234
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 177bf61001c8d454f90715432550a4cb
+      internalID: -1132586740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_175
+      rect:
+        serializedVersion: 2
+        x: 1741
+        y: 2388
+        width: 286
+        height: 235
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7e4aa988c97cde4cbe06ed8cb78b33e
+      internalID: 2120901386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_176
+      rect:
+        serializedVersion: 2
+        x: 2030
+        y: 2506
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad3f3f3d3a5cd914bbd16bee0fb24519
+      internalID: 2040758782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_177
+      rect:
+        serializedVersion: 2
+        x: 2035
+        y: 2388
+        width: 267
+        height: 262
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b5f40a1661d9614789ee88cbc2776e8
+      internalID: -20934472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_178
+      rect:
+        serializedVersion: 2
+        x: 2901
+        y: 2395
+        width: 281
+        height: 238
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 335a1fdba016b3e42b43cb5d1967095e
+      internalID: 1292090334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_179
+      rect:
+        serializedVersion: 2
+        x: 3186
+        y: 2394
+        width: 282
+        height: 241
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da612f05e4efb504a8aa894aa348bfac
+      internalID: -212200025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_181
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 2087
+        width: 272
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7f5b05a1a650d04bb95d1094d08a276
+      internalID: 1578493203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_185
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 2095
+        width: 248
+        height: 243
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6835bec32b9f563498c5755edeeda369
+      internalID: 1723468396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_187
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 2090
+        width: 281
+        height: 290
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddb37904c7516954ab92eff0ca7158f9
+      internalID: 644957395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_188
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 1791
+        width: 258
+        height: 263
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d88cc94494ebed4f9f2f570ba60082a
+      internalID: 1831017171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_190
+      rect:
+        serializedVersion: 2
+        x: 1158
+        y: 1806
+        width: 283
+        height: 255
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 876fb58d86c0b7f488ddc6613d0b60ed
+      internalID: -103366133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_192
+      rect:
+        serializedVersion: 2
+        x: 2889
+        y: 1805
+        width: 277
+        height: 254
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfc91344b036d7b40a41cab777c94bca
+      internalID: 746152053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_196
+      rect:
+        serializedVersion: 2
+        x: 3483
+        y: 1525
+        width: 269
+        height: 225
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83b9f5a61f53459438b474cf63113f2a
+      internalID: 650876712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_197
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1238
+        width: 284
+        height: 210
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cac0c089551d6a34b8a0bbbc225961fc
+      internalID: 84585316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_198
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 1222
+        width: 260
+        height: 223
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6afdb5a2465d8164a971f7a7d26f922d
+      internalID: 1662861845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_199
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 1241
+        width: 255
+        height: 207
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05e4aadd84ca379488333f6c15cfc294
+      internalID: 392966497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_200
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 1238
+        width: 260
+        height: 248
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a71bb93abec7b004fa1e9831d206db97
+      internalID: 1920832527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_201
+      rect:
+        serializedVersion: 2
+        x: 1467
+        y: 1238
+        width: 262
+        height: 207
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf8db669ea12106429a364bfabd84c5e
+      internalID: -1607125703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_202
+      rect:
+        serializedVersion: 2
+        x: 1746
+        y: 1238
+        width: 264
+        height: 210
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35739bda7dd349746928a4aafcab5a4e
+      internalID: 1136901169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_203
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 1231
+        width: 284
+        height: 258
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3e12e4691ded534da6f8a6a188df228
+      internalID: 1663575437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_204
+      rect:
+        serializedVersion: 2
+        x: 2893
+        y: 1224
+        width: 281
+        height: 255
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4e178bba2d4e5249ad3a641dd392492
+      internalID: 59738294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_205
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 928
+        width: 277
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3f246c7bc722174fb9aec47b578e0a3
+      internalID: -779006560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_206
+      rect:
+        serializedVersion: 2
+        x: 1446
+        y: 949
+        width: 276
+        height: 229
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26e6a1e7e3869784ebb83dec1a52f27d
+      internalID: -573156253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_211
+      rect:
+        serializedVersion: 2
+        x: 2607
+        y: 938
+        width: 275
+        height: 247
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f307a5fa068564c418e3600299856880
+      internalID: 1811098791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_212
+      rect:
+        serializedVersion: 2
+        x: 3183
+        y: 924
+        width: 281
+        height: 267
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73ad95fd6a3dbfa42ac89a15b93d3d52
+      internalID: -1378187724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_214
+      rect:
+        serializedVersion: 2
+        x: 1744
+        y: 637
+        width: 276
+        height: 257
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 943578bc5d4dcab46b134ca6a691dced
+      internalID: -1272811340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_216
+      rect:
+        serializedVersion: 2
+        x: 3187
+        y: 653
+        width: 274
+        height: 241
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cf707d7232e2c8488fdba96e849abac
+      internalID: -1937060196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_217
+      rect:
+        serializedVersion: 2
+        x: 3480
+        y: 635
+        width: 272
+        height: 262
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aaa5c0060d98114b9b236592331c340
+      internalID: 1700920089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_218
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 654
+        width: 276
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 884f8b66a36850b4eb499355e24caa80
+      internalID: 168036394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_219
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 664
+        width: 283
+        height: 202
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a8d7657776971c4f922b20ea4e46197
+      internalID: -281675159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_220
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 678
+        width: 284
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 773a98bedaa237440b52bb035cd37b85
+      internalID: -916530685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_221
+      rect:
+        serializedVersion: 2
+        x: 1154
+        y: 642
+        width: 282
+        height: 231
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ce715aa7b2c3ec479e352bc0de4ac23
+      internalID: -2067764103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_223
+      rect:
+        serializedVersion: 2
+        x: 2042
+        y: 661
+        width: 262
+        height: 219
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cf4f8292213fca42bc96bf94b5158cb
+      internalID: 598221663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_224
+      rect:
+        serializedVersion: 2
+        x: 2335
+        y: 637
+        width: 250
+        height: 246
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d99ce23849fee3418da9e421eadb550
+      internalID: 738007448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_225
+      rect:
+        serializedVersion: 2
+        x: 2598
+        y: 644
+        width: 290
+        height: 236
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ede038978ffe06a4d9ed6d4af90933c7
+      internalID: -642001696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_229
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 363
+        width: 234
+        height: 236
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a8b2a86e43204b43913637a968d8102
+      internalID: 2048634792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_230
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 361
+        width: 265
+        height: 235
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0be05db75ae7ba14f841cd780113ae31
+      internalID: -389503530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_231
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 363
+        width: 238
+        height: 236
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aee05b6accc122a46b3f97e7fc151ddc
+      internalID: -1621742929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_232
+      rect:
+        serializedVersion: 2
+        x: 1154
+        y: 351
+        width: 291
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e23a8220fc0cf94e9d0c704fecb0ed2
+      internalID: 1133054748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_234
+      rect:
+        serializedVersion: 2
+        x: 1462
+        y: 358
+        width: 243
+        height: 227
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5164b7c42aa9a094f92cef3792b9ca5f
+      internalID: 1423922369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_235
+      rect:
+        serializedVersion: 2
+        x: 1736
+        y: 348
+        width: 284
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1067236fe83b8c3428bbc114fbbce25c
+      internalID: 359961566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_236
+      rect:
+        serializedVersion: 2
+        x: 2033
+        y: 339
+        width: 267
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3357965430749254db804ad1e81cdd9b
+      internalID: -782227093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_238
+      rect:
+        serializedVersion: 2
+        x: 2338
+        y: 339
+        width: 250
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: babfd03810f069845a760dd6aa72293a
+      internalID: 35790461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_240
+      rect:
+        serializedVersion: 2
+        x: 2917
+        y: 336
+        width: 243
+        height: 291
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 501e83edaf7e02c4fa457da787466b58
+      internalID: -1862699800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_241
+      rect:
+        serializedVersion: 2
+        x: 3184
+        y: 336
+        width: 282
+        height: 291
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e850f71c7c2f484a92054efda0d6c1c
+      internalID: 990493139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_242
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 368
+        width: 214
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 452b8f895839a9141a58625528f8e9de
+      internalID: -1287199874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_243
+      rect:
+        serializedVersion: 2
+        x: 2633
+        y: 349
+        width: 236
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aa6a9b06f78aa448a2d0878ea4477d1
+      internalID: 1329626584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_248
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 9
+        width: 216
+        height: 301
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1400a33d784bf4a4ba598be63c800fbc
+      internalID: 193905942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_249
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 33
+        width: 158
+        height: 268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77e11aaf2448fe74bb928a0ff848dcd7
+      internalID: 299569465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_250
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 33
+        width: 156
+        height: 268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45c3e4c16f5e4e946b7f11362bab2628
+      internalID: 408960318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_251
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 33
+        width: 161
+        height: 268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e16aaf8a67fe984e8fda2536bb3c400
+      internalID: -899207126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_253
+      rect:
+        serializedVersion: 2
+        x: 1219
+        y: 33
+        width: 149
+        height: 268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6415cfb415dfb348b73abd024f1c1cb
+      internalID: 866245269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_254
+      rect:
+        serializedVersion: 2
+        x: 1510
+        y: 33
+        width: 157
+        height: 265
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f401de1680d2a64cad05a22b553d931
+      internalID: -652042464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_255
+      rect:
+        serializedVersion: 2
+        x: 1801
+        y: 33
+        width: 157
+        height: 268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bf39288c30edf6438380af3d0bc3b8b
+      internalID: 957079282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_256
+      rect:
+        serializedVersion: 2
+        x: 2092
+        y: 33
+        width: 154
+        height: 265
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eed7fba1c5a25a74daf19eb58234f01d
+      internalID: 475420171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_257
+      rect:
+        serializedVersion: 2
+        x: 2381
+        y: 33
+        width: 153
+        height: 265
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5a88d8d290544f4c8f535be39c9fbb7
+      internalID: 622717115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_259
+      rect:
+        serializedVersion: 2
+        x: 2667
+        y: 33
+        width: 161
+        height: 272
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d58517735766b04297fc1a10c1f64d6
+      internalID: -2047955500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_260
+      rect:
+        serializedVersion: 2
+        x: 2958
+        y: 33
+        width: 152
+        height: 268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd2c9d9cdf693d94bb69c235d9676280
+      internalID: -2056685410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_261
+      rect:
+        serializedVersion: 2
+        x: 3254
+        y: 43
+        width: 169
+        height: 241
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31117f6049e42b64fb022581a0930d96
+      internalID: -540293038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_3
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 6127
+        width: 287
+        height: 261
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 489affcf7f6cfa940aed27bbc74537d1
+      internalID: -1764348313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_9
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 5814
+        width: 276
+        height: 261
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5121efc6eb6eb0843af9c00fee302043
+      internalID: -1435172434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_11
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 5494
+        width: 281
+        height: 271
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88fe11871503e3345a5b431a4c09f71a
+      internalID: 976852356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_13
+      rect:
+        serializedVersion: 2
+        x: 2886
+        y: 4877
+        width: 308
+        height: 238
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 390d4678b5c352648b7eae19335a94cd
+      internalID: -1622225657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_21
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 2664
+        width: 286
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 833b1e626839c8849bd6c71f7814425f
+      internalID: 1226102644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_22
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 2661
+        width: 294
+        height: 272
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2143ed69c9a9524e8f022dc563c6902
+      internalID: 131819400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_48
+      rect:
+        serializedVersion: 2
+        x: 1730
+        y: 2663
+        width: 285
+        height: 255
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb62bd834f3a09d4eb664d2785dd7248
+      internalID: -982467271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_52
+      rect:
+        serializedVersion: 2
+        x: 2020
+        y: 2658
+        width: 290
+        height: 277
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 984fb4da4327aac46b85ad01efe3ca4c
+      internalID: 479533633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_54
+      rect:
+        serializedVersion: 2
+        x: 3480
+        y: 2396
+        width: 272
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6d835d98af1bc6459be672ee8414d0c
+      internalID: 560204051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_57
+      rect:
+        serializedVersion: 2
+        x: 2305
+        y: 2386
+        width: 298
+        height: 266
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13a2502008fbd01489f96daa6226e7c2
+      internalID: -374101269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_58
+      rect:
+        serializedVersion: 2
+        x: 2606
+        y: 2389
+        width: 284
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 738bfab6a5c19434da6e13a300e5df02
+      internalID: 1154740016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_60
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 2389
+        width: 294
+        height: 257
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 135a2234fafdd9e439c18194a093f817
+      internalID: -1243555345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_61
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 2082
+        width: 284
+        height: 283
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab9d46c9c7d2c104dba393349fed212c
+      internalID: -1221037322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_62
+      rect:
+        serializedVersion: 2
+        x: 1162
+        y: 2088
+        width: 269
+        height: 277
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bb0f4a2913ed554aa387a23b9599144
+      internalID: -355389123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_63
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 2075
+        width: 284
+        height: 290
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ca13507401c3eb42ba6e0c0ed429dcb
+      internalID: -348734546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_70
+      rect:
+        serializedVersion: 2
+        x: 1736
+        y: 2073
+        width: 289
+        height: 291
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8274c9ddfce8f154082795ad9e3e6a8e
+      internalID: 1932218678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_75
+      rect:
+        serializedVersion: 2
+        x: 2035
+        y: 2082
+        width: 272
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6ae2a25e377b6b4b827378a2be46857
+      internalID: 1497244847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_77
+      rect:
+        serializedVersion: 2
+        x: 2317
+        y: 2085
+        width: 277
+        height: 279
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21985120668fe7645ae8dfcadff146bb
+      internalID: -1623679464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_78
+      rect:
+        serializedVersion: 2
+        x: 2605
+        y: 2070
+        width: 283
+        height: 292
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb120bca0e44ac4448ef5aa803108bb6
+      internalID: 693028635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_79
+      rect:
+        serializedVersion: 2
+        x: 2900
+        y: 2075
+        width: 263
+        height: 286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75bc92d94c59ad549a7e01c136f9be22
+      internalID: -971732319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_94
+      rect:
+        serializedVersion: 2
+        x: 3173
+        y: 2081
+        width: 292
+        height: 283
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ad2926f5fce42c48b8061c81e780e79
+      internalID: -1896684179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_95
+      rect:
+        serializedVersion: 2
+        x: 3477
+        y: 2067
+        width: 267
+        height: 294
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 204244b47da1970419a436ce13e453ee
+      internalID: -1902151639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_102
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 1780
+        width: 272
+        height: 277
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38f11b765b964954cbc6ec2ebb80e6bc
+      internalID: -1983803291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_107
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 1777
+        width: 285
+        height: 283
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d4f699e41ed0394e85995822c817d82
+      internalID: 1705274180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_116
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 1791
+        width: 276
+        height: 282
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7c1aad83bc77454985065cc4a13ac43
+      internalID: 784209937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_120
+      rect:
+        serializedVersion: 2
+        x: 3185
+        y: 1514
+        width: 278
+        height: 255
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f7887f1087fbdf459daf92908166d04
+      internalID: -1262149624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_121
+      rect:
+        serializedVersion: 2
+        x: 2897
+        y: 1514
+        width: 277
+        height: 273
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0c9dc7e4626e7a49b5d62f4b68f7584
+      internalID: -1106673487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_133
+      rect:
+        serializedVersion: 2
+        x: 2607
+        y: 1517
+        width: 276
+        height: 261
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbf5040186321f348a9326a652c287d2
+      internalID: -754390270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_135
+      rect:
+        serializedVersion: 2
+        x: 2312
+        y: 1512
+        width: 295
+        height: 267
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f10a8753cbbb36345a62f8fcad41361c
+      internalID: 951828436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_137
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1490
+        width: 279
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fc301273de375b4c919ed0fe70f6a94
+      internalID: 197454625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_139
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 1516
+        width: 282
+        height: 242
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: add56f4af9ef588459a2f6302027c9fb
+      internalID: -1029851122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_145
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 1512
+        width: 289
+        height: 245
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 526253b31250cd749813714aca71b5da
+      internalID: -241933287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_146
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 1513
+        width: 282
+        height: 246
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6e67f7e30734374089e0915cb08d309
+      internalID: 1768275809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_164
+      rect:
+        serializedVersion: 2
+        x: 1155
+        y: 1516
+        width: 282
+        height: 239
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f74b2df43d8c96b498948f1c32960ef0
+      internalID: -1218928970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_165
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 1521
+        width: 287
+        height: 237
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f3ac25bb50214547a698376038670ed
+      internalID: 262468549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_167
+      rect:
+        serializedVersion: 2
+        x: 1733
+        y: 1526
+        width: 281
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93fc9e6aac447ec4f8e75256a2393005
+      internalID: -2099475754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_168
+      rect:
+        serializedVersion: 2
+        x: 2022
+        y: 1525
+        width: 284
+        height: 234
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cce6f250b5ce19646a6c3c78f4f4bd9a
+      internalID: 146108566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_172
+      rect:
+        serializedVersion: 2
+        x: 1157
+        y: 1239
+        width: 271
+        height: 247
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a596d55f5349c794fb214d3891210498
+      internalID: 1014456173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_180
+      rect:
+        serializedVersion: 2
+        x: 2311
+        y: 1227
+        width: 275
+        height: 257
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f4ac7e62e877944bb1285149dae601d
+      internalID: 1800139908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_182
+      rect:
+        serializedVersion: 2
+        x: 2596
+        y: 1219
+        width: 275
+        height: 262
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed033fd60de848146aa15d90ab4036d3
+      internalID: -1103178142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_183
+      rect:
+        serializedVersion: 2
+        x: 3188
+        y: 1231
+        width: 269
+        height: 247
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a26e584adfb02d4892856ef19e0f1b0
+      internalID: 725377230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_184
+      rect:
+        serializedVersion: 2
+        x: 3466
+        y: 1225
+        width: 284
+        height: 277
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4ee808383cd2a44dafaac5dae4765a6
+      internalID: 141759861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_186
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 925
+        width: 280
+        height: 274
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ec903c213ed1c4429ea2af138943bcd
+      internalID: -1086319288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_189
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 929
+        width: 288
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67d52ec515947fe4eb0eefff12b76bd7
+      internalID: 207860888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_193
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 920
+        width: 286
+        height: 286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aed5da46bd110ff4c9a07aec8051346a
+      internalID: -1237524691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_194
+      rect:
+        serializedVersion: 2
+        x: 1158
+        y: 927
+        width: 277
+        height: 257
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 065e4925a4c3b6d41a76d184c735f70a
+      internalID: -1604669221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_195
+      rect:
+        serializedVersion: 2
+        x: 1733
+        y: 947
+        width: 285
+        height: 229
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ba36c9ccbbfb9f41b6e57fd16774b3d
+      internalID: 512947968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_207
+      rect:
+        serializedVersion: 2
+        x: 2023
+        y: 950
+        width: 287
+        height: 226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86eb1bb730434764fa2e2463e955858d
+      internalID: 1696114174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_208
+      rect:
+        serializedVersion: 2
+        x: 2313
+        y: 932
+        width: 281
+        height: 248
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b854239cbe6de1c4593e0a7fd615fb30
+      internalID: 1221231456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_209
+      rect:
+        serializedVersion: 2
+        x: 2891
+        y: 928
+        width: 288
+        height: 254
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fbc2036f888c9a4ca4f4b75d21f00e2
+      internalID: -1785427435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_210
+      rect:
+        serializedVersion: 2
+        x: 3474
+        y: 941
+        width: 278
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 564ec855a92cd4446a408c2d0ac7551e
+      internalID: 2078114085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_213
+      rect:
+        serializedVersion: 2
+        x: 2896
+        y: 653
+        width: 274
+        height: 229
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d473dda8a5b1d244b5ce4b70bb596d8
+      internalID: 1971327089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_215
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 642
+        width: 294
+        height: 255
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d306bc2c5411994098a184673cca47d
+      internalID: -301198273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_222
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 661
+        width: 285
+        height: 205
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d407935ad29673e409e80279c648f7e4
+      internalID: 1999764216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_10
+      rect:
+        serializedVersion: 2
+        x: 1446
+        y: 1795
+        width: 267
+        height: 266
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40f6ee6ff3f03a342bf33140a10bfcd5
+      internalID: -427893986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_191
+      rect:
+        serializedVersion: 2
+        x: 2594
+        y: 1793
+        width: 289
+        height: 266
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20be6a851c9060a4b923ab946e7253d0
+      internalID: 690596283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_226
+      rect:
+        serializedVersion: 2
+        x: 3175
+        y: 1802
+        width: 286
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dedb755a36320cb4eba5f1e33db4c6dc
+      internalID: -2051614022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: food_icons_227
+      rect:
+        serializedVersion: 2
+        x: 3472
+        y: 1801
+        width: 274
+        height: 242
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6c439a96b53cef49a4dd9f8481eaecb
+      internalID: -1367104719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: fe36ffb47c26e0e4c968fd5e489aad16
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      food_icons_0: -1542012703
+      food_icons_1: 17265212
+      food_icons_10: -427893986
+      food_icons_100: 1091430018
+      food_icons_101: 536041266
+      food_icons_102: -1983803291
+      food_icons_103: 1780329381
+      food_icons_104: -169261107
+      food_icons_105: -360953306
+      food_icons_106: 1476807713
+      food_icons_107: 1705274180
+      food_icons_108: 1677969853
+      food_icons_109: -1368216520
+      food_icons_11: 976852356
+      food_icons_110: 548116117
+      food_icons_111: -2131875999
+      food_icons_112: -1042133137
+      food_icons_113: -1496497237
+      food_icons_114: 745145700
+      food_icons_115: -319189964
+      food_icons_116: 784209937
+      food_icons_117: -1236953134
+      food_icons_118: -1705878454
+      food_icons_119: 1070532777
+      food_icons_12: -1719546443
+      food_icons_120: -1262149624
+      food_icons_121: -1106673487
+      food_icons_122: -921678772
+      food_icons_123: -1650929260
+      food_icons_124: -442570841
+      food_icons_125: -395914427
+      food_icons_126: 1668220783
+      food_icons_127: -306497949
+      food_icons_128: 237713557
+      food_icons_129: -556842256
+      food_icons_13: -1622225657
+      food_icons_130: 651947137
+      food_icons_131: 471395727
+      food_icons_132: 26048861
+      food_icons_133: -754390270
+      food_icons_134: -28924745
+      food_icons_135: 951828436
+      food_icons_136: 733424592
+      food_icons_137: 197454625
+      food_icons_138: 1106784859
+      food_icons_139: -1029851122
+      food_icons_14: 1124721472
+      food_icons_140: -656641932
+      food_icons_141: -1246524457
+      food_icons_142: -822816001
+      food_icons_143: 1720377300
+      food_icons_144: 98764212
+      food_icons_145: -241933287
+      food_icons_146: 1768275809
+      food_icons_147: -1269962251
+      food_icons_148: -1882736651
+      food_icons_149: 1985294531
+      food_icons_15: 1138064857
+      food_icons_150: -2026408381
+      food_icons_151: 1880820449
+      food_icons_152: 1211873050
+      food_icons_153: -2067047984
+      food_icons_154: -1066540273
+      food_icons_155: -1090251884
+      food_icons_156: -158782179
+      food_icons_157: -1904101866
+      food_icons_158: 1426126461
+      food_icons_159: 42703227
+      food_icons_16: 1978534647
+      food_icons_160: -573675983
+      food_icons_161: -1580193083
+      food_icons_162: -1011745857
+      food_icons_163: -1568560702
+      food_icons_164: -1218928970
+      food_icons_165: 262468549
+      food_icons_166: -532157384
+      food_icons_167: -2099475754
+      food_icons_168: 146108566
+      food_icons_169: 502835593
+      food_icons_17: -492557098
+      food_icons_170: -628762671
+      food_icons_171: 870457152
+      food_icons_172: 1014456173
+      food_icons_173: 1928871942
+      food_icons_174: -1132586740
+      food_icons_175: 2120901386
+      food_icons_176: 2040758782
+      food_icons_177: -20934472
+      food_icons_178: 1292090334
+      food_icons_179: -212200025
+      food_icons_18: -338273333
+      food_icons_180: 1800139908
+      food_icons_181: 1578493203
+      food_icons_182: -1103178142
+      food_icons_183: 725377230
+      food_icons_184: 141759861
+      food_icons_185: 1723468396
+      food_icons_186: -1086319288
+      food_icons_187: 644957395
+      food_icons_188: 1831017171
+      food_icons_189: 207860888
+      food_icons_19: -817884572
+      food_icons_190: -103366133
+      food_icons_191: 690596283
+      food_icons_192: 746152053
+      food_icons_193: -1237524691
+      food_icons_194: -1604669221
+      food_icons_195: 512947968
+      food_icons_196: 650876712
+      food_icons_197: 84585316
+      food_icons_198: 1662861845
+      food_icons_199: 392966497
+      food_icons_2: 94434448
+      food_icons_20: 926201119
+      food_icons_200: 1920832527
+      food_icons_201: -1607125703
+      food_icons_202: 1136901169
+      food_icons_203: 1663575437
+      food_icons_204: 59738294
+      food_icons_205: -779006560
+      food_icons_206: -573156253
+      food_icons_207: 1696114174
+      food_icons_208: 1221231456
+      food_icons_209: -1785427435
+      food_icons_21: 1226102644
+      food_icons_210: 2078114085
+      food_icons_211: 1811098791
+      food_icons_212: -1378187724
+      food_icons_213: 1971327089
+      food_icons_214: -1272811340
+      food_icons_215: -301198273
+      food_icons_216: -1937060196
+      food_icons_217: 1700920089
+      food_icons_218: 168036394
+      food_icons_219: -281675159
+      food_icons_22: 131819400
+      food_icons_220: -916530685
+      food_icons_221: -2067764103
+      food_icons_222: 1999764216
+      food_icons_223: 598221663
+      food_icons_224: 738007448
+      food_icons_225: -642001696
+      food_icons_226: -2051614022
+      food_icons_227: -1367104719
+      food_icons_228: 1104386597
+      food_icons_229: 2048634792
+      food_icons_23: -719841880
+      food_icons_230: -389503530
+      food_icons_231: -1621742929
+      food_icons_232: 1133054748
+      food_icons_233: -1816382660
+      food_icons_234: 1423922369
+      food_icons_235: 359961566
+      food_icons_236: -782227093
+      food_icons_237: -1576848278
+      food_icons_238: 35790461
+      food_icons_239: 224733155
+      food_icons_24: 565701777
+      food_icons_240: -1862699800
+      food_icons_241: 990493139
+      food_icons_242: -1287199874
+      food_icons_243: 1329626584
+      food_icons_244: 113651058
+      food_icons_245: -347532925
+      food_icons_246: 624157026
+      food_icons_247: 490670101
+      food_icons_248: 193905942
+      food_icons_249: 299569465
+      food_icons_25: -1800636819
+      food_icons_250: 408960318
+      food_icons_251: -899207126
+      food_icons_252: -1395466643
+      food_icons_253: 866245269
+      food_icons_254: -652042464
+      food_icons_255: 957079282
+      food_icons_256: 475420171
+      food_icons_257: 622717115
+      food_icons_258: -1439963312
+      food_icons_259: -2047955500
+      food_icons_26: 1678185502
+      food_icons_260: -2056685410
+      food_icons_261: -540293038
+      food_icons_262: -1236147535
+      food_icons_263: -1903229121
+      food_icons_264: 1379699104
+      food_icons_265: -1154135848
+      food_icons_27: 1944382689
+      food_icons_28: 489460058
+      food_icons_29: -241912255
+      food_icons_3: -1764348313
+      food_icons_30: 1481693242
+      food_icons_31: -1520447863
+      food_icons_32: -410077942
+      food_icons_33: 1891821074
+      food_icons_34: 1450488592
+      food_icons_35: -1582882572
+      food_icons_36: -1705533785
+      food_icons_37: -1655363977
+      food_icons_38: 678526126
+      food_icons_39: 752670266
+      food_icons_4: -1271535968
+      food_icons_40: 132194
+      food_icons_41: 415170160
+      food_icons_42: 1073595262
+      food_icons_43: 832565032
+      food_icons_44: -1411875665
+      food_icons_45: -2112731850
+      food_icons_46: -572088761
+      food_icons_47: 1514854904
+      food_icons_48: -982467271
+      food_icons_49: -1342479092
+      food_icons_5: -499248067
+      food_icons_50: -903452698
+      food_icons_51: -1079386554
+      food_icons_52: 479533633
+      food_icons_53: 165956207
+      food_icons_54: 560204051
+      food_icons_55: 573123660
+      food_icons_56: 164476793
+      food_icons_57: -374101269
+      food_icons_58: 1154740016
+      food_icons_59: 1727369810
+      food_icons_6: -306357231
+      food_icons_60: -1243555345
+      food_icons_61: -1221037322
+      food_icons_62: -355389123
+      food_icons_63: -348734546
+      food_icons_64: 1082091510
+      food_icons_65: 2024394505
+      food_icons_66: -2141520721
+      food_icons_67: 904820991
+      food_icons_68: 1930271012
+      food_icons_69: 1765107200
+      food_icons_7: -346663129
+      food_icons_70: 1932218678
+      food_icons_71: -933571860
+      food_icons_72: 1381934839
+      food_icons_73: -1425931610
+      food_icons_74: -1244138975
+      food_icons_75: 1497244847
+      food_icons_76: -1070087043
+      food_icons_77: -1623679464
+      food_icons_78: 693028635
+      food_icons_79: -971732319
+      food_icons_8: -1783313994
+      food_icons_80: 430805325
+      food_icons_81: 1593058910
+      food_icons_82: 1429428390
+      food_icons_83: 41908379
+      food_icons_84: -1078055264
+      food_icons_85: 1402352151
+      food_icons_86: 255468338
+      food_icons_87: 191156911
+      food_icons_88: -1957385162
+      food_icons_89: -558874935
+      food_icons_9: -1435172434
+      food_icons_90: 116443919
+      food_icons_91: -73592379
+      food_icons_92: 346165106
+      food_icons_93: -1261354249
+      food_icons_94: -1896684179
+      food_icons_95: -1902151639
+      food_icons_96: 63557354
+      food_icons_97: -138986813
+      food_icons_98: -1013291404
+      food_icons_99: -2086929617
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
