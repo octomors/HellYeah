@@ -30,14 +30,34 @@ public class DungeonManager : MonoBehaviour
     }
 
     [ContextMenu("Generate Floor")]
-    public void GenerateFloor()
-    {
-        GenerateFloor(floorConfigs[0]);
+    public void GenerateFloor(FloorConfig config)
+    {        if (config == null)
+        {
+            Debug.LogError("FloorConfig is null.");
+            return;
+        }
 
+        IDungeonGenerator dungeonGenerator;
+        switch (config.GenerationType)
+        {
+            case GenerationType.Sausage:
+                dungeonGenerator = new SausageDungeonGenerator();
+                break;
+            case GenerationType.Waffle:
+                dungeonGenerator = new WaffleDungeonGenerator();
+                break;
+            default:
+                Debug.LogError($"Unsupported GenerationType.");
+                return;
+        }
+        Map map = dungeonGenerator.Generate(config);
+        RoomSpawner.SpawnRooms(config, map);
     }
 
-    public void GenerateFloor(FloorConfig config)
+    [ContextMenu("Generate Floor (config 0)")]
+    public void GenerateFloorDebug()
     {
+        FloorConfig config = floorConfigs[0];
         if (config == null)
         {
             Debug.LogError("FloorConfig is null.");
