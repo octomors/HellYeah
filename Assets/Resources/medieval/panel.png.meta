@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 72a89567106c2d84c98a85d3c6e84f81
+guid: 0a2280151bc25c94a83af167a37c8211
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -49,7 +49,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 905, y: 112, z: 238, w: 90}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: game_menu_0
+      name: panel_0
       rect:
         serializedVersion: 2
-        x: 902
-        y: 112
-        width: 781
-        height: 878
+        x: 5
+        y: 2
+        width: 892
+        height: 369
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,8 +125,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c1f09d81ec410e48b25ecabbfce5fb7
-      internalID: 1908125418
+      spriteID: b1e0b44a49d7a144cbdb6eb2268bcf62
+      internalID: -2038081611
       vertices: []
       indices: 
       edges: []
@@ -135,8 +135,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    spriteID: 5b8e7cfcedb53e146b840a9e848143c6
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -145,7 +145,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      game_menu_0: 1908125418
+      panel_0: -2038081611
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
