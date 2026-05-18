@@ -59,7 +59,7 @@ public class PauseMenu : MonoBehaviour
     private void Update()
     {
         if (!Input.GetKeyDown(KeyCode.Escape)) return;
-
+        if (InventoryUI.EscapeConsumed) return;
         // Не открываем если активен инвентарь или готовка
         if (IsAnyUIOpen()) return;
 
