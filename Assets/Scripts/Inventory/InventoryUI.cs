@@ -30,7 +30,6 @@ public class InventoryUI : MonoBehaviour
     private MonoBehaviour[] _playerScripts; //массив MonoBehaviour'ов на игроке, которые надо отключать при открытии инвентаря (чтобы игрок не двигался и не взаимодействовал)
 
     private static InventoryUI _instance;
-    public static bool EscapeConsumed { get; private set; }
 
     // Гарантирует, что существует только один экземпляр этого UI
     private void Awake()
@@ -91,15 +90,7 @@ public class InventoryUI : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.Escape) && _isOpen)
-        {
             Close();
-            EscapeConsumed = true;
-        }
-    }
-
-    private void LateUpdate()
-    {
-        EscapeConsumed = false; //сообщаем PauseMenu что Escape уже обработан
     }
 
     // Включает панель
