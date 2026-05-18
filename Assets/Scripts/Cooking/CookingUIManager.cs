@@ -60,6 +60,11 @@ public class CookingUIManager : MonoBehaviour
     [Header("Управление камерой")]
     public CookingCameraController cookingCameraController;
 
+    [Header("Цвета UI текста")]
+    [SerializeField] private Color ColorBasic;
+    [SerializeField] private Color ColorRight;
+    [SerializeField] private Color ColorWrong;
+
     private Dictionary<Ingredient, int> currentPotIngredients = new Dictionary<Ingredient, int>();
     private Dictionary<Ingredient, IngredientUI> ingredientUIMap = new Dictionary<Ingredient, IngredientUI>();
     private List<RecipeUI> recipeUIs = new List<RecipeUI>();
@@ -552,13 +557,13 @@ public class CookingUIManager : MonoBehaviour
         if (resultDishName != null)
         {
             resultDishName.text = recipe.recipeName;
-            resultDishName.color = Color.white;
+            resultDishName.color = ColorBasic;
         }
         
         if (resultBuffsText != null)
         {
             resultBuffsText.text = recipe.buffDescription;
-            resultBuffsText.color = Color.green;
+            resultBuffsText.color = ColorRight;
         }
         
         resultPanel.SetActive(true);
@@ -596,13 +601,13 @@ public class CookingUIManager : MonoBehaviour
         if (resultDishName != null)
         {
             resultDishName.text = !string.IsNullOrEmpty(result.resultName) ? result.resultName : "Неизвестное блюдо";
-            resultDishName.color = result.isSuccess ? Color.white : Color.red;
+            resultDishName.color = ColorWrong;
         }
         
         if (resultBuffsText != null)
         {
             resultBuffsText.text = !string.IsNullOrEmpty(result.buffDescription) ? result.buffDescription : "Нет эффектов";
-            resultBuffsText.color = result.isSuccess ? Color.green : Color.grey;
+            resultBuffsText.color = ColorBasic;
         }
         
         resultPanel.SetActive(true);
