@@ -1,11 +1,16 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DungeonManager : MonoBehaviour
 {
+    [SerializeField] private DungeonGenerator dungeonGenerator;
     [SerializeField] private FloorConfig[] floorConfigs = new FloorConfig[3];
 
     private void Start()
+    {
+        InitFloor();
+    }
+
+    public void InitFloor()
     {
         if (RunManager.Instance == null)
         {
@@ -13,152 +18,39 @@ public class DungeonManager : MonoBehaviour
             return;
         }
 
-        InitFloor();
-    }
+        if (dungeonGenerator == null)
+        {
+            Debug.LogError("DungeonGenerator is not assigned in DungeonManager.");
+            return;
+        }
 
-    public void InitFloor()
-    {
         int floor = RunManager.Instance.CurrentFloor;
-        FloorConfig config = floorConfigs[floor];
-        if (config == null)
-        {
-            Debug.LogError($"FloorConfig not found for floor {floor}.");
-            return;
-        }
 
-        GenerateFloor(config);
+        FloorConfig config = ResolveConfigForFloor(floor);
+        int floorSeed = RunManager.Instance.Seed + floor * 997;
+
+        dungeonGenerator.Generate(config, floorSeed, out Vector3 playerSpawnPosition, out Quaternion playerSpawnRotation);
+
+        SpawnPlayer(playerSpawnPosition, playerSpawnRotation);
     }
 
-    [ContextMenu("Generate Floor")]
-    public void GenerateFloor(FloorConfig config)
-    {        if (config == null)
-        {
-            Debug.LogError("FloorConfig is null.");
-            return;
-        }
-
-        IDungeonGenerator dungeonGenerator;
-        switch (config.GenerationType)
-        {
-            case GenerationType.Sausage:
-                dungeonGenerator = new SausageDungeonGenerator();
-                break;
-            case GenerationType.Waffle:
-                dungeonGenerator = new WaffleDungeonGenerator();
-                break;
-            default:
-                Debug.LogError($"Unsupported GenerationType.");
-                return;
-        }
-        Map map = dungeonGenerator.Generate(config);
-        RoomSpawner.SpawnRooms(config, map);
-    }
-
-    [ContextMenu("Generate Floor (config 0)")]
-    public void GenerateFloorDebug()
+    private void SpawnPlayer(Vector3 position, Quaternion rotation)
     {
-        FloorConfig config = floorConfigs[0];
-        if (config == null)
+        PlayerSpawner spawner = PlayerSpawner.Instance != null ? PlayerSpawner.Instance : FindAnyObjectByType<PlayerSpawner>();
+        if (spawner == null)
         {
-            Debug.LogError("FloorConfig is null.");
+            Debug.LogError("PlayerSpawner not found in scene.");
             return;
         }
 
-        HashSet<string> prefabNames = new HashSet<string>();
-        foreach (var group in config.RoomPrefabGroups)
-        {
-            if (group == null || group.prefabs == null)
-            {
-                continue;
-            }
+        spawner.SpawnPlayer(position, rotation);
+    }
 
-            foreach (var prefab in group.prefabs)
-            {
-                if (prefab != null)
-                {
-                    prefabNames.Add(prefab.name);
-                }
-            }
-        }
+    private FloorConfig ResolveConfigForFloor(int floor)
+    {
+        int index = Mathf.Clamp(floor - 1, 0, floorConfigs.Length - 1);
+        FloorConfig config = floorConfigs[index];
 
-        if (prefabNames.Count > 0)
-        {
-            GameObject[] allObjects = GameObject.FindObjectsByType<GameObject>(
-                FindObjectsInactive.Include,
-                FindObjectsSortMode.None);
-            foreach (GameObject obj in allObjects)
-            {
-                if (obj == null)
-                {
-                    continue;
-                }
-
-                string name = obj.name;
-                bool isGenerated = false;
-                foreach (string prefabName in prefabNames)
-                {
-                    if (name == prefabName || name == prefabName + "(Clone)")
-                    {
-                        isGenerated = true;
-                        break;
-                    }
-                }
-
-                if (!isGenerated)
-                {
-                    continue;
-                }
-
-                if (Application.isPlaying)
-                {
-                    Destroy(obj);
-                }
-                else
-                {
-                    DestroyImmediate(obj);
-                }
-            }
-        }
-
-        IDungeonGenerator dungeonGenerator;
-        switch (config.GenerationType)
-        {
-            case GenerationType.Sausage:
-                dungeonGenerator = new SausageDungeonGenerator();
-                break;
-            case GenerationType.Waffle:
-                dungeonGenerator = new WaffleDungeonGenerator();
-                break;
-            default:
-                Debug.LogError($"Unsupported GenerationType.");
-                return;
-        }
-        Map map = dungeonGenerator.Generate(config);
-        RoomSpawner.SpawnRooms(config, map);
-
-        LODGroup[] lodGroups = FindObjectsByType<LODGroup>(FindObjectsInactive.Include, FindObjectsSortMode.None);
-        foreach (LODGroup lodGroup in lodGroups)
-        {
-            if (lodGroup == null)
-            {
-                continue;
-            }
-
-            string rootName = lodGroup.transform.root.gameObject.name;
-            bool isGenerated = false;
-            foreach (string prefabName in prefabNames)
-            {
-                if (rootName == prefabName || rootName == prefabName + "(Clone)")
-                {
-                    isGenerated = true;
-                    break;
-                }
-            }
-
-            if (isGenerated)
-            {
-                lodGroup.enabled = false;
-            }
-        }
+        return config;
     }
 }
