@@ -5,25 +5,82 @@ using System;
 public class BasePlayerStats : MonoBehaviour
 {
     [Header("Movement")]
-    public float Speed;
-    public float JumpStrength;
-    public float CrouchSpeed;
+        [SerializeField] private float speed;
+        [SerializeField] private float jumpStrength;
+        [SerializeField] private float crouchSpeed;
 
     [Header("Dash")]
-    public int DashCharges;
-    public float DashChargeRecoveryTime;
-    public float DashSpeed;
-    public float DashTime;
+        [SerializeField] private int dashCharges;
+        [SerializeField] private float dashChargeRecoveryTime;
+        [SerializeField] private float dashSpeed;
+        [SerializeField] private float dashTime;
 
     [Header("Combat")]
-    public float Health;
-    public float AttackDamage;
+        [SerializeField] private float health;
+        [SerializeField] private float attackDamage;
    
     [Header("Limits")]
-    public float MaxSpeed;
-    public float MaxJumpStrength;
-    public float MaxCrouchSpeed;
-    public int MaxDashCharges;
-    public float MinDashChargeRecoveryTime;
-    public float MaxHealth;
+        [SerializeField] private float maxSpeed;
+        [SerializeField] private float maxJumpStrength;
+        [SerializeField] private float maxCrouchSpeed;
+        [SerializeField] private int maxDashCharges;
+        [SerializeField] private float maxDashChargeRecoveryTime;
+        [SerializeField] private float maxDashSpeed;
+        [SerializeField] private float maxDashTime;
+        [SerializeField] private float maxHealth;
+        [SerializeField] private float maxAttackDamage;
+
+        public float Speed
+        {
+            get => speed;
+            set => speed = value > maxSpeed ? maxSpeed : value;
+        }
+
+        public float JumpStrength
+        {
+            get => jumpStrength;
+            set => jumpStrength = value > maxJumpStrength ? maxJumpStrength : value;
+        }
+
+        public float CrouchSpeed
+        {
+            get => crouchSpeed;
+            set => crouchSpeed = value > maxCrouchSpeed ? maxCrouchSpeed : value;
+        }
+
+        public int DashCharges
+        {
+            get => dashCharges;
+            set => dashCharges = value > maxDashCharges ? maxDashCharges : value;
+        }
+
+        public float DashChargeRecoveryTime
+        {
+            get => dashChargeRecoveryTime;
+            set => dashChargeRecoveryTime = value > maxDashChargeRecoveryTime ? maxDashChargeRecoveryTime : value;
+        }
+
+        public float DashSpeed
+        {
+            get => dashSpeed;
+            set => dashSpeed = value > maxDashSpeed ? maxDashSpeed : value;
+        }
+
+        public float DashTime
+        {
+            get => dashTime;
+            set => dashTime = value > maxDashTime ? maxDashTime : value;
+        }
+
+        public float Health
+        {
+            get => health;
+            set => health = value > maxHealth ? maxHealth : value;
+        }
+
+        public float AttackDamage
+        {
+            get => attackDamage;
+            set => attackDamage = value > maxAttackDamage ? maxAttackDamage : value;
+        }
 }
