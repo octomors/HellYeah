@@ -3,7 +3,9 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using DG.Tweening;
+using System.Linq;
 
 public class CookingUIManager : MonoBehaviour
 {
@@ -15,7 +17,7 @@ public class CookingUIManager : MonoBehaviour
     public TMP_Text potContentsText;
     public Button cookButton;
     public CanvasGroup cookingScreenCanvasGroup;
-    
+
     [Header("Result Panel")]
     [SerializeField] private CookingResult suspiciousDishResult;
     [SerializeField] private GameObject resultPanel;
@@ -24,7 +26,7 @@ public class CookingUIManager : MonoBehaviour
     [SerializeField] private TMP_Text resultDishName;
     [SerializeField] private TMP_Text resultBuffsText;
     [SerializeField] private Button resultCloseButton;
-    
+
     [Header("Recipe Details Panel")]
     [SerializeField] private GameObject recipeDetailsPanel;
     [SerializeField] private CanvasGroup recipeDetailsCanvasGroup;
@@ -42,7 +44,7 @@ public class CookingUIManager : MonoBehaviour
     [SerializeField] private GameObject flyingIngredientPrefab;
     [SerializeField] private Transform flyingObjectsParent;
     [SerializeField] private RectTransform cauldronTarget;
-    
+
     [Header("Right Panel UI Elements")]
     [SerializeField] private Button clearPotButton;
     [SerializeField] private CanvasGroup cookButtonCanvasGroup;
@@ -159,7 +161,7 @@ public class CookingUIManager : MonoBehaviour
         {
             recipeUI.UpdateIngredientsAvailability();
         }
-        
+
         if (recipeDetailsPanel != null && recipeDetailsPanel.activeSelf)
         {
             UpdateDetailsIngredientsAvailability();
@@ -196,7 +198,7 @@ public class CookingUIManager : MonoBehaviour
         // Запускаем анимацию полёта
         GameObject flyingObj = Instantiate(flyingIngredientPrefab, flyingObjectsParent);
         FlyingIngredient flying = flyingObj.GetComponent<FlyingIngredient>();
-        
+
         flying.Setup(ingredient.icon, startPos, endPos, () =>
         {
             // По завершении полёта добавляем ингредиент в котёл
@@ -204,7 +206,7 @@ public class CookingUIManager : MonoBehaviour
                 currentPotIngredients[ingredient]++;
             else
                 currentPotIngredients.Add(ingredient, 1);
-            
+
             UpdatePotContentsText();
         });
     }
@@ -217,7 +219,7 @@ public class CookingUIManager : MonoBehaviour
             potContentsText.text = "Котёл пуст";
             return;
         }
-        
+
         string text = "В котле:\n";
         foreach (var item in currentPotIngredients)
         {
@@ -234,7 +236,7 @@ public class CookingUIManager : MonoBehaviour
         {
             InventoryManager.Instance.AddIngredient(item.Key, item.Value);
         }
-        
+
         currentPotIngredients.Clear();
         UpdatePotContentsText();
     }
@@ -245,14 +247,14 @@ public class CookingUIManager : MonoBehaviour
         currentPotIngredients.Clear();
         UpdatePotContentsText();
     }
-    
+
     // Обновляем книгу рецептов
     void PopulateRecipeBook()
     {
         foreach (Transform child in recipesContent) 
             Destroy(child.gameObject);
         recipeUIs.Clear();
-        
+
         Recipe[] recipes = Resources.LoadAll<Recipe>("Recipes");
         foreach (Recipe recipe in recipes)
         {
@@ -260,7 +262,7 @@ public class CookingUIManager : MonoBehaviour
             RecipeUI ui = obj.GetComponent<RecipeUI>();
             ui.Setup(recipe);
             ui.OnClicked += (clickedUI) => ShowRecipeDetails(clickedUI.Recipe);
-            
+
             recipeUIs.Add(ui);
         }
     }
@@ -269,32 +271,32 @@ public class CookingUIManager : MonoBehaviour
     private void ShowRecipeDetails(Recipe recipe)
     {
         if (recipeDetailsPanel == null) return;
-        
+
         currentDisplayedRecipe = recipe;
-        
+
         if (detailsRecipeIcon != null && recipe.recipeIcon != null)
             detailsRecipeIcon.sprite = recipe.recipeIcon;
-        
+
         if (detailsRecipeName != null)
             detailsRecipeName.text = recipe.recipeName;
-        
+
         if (detailsDescriptionText != null)
             detailsDescriptionText.text = recipe.description;
-        
+
         if (detailsBuffsText != null)
             detailsBuffsText.text = recipe.buffDescription;
-        
+
         CreateDetailsIngredientIcons(recipe);
         UpdateDetailsCookButton();
-        
+
         recipeDetailsPanel.SetActive(true);
-        
+
         if (recipeDetailsCanvasGroup != null)
         {
             recipeDetailsCanvasGroup.alpha = 0f;
             recipeDetailsCanvasGroup.DOFade(1f, 0.3f).SetUpdate(true);
         }
-        
+
         if (cookingScreenCanvasGroup != null)
             cookingScreenCanvasGroup.DOFade(0.5f, 0.2f);
     }
@@ -305,21 +307,21 @@ public class CookingUIManager : MonoBehaviour
         foreach (Transform child in detailsIngredientsContainer)
             Destroy(child.gameObject);
         detailsIngredientIcons.Clear();
-        
+
         if (recipe == null) return;
-        
+
         foreach (var requirement in recipe.ingredients)
         {
             GameObject iconObj = Instantiate(detailsIngredientIconPrefab, detailsIngredientsContainer);
             RecipeIngredientIconUI iconUI = iconObj.GetComponent<RecipeIngredientIconUI>();
-            
+
             if (iconUI != null)
             {
                 iconUI.Setup(requirement.ingredient, requirement.amount);
                 detailsIngredientIcons.Add(iconUI);
             }
         }
-        
+
         UpdateDetailsIngredientsAvailability();
     }
 
@@ -327,7 +329,7 @@ public class CookingUIManager : MonoBehaviour
     private void UpdateDetailsIngredientsAvailability()
     {
         if (InventoryManager.Instance == null) return;
-        
+
         foreach (var icon in detailsIngredientIcons)
         {
             if (icon != null && icon.Ingredient != null)
@@ -342,10 +344,10 @@ public class CookingUIManager : MonoBehaviour
     private void UpdateDetailsCookButton()
     {
         if (detailsCookButton == null || currentDisplayedRecipe == null) return;
-        
+
         bool canCook = CanCookRecipe(currentDisplayedRecipe);
         detailsCookButton.interactable = canCook;
-        
+
         TMP_Text buttonText = detailsCookButton.GetComponentInChildren<TMP_Text>();
         if (buttonText != null)
             buttonText.text = canCook ? "Добавить ингредиенты в котёл" : "Не хватает ингредиентов";
@@ -355,7 +357,7 @@ public class CookingUIManager : MonoBehaviour
     private bool CanCookRecipe(Recipe recipe)
     {
         if (InventoryManager.Instance == null) return false;
-        
+
         foreach (var req in recipe.ingredients)
         {
             if (!InventoryManager.Instance.HasIngredient(req.ingredient, req.amount))
@@ -378,7 +380,7 @@ public class CookingUIManager : MonoBehaviour
         {
             recipeDetailsPanel.SetActive(false);
         }
-        
+
         if (cookingScreenCanvasGroup != null)
             cookingScreenCanvasGroup.DOFade(1f, 0.2f);
     }
@@ -387,13 +389,13 @@ public class CookingUIManager : MonoBehaviour
     private void OnCookFromDetails()
     {
         if (currentDisplayedRecipe == null) return;
-        
+
         if (!CanCookRecipe(currentDisplayedRecipe))
         {
             Debug.Log("Не хватает ингредиентов!");
             return;
         }
-        
+
         AddAllIngredientsToPot(currentDisplayedRecipe);
         HideRecipeDetails();
     }
@@ -422,14 +424,14 @@ public class CookingUIManager : MonoBehaviour
     private Recipe CheckExactRecipe()
     {
         Recipe[] recipes = Resources.LoadAll<Recipe>("Recipes");
-        
+
         foreach (Recipe recipe in recipes)
         {
             if (currentPotIngredients.Count != recipe.ingredients.Count)
                 continue;
-            
+
             bool exactMatch = true;
-            
+
             foreach (var req in recipe.ingredients)
             {
                 if (!currentPotIngredients.ContainsKey(req.ingredient))
@@ -437,14 +439,14 @@ public class CookingUIManager : MonoBehaviour
                     exactMatch = false;
                     break;
                 }
-                
+
                 if (currentPotIngredients[req.ingredient] != req.amount)
                 {
                     exactMatch = false;
                     break;
                 }
             }
-            
+
             if (exactMatch)
             {
                 return recipe;
@@ -461,9 +463,9 @@ public class CookingUIManager : MonoBehaviour
             Debug.Log("Котёл пуст! Добавьте ингредиенты.");
             return;
         }
-        
+
         Recipe exactRecipe = CheckExactRecipe();
-        
+
         if (exactRecipe != null)
         {
             StartCoroutine(CookSequenceFromRecipe(exactRecipe));
@@ -479,7 +481,60 @@ public class CookingUIManager : MonoBehaviour
     {
         yield return StartCoroutine(PlayCookingAnimation());
         ConsumePotIngredients();
+        ApplyRecipeBuff(recipe);
         ShowResultPanelFromRecipe(recipe);
+    }
+
+    private void ApplyRecipeBuff(Recipe recipe)
+    {
+        if (recipe == null || recipe.buffs == null || recipe.buffs.Count == 0)
+        {
+            return;
+        }
+
+
+        BasePlayerStats stats = FindObjectsOfType<BasePlayerStats>(true).FirstOrDefault();
+        if (stats == null)
+        {
+            Debug.LogWarning("[CookingUI] BasePlayerStats not found in scene.");
+            return;
+        }
+
+        foreach (Buff buff in recipe.buffs)
+        {
+            if (buff == null || string.IsNullOrWhiteSpace(buff.statName))
+            {
+                continue;
+            }
+
+            PropertyInfo property = typeof(BasePlayerStats).GetProperty(
+                buff.statName,
+                BindingFlags.Public | BindingFlags.Instance);
+
+            if (property == null)
+            {
+                Debug.LogWarning($"[CookingUI] Stat property '{buff.statName}' not found on BasePlayerStats.");
+                continue;
+            }
+
+            if (property.PropertyType == typeof(int))
+            {
+                
+                int current = (int)property.GetValue(stats);
+                int delta = Mathf.RoundToInt(buff.amount);
+                property.SetValue(stats, current + delta);
+                continue;
+            }
+
+            if (property.PropertyType == typeof(float))
+            {
+                float current = (float)property.GetValue(stats);
+                property.SetValue(stats, current + buff.amount);
+                continue;
+            }
+
+            Debug.LogWarning($"[CookingUI] Stat property '{buff.statName}' has unsupported type {property.PropertyType}.");
+        }
     }
 
     // В случае если рецепт не существует (положены рандомные ингредиенты в котел)
@@ -550,30 +605,30 @@ public class CookingUIManager : MonoBehaviour
     private void ShowResultPanelFromRecipe(Recipe recipe)
     {
         if (resultPanel == null) return;
-        
+
         if (resultDishIcon != null && recipe.recipeIcon != null)
             resultDishIcon.sprite = recipe.recipeIcon;
-        
+
         if (resultDishName != null)
         {
             resultDishName.text = recipe.recipeName;
             resultDishName.color = ColorBasic;
         }
-        
+
         if (resultBuffsText != null)
         {
             resultBuffsText.text = recipe.buffDescription;
             resultBuffsText.color = ColorRight;
         }
-        
+
         resultPanel.SetActive(true);
-        
+
         if (resultCanvasGroup != null)
         {
             resultCanvasGroup.alpha = 0f;
             resultCanvasGroup.DOFade(1f, 0.5f).SetUpdate(true);
         }
-        
+
         if (cookingScreenCanvasGroup != null)
             cookingScreenCanvasGroup.DOFade(0.5f, 0.3f);
     }
@@ -582,9 +637,9 @@ public class CookingUIManager : MonoBehaviour
     private void ShowResultPanelFromResult(CookingResult result)
     {
         if (resultPanel == null) return;
-        
+
         if (result == null) return;
-        
+
         if (resultDishIcon != null)
         {
             if (result.resultIcon != null)
@@ -597,27 +652,27 @@ public class CookingUIManager : MonoBehaviour
                 resultDishIcon.color = Color.gray;
             }
         }
-        
+
         if (resultDishName != null)
         {
             resultDishName.text = !string.IsNullOrEmpty(result.resultName) ? result.resultName : "Неизвестное блюдо";
             resultDishName.color = ColorWrong;
         }
-        
+
         if (resultBuffsText != null)
         {
             resultBuffsText.text = !string.IsNullOrEmpty(result.buffDescription) ? result.buffDescription : "Нет эффектов";
             resultBuffsText.color = ColorBasic;
         }
-        
+
         resultPanel.SetActive(true);
-        
+
         if (resultCanvasGroup != null)
         {
             resultCanvasGroup.alpha = 0f;
             resultCanvasGroup.DOFade(1f, 0.5f).SetUpdate(true);
         }
-        
+
         if (cookingScreenCanvasGroup != null)
         {
             cookingScreenCanvasGroup.DOFade(0.5f, 0.3f);
@@ -638,7 +693,7 @@ public class CookingUIManager : MonoBehaviour
         {
             resultPanel.SetActive(false);
         }
-        
+
         if (cookingScreenCanvasGroup != null)
             cookingScreenCanvasGroup.DOFade(1f, 0.3f);
     }
@@ -658,15 +713,15 @@ public class CookingUIManager : MonoBehaviour
         UpdateIngredientUI();
         PopulateRecipeBook();
     }
-    
+
     // Закрывает экран готовки и возвращает камеру к игроку.
     public void CloseCookingScreen()
     {
         if (_isCooking) return;
         HUDController.Instance?.Show();
-        
+
         gameObject.SetActive(false);
-        
+
         if (cookingCameraController != null)
             cookingCameraController.ExitCookingMode();
     }
