@@ -42,20 +42,6 @@ public class PlayerCombatManager : MonoBehaviour
         Debug.Log($"Health restored: {currentHealth}/{stats.Health}");
     }
     
-    public bool ApplyHealthBuff(float amount)
-    {
-        float newHealth = stats.Health + amount;
-        if (newHealth <= stats.MaxHealth)
-        {
-            stats.Health = newHealth;
-            currentHealth = stats.Health;
-            Debug.Log($"Health buffed! New max HP: {stats.Health}");
-            return true;
-        }
-        Debug.Log($"Cannot buff beyond MaxHealth ({stats.MaxHealth})");
-        return false;
-    }
-    
     void Update()
     {
         if (isDead) return; // Dead men don't swing swords
