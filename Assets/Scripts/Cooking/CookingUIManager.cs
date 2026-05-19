@@ -3,9 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections;
 using System.Collections.Generic;
-using System.Reflection;
 using DG.Tweening;
-using System.Linq;
 
 public class CookingUIManager : MonoBehaviour
 {
@@ -61,6 +59,11 @@ public class CookingUIManager : MonoBehaviour
 
     [Header("Управление камерой")]
     public CookingCameraController cookingCameraController;
+
+    [Header("Цвета UI текста")]
+    [SerializeField] private Color ColorBasic;
+    [SerializeField] private Color ColorRight;
+    [SerializeField] private Color ColorWrong;
 
     private Dictionary<Ingredient, int> currentPotIngredients = new Dictionary<Ingredient, int>();
     private Dictionary<Ingredient, IngredientUI> ingredientUIMap = new Dictionary<Ingredient, IngredientUI>();
@@ -476,60 +479,7 @@ public class CookingUIManager : MonoBehaviour
     {
         yield return StartCoroutine(PlayCookingAnimation());
         ConsumePotIngredients();
-        ApplyRecipeBuff(recipe);
         ShowResultPanelFromRecipe(recipe);
-    }
-
-    private void ApplyRecipeBuff(Recipe recipe)
-    {
-        if (recipe == null || recipe.buffs == null || recipe.buffs.Count == 0)
-        {
-            return;
-        }
-
-
-        BasePlayerStats stats = FindObjectsOfType<BasePlayerStats>(true).FirstOrDefault();
-        if (stats == null)
-        {
-            Debug.LogWarning("[CookingUI] BasePlayerStats not found in scene.");
-            return;
-        }
-
-        foreach (Buff buff in recipe.buffs)
-        {
-            if (buff == null || string.IsNullOrWhiteSpace(buff.statName))
-            {
-                continue;
-            }
-
-            PropertyInfo property = typeof(BasePlayerStats).GetProperty(
-                buff.statName,
-                BindingFlags.Public | BindingFlags.Instance);
-
-            if (property == null)
-            {
-                Debug.LogWarning($"[CookingUI] Stat property '{buff.statName}' not found on BasePlayerStats.");
-                continue;
-            }
-
-            if (property.PropertyType == typeof(int))
-            {
-                
-                int current = (int)property.GetValue(stats);
-                int delta = Mathf.RoundToInt(buff.amount);
-                property.SetValue(stats, current + delta);
-                continue;
-            }
-
-            if (property.PropertyType == typeof(float))
-            {
-                float current = (float)property.GetValue(stats);
-                property.SetValue(stats, current + buff.amount);
-                continue;
-            }
-
-            Debug.LogWarning($"[CookingUI] Stat property '{buff.statName}' has unsupported type {property.PropertyType}.");
-        }
     }
 
     // В случае если рецепт не существует (положены рандомные ингредиенты в котел)
@@ -607,13 +557,13 @@ public class CookingUIManager : MonoBehaviour
         if (resultDishName != null)
         {
             resultDishName.text = recipe.recipeName;
-            resultDishName.color = Color.white;
+            resultDishName.color = ColorBasic;
         }
         
         if (resultBuffsText != null)
         {
             resultBuffsText.text = recipe.buffDescription;
-            resultBuffsText.color = Color.green;
+            resultBuffsText.color = ColorRight;
         }
         
         resultPanel.SetActive(true);
@@ -651,13 +601,13 @@ public class CookingUIManager : MonoBehaviour
         if (resultDishName != null)
         {
             resultDishName.text = !string.IsNullOrEmpty(result.resultName) ? result.resultName : "Неизвестное блюдо";
-            resultDishName.color = result.isSuccess ? Color.white : Color.red;
+            resultDishName.color = ColorWrong;
         }
         
         if (resultBuffsText != null)
         {
             resultBuffsText.text = !string.IsNullOrEmpty(result.buffDescription) ? result.buffDescription : "Нет эффектов";
-            resultBuffsText.color = result.isSuccess ? Color.green : Color.grey;
+            resultBuffsText.color = ColorBasic;
         }
         
         resultPanel.SetActive(true);
