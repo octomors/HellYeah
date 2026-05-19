@@ -13,8 +13,6 @@ public class RecipeIngredientIconUI : MonoBehaviour
     [Header("Colors")]
     [SerializeField] private Color availableColor = Color.white;
     [SerializeField] private Color unavailableColor = new Color(0.5f, 0.5f, 0.5f, 0.5f);
-    [SerializeField] private Color availableTextColor = Color.white;
-    [SerializeField] private Color unavailableTextColor = new Color(0.5f, 0.5f, 0.5f, 0.5f);
 
     public void Setup(Ingredient ingredient, int amount)
     {
@@ -57,7 +55,7 @@ public class RecipeIngredientIconUI : MonoBehaviour
         
         if (amountText != null)
         {
-            amountText.color = available ? availableTextColor : unavailableTextColor;
+            amountText.color = available ? Color.white : Color.red;
         }
     }
 }
