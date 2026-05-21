@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour, IDoorHandler
     {
         runManager.StartRun();
         sceneLoader.LoadDungeon();
+        Debug.Log(runManager.CurrentFloor);
     }
 
     public void CompleteFloor()
@@ -50,6 +51,7 @@ public class GameManager : MonoBehaviour, IDoorHandler
         {
             EndRun();
         }
+        Debug.Log(runManager.CurrentFloor);
     }
 
     public void EndRun()

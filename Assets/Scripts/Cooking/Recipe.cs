@@ -11,7 +11,15 @@ public class Recipe : ScriptableObject
     public List<IngredientRequirement> ingredients;
     [TextArea(2, 4)]
     public string buffDescription;
+    public List<Buff> buffs = new List<Buff>();
     public CookingResult cookingResult;
+}
+
+[System.Serializable]
+public class Buff
+{
+    public string statName;
+    public float amount;
 }
 
 [System.Serializable]
