@@ -89,6 +89,25 @@ public class HUDController : MonoBehaviour
         Instance = this;
     }
 
+    private void OnEnable()
+    {
+        PlayerCombatManager.OnPlayerDamaged += OnHealthChanged;
+        PlayerCombatManager.OnPlayerHealed += OnHealthChanged;
+    }
+
+    private void OnDisable()
+    {
+        PlayerCombatManager.OnPlayerDamaged -= OnHealthChanged;
+        PlayerCombatManager.OnPlayerHealed -= OnHealthChanged;
+    }
+
+    private void OnHealthChanged(float current, float max)
+    {
+        _maxHealth = max;
+        _currentHealth = current;
+        RefreshHealth();
+    }
+
     private void Start()
     {
         RefreshHealth();

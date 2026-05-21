@@ -12,6 +12,7 @@ public class PlayerCombatManager : MonoBehaviour
     
     [Header("Health")]
     [SerializeField] private float currentHealth;
+    private float _lastMaxHealth; // для отслеживания изменений maxHealth
     
     // EVENTS
     public static event Action OnPlayerDeath;
@@ -32,13 +33,16 @@ public class PlayerCombatManager : MonoBehaviour
         else{
             RestoreHealth();
             attackDamage = stats.AttackDamage;
+            _lastMaxHealth = stats.Health;
         }
     }
     
     public void RestoreHealth()
     {
         currentHealth = stats.Health;
+        _lastMaxHealth = stats.Health;
         isDead = false;
+        OnPlayerHealed?.Invoke(currentHealth, stats.Health);
         Debug.Log($"Health restored: {currentHealth}/{stats.Health}");
     }
     
@@ -46,6 +50,19 @@ public class PlayerCombatManager : MonoBehaviour
     {
         if (isDead) return; // Dead men don't swing swords
         
+        // Отслеживаем изменение maxHealth (после баффа рецепта)
+        if (stats != null && stats.Health != _lastMaxHealth)
+        {
+            // При увеличении maxHealth - сразу восстанавливаем текущее хп до максимума
+            if (stats.Health > _lastMaxHealth)
+                currentHealth = stats.Health;
+            // если maxHealth уменьшился - currentHealth не превышает новый максимум. По идее у нас нет дебаффов, но на всякий случай
+            else
+                currentHealth = Mathf.Min(currentHealth, stats.Health);
+            _lastMaxHealth = stats.Health;
+            OnPlayerHealed?.Invoke(currentHealth, stats.Health);
+        }
+
         if (Input.GetMouseButtonDown(0) && Time.time >= nextAttackTime)
         {
             nextAttackTime = Time.time + attackCooldown;
