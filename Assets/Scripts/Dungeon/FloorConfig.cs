@@ -18,8 +18,8 @@ public class FloorConfig : ScriptableObject
     public int MaxRoomCount;
     public List<RoomPrefabGroup> RoomPrefabGroups;
 
-    public int CorridorLength;
-    public int DoorsToRoomOriginLength;
+    public float CorridorLength;
+    public float DoorsToRoomOriginLength;
 
     private bool cacheBuilded;
     private Dictionary<RoomType, List<GameObject>> prefabs;

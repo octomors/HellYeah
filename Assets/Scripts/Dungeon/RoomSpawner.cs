@@ -32,7 +32,7 @@ public static class RoomSpawner
             Debug.LogWarning("RoomSpawner: Map has no room coordinates.");
         }
 
-        float spacing = (config.DoorsToRoomOriginLength * 2) + config.CorridorLength;
+        float spacing = (config.DoorsToRoomOriginLength * 2f) + config.CorridorLength;
         Dictionary<RoomType, List<GameObject>> prefabMap = config.RoomPrefabs;
 
         Dictionary<(int y, int x), DoorDir> specialDoors = BuildSpecialDoorMap(map, map.roomCoords);
