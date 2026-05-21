@@ -62,7 +62,7 @@ public class FirstPersonMovement : MonoBehaviour
 
         if (HUDController.Instance != null)
         {
-            HUDController.Instance.DashCharges  = basePlayerStats.DashCharges;
+            HUDController.Instance.DashCharges = basePlayerStats.DashCharges;
             HUDController.Instance.CurrentCharges = currentDashCharges;
             HUDController.Instance.DashChargeRecoveryTime = basePlayerStats.DashChargeRecoveryTime;
         }
@@ -70,6 +70,13 @@ public class FirstPersonMovement : MonoBehaviour
 
     void Update()
     {
+        // Проверяем изменились ли статы (например после баффов)
+        if (HUDController.Instance != null)
+        {
+            if (HUDController.Instance.DashCharges != basePlayerStats.DashCharges) HUDController.Instance.DashCharges = basePlayerStats.DashCharges;
+            if (HUDController.Instance.DashChargeRecoveryTime != basePlayerStats.DashChargeRecoveryTime) HUDController.Instance.DashChargeRecoveryTime = basePlayerStats.DashChargeRecoveryTime;
+        } 
+
         if (!isDashing && Input.GetKeyDown(DashKey) && groundCheck.isGrounded && currentDashCharges > 0)
         {
             dashRequested = true;

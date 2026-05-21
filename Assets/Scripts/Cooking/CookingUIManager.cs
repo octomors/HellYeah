@@ -76,6 +76,7 @@ public class CookingUIManager : MonoBehaviour
     private bool _isCooking = false;
     private bool _fireEverLit = false;
     private bool _initialized = false; //защита от повторной инициализации
+    private bool _isDetailScreenOpen = false;
 
     private void Start()
     {
@@ -272,6 +273,8 @@ public class CookingUIManager : MonoBehaviour
     {
         if (recipeDetailsPanel == null) return;
 
+        _isDetailScreenOpen = true;
+
         currentDisplayedRecipe = recipe;
 
         if (detailsRecipeIcon != null && recipe.recipeIcon != null)
@@ -369,6 +372,8 @@ public class CookingUIManager : MonoBehaviour
     // Закрыть окно детального описания рецепта
     private void HideRecipeDetails()
     {
+        _isDetailScreenOpen = false;
+
         if (recipeDetailsCanvasGroup != null)
         {
             recipeDetailsCanvasGroup.DOFade(0f, 0.2f).OnComplete(() =>
@@ -729,9 +734,10 @@ public class CookingUIManager : MonoBehaviour
     // При нажатии на esc выходит с экрана готовки
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && gameObject.activeSelf && !_isCooking)
+        if (Input.GetKeyDown(KeyCode.Escape) && gameObject.activeSelf && !_isCooking && !_isDetailScreenOpen)
         {
             CloseCookingScreen();
         }
+        if (Input.GetKeyDown(KeyCode.Escape) && _isDetailScreenOpen) HideRecipeDetails();
     }
 }
