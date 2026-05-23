@@ -6,7 +6,7 @@ public class CampManager : MonoBehaviour
 
 	private void Start()
 	{
-		SpawnPlayerInCamp();
+		//SpawnPlayerInCamp();
 	}
 	
 

@@ -12,7 +12,7 @@ public class CookingCameraController : MonoBehaviour
     public CanvasGroup fadePanel;
     public float fadeDuration = 0.35f;
     public string firstPersonCameraName = "First Person Camera";
-    public string playerRootName = "Player(Clone)";
+    public string playerRootName = "Player";
 
     private Camera _firstPersonCamera;
     private bool _isInCookingMode = false;
