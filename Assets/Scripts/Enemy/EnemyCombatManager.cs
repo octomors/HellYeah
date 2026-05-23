@@ -149,10 +149,11 @@ public class EnemyCombat : MonoBehaviour
         {
             animator = GetComponent<Animator>();
         }
-        
+
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         if (playerObj != null)
         {
+            Debug.Log($"EnemyCombat found player: {playerObj}");
             player = playerObj.transform;
         }
     }

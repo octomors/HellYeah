@@ -23,7 +23,7 @@ public class InventoryUI : MonoBehaviour
     public TextMeshProUGUI detailDescription;
 
     [Header("Имя объекта игрока")]
-    public string playerRootName = "Player(Clone)";
+    public string playerRootName = "Player";
 
     private bool _isOpen = false; //состояние окна
     private List<InventorySlotUI> _slotUIs = new List<InventorySlotUI>(); //список всех созданных слотов
