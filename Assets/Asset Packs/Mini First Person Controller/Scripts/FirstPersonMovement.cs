@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class FirstPersonMovement : MonoBehaviour
 {
-    public bool IsDashing { get; private set; }
+    public bool IsDashing { get; private set; } = false;
+    public bool IsWalking { get; private set; }
     public KeyCode DashKey = KeyCode.LeftShift;
     
     public BasePlayerStats basePlayerStats;
@@ -14,7 +15,7 @@ public class FirstPersonMovement : MonoBehaviour
     public List<System.Func<float>> speedOverrides = new List<System.Func<float>>();
 
     // Dash state
-    bool isDashing = false;
+    //bool IsDashing = false;
     float dashTimer = 0f;
     int currentDashCharges;
     float dashRecoveryTimer = 0f;
@@ -77,7 +78,7 @@ public class FirstPersonMovement : MonoBehaviour
             if (HUDController.Instance.DashChargeRecoveryTime != basePlayerStats.DashChargeRecoveryTime) HUDController.Instance.DashChargeRecoveryTime = basePlayerStats.DashChargeRecoveryTime;
         } 
 
-        if (!isDashing && Input.GetKeyDown(DashKey) && groundCheck.isGrounded && currentDashCharges > 0)
+        if (!IsDashing && Input.GetKeyDown(DashKey) && groundCheck.isGrounded && currentDashCharges > 0)
         {
             dashRequested = true;
         }
@@ -85,10 +86,10 @@ public class FirstPersonMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (dashRequested && !isDashing)
+        if (dashRequested && !IsDashing)
         {
             dashRequested = false;
-            isDashing = true;
+            IsDashing = true;
             currentDashCharges--;
             dashTimer = basePlayerStats.DashTime;
 
@@ -105,7 +106,7 @@ public class FirstPersonMovement : MonoBehaviour
         }
 
         // If currently dashing, maintain dash velocity regardless of input
-        if (isDashing)
+        if (IsDashing)
         {
             HandleDash();
         }
@@ -122,7 +123,7 @@ public class FirstPersonMovement : MonoBehaviour
         dashTimer -= Time.fixedDeltaTime;
         if (dashTimer <= 0f)
         {
-            isDashing = false;
+            IsDashing = false;
             cachedDashInput = Vector2.zero;
             rb.linearVelocity = new Vector3(0f, rb.linearVelocity.y, 0f);
             return;
@@ -145,6 +146,8 @@ public class FirstPersonMovement : MonoBehaviour
         // Get targetVelocity from input.
         Vector2 targetVelocity =
         new Vector2(Input.GetAxis("Horizontal") * targetMovingSpeed, Input.GetAxis("Vertical") * targetMovingSpeed);
+
+        IsWalking = targetVelocity.magnitude > 0.1f;
 
         // Apply movement.
         rb.linearVelocity =
