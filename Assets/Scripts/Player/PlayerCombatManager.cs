@@ -75,6 +75,9 @@ public class PlayerCombatManager : MonoBehaviour
         Vector3 origin = transform.position + Vector3.up * 1f;
         RaycastHit hit;
         Debug.Log($"You be swinging fr");
+
+        PlayerAnimationController arms = GetComponentInChildren<PlayerAnimationController>();
+        if (arms != null) arms.PlayAttack();
         
         if (Physics.SphereCast(origin, attackRadius, transform.forward, out hit, attackRange))
         {
