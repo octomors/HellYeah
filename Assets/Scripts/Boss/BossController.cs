@@ -32,6 +32,12 @@ public class BossController : MonoBehaviour
     [SerializeField] private float repositionStoppingDistance = 0.3f; // How close is "close enough"
     [SerializeField] private float turnSpeed = 120f; // Degrees per second, how fast boss turns
 
+    [Header("Attacking")]
+    [SerializeField] private float attackRecoveryDuration = 1f;  // Post-attack pause before choosing next action
+    [SerializeField] private float biteDamage = 15f;
+    [SerializeField] private float clawDamage = 20f;
+    private float attackTimer;
+
 
     // Components
     private NavMeshAgent agent;
@@ -145,6 +151,8 @@ public class BossController : MonoBehaviour
 
             case BossState.Attacking:
                 agent.enabled = false; // Don't move while attacking
+                attackTimer = attackRecoveryDuration;
+                animator.SetTrigger(OnAttackParam);
                 break;
 
             case BossState.Taunting:
@@ -327,7 +335,38 @@ public class BossController : MonoBehaviour
 
     private void UpdateAttacking()
     {
-        // TODO: Wait for animation to finish → TransitionToState(BossState.Idle)
+        attackTimer -= Time.deltaTime;
+
+        if (attackTimer <= 0f)
+        {
+            // Attack animation has played and recovery is over
+            TransitionToState(BossState.Idle);
+        }
+    }
+
+    // Called by Animation Events on attack clips to enable/disable the damage hitbox.
+
+    public void EnableDamageHitbox()
+    {
+        if (damageHitbox != null)
+            damageHitbox.enabled = true;
+    }
+
+    public void DisableDamageHitbox()
+    {
+        if (damageHitbox != null)
+            damageHitbox.enabled = false;
+    }
+
+    // Returns the damage value for the current attack type.
+    public float GetCurrentAttackDamage()
+    {
+        return currentAttackType switch
+        {
+            0 => biteDamage,
+            1 => clawDamage,
+            _ => biteDamage
+        };
     }
 
     private void UpdateTaunting()
@@ -359,4 +398,5 @@ public class BossController : MonoBehaviour
     {
         // TODO: Reduce health, check for death, trigger hit react or block
     }
+
 }
