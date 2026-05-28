@@ -30,7 +30,7 @@ public class FirstPersonMovement : MonoBehaviour
         // Get PlayerStats from the same GameObject.
         if (basePlayerStats == null)
         {
-            basePlayerStats = GetComponent<BasePlayerStats>();
+            basePlayerStats = FindAnyObjectByType<BasePlayerStats>();
         }
         currentDashCharges = basePlayerStats.DashCharges;
 

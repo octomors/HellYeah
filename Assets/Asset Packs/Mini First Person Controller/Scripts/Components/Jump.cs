@@ -22,7 +22,7 @@ public class Jump : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
         if (playerStats == null)
         {
-            playerStats = GetComponent<BasePlayerStats>();
+            playerStats = FindAnyObjectByType<BasePlayerStats>();
         }
     }
 

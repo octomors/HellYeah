@@ -513,7 +513,7 @@ public class CookingUIManager : MonoBehaviour
         }
 
 
-        BasePlayerStats stats = FindObjectsOfType<BasePlayerStats>(true).FirstOrDefault();
+        BasePlayerStats stats = FindAnyObjectByType<BasePlayerStats>();
         if (stats == null)
         {
             Debug.LogWarning("[CookingUI] BasePlayerStats not found in scene.");

@@ -83,4 +83,58 @@ public class BasePlayerStats : MonoBehaviour
             get => attackDamage;
             set => attackDamage = value > maxAttackDamage ? maxAttackDamage : value;
         }
+
+        public float MaxSpeed
+        {
+            get => maxSpeed;
+            set => maxSpeed = value;
+        }
+
+        public float MaxJumpStrength
+        {
+            get => maxJumpStrength;
+            set => maxJumpStrength = value;
+        }
+
+        public float MaxCrouchSpeed
+        {
+            get => maxCrouchSpeed;
+            set => maxCrouchSpeed = value;
+        }
+
+        public int MaxDashCharges
+        {
+            get => maxDashCharges;
+            set => maxDashCharges = value;
+        }
+
+        public float MaxDashChargeRecoveryTime
+        {
+            get => maxDashChargeRecoveryTime;
+            set => maxDashChargeRecoveryTime = value;
+        }
+
+        public float MaxDashSpeed
+        {
+            get => maxDashSpeed;
+            set => maxDashSpeed = value;
+        }
+
+        public float MaxDashTime
+        {
+            get => maxDashTime;
+            set => maxDashTime = value;
+        }
+
+        public float MaxHealth
+        {
+            get => maxHealth;
+            set => maxHealth = value;
+        }
+
+        public float MaxAttackDamage
+        {
+            get => maxAttackDamage;
+            set => maxAttackDamage = value;
+        }
 }

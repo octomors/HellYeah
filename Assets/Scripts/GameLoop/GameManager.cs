@@ -33,6 +33,11 @@ public class GameManager : MonoBehaviour, IDoorHandler
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
+    private void Start()
+    {
+        LoadFromDisk();
+    }
+
     public void StartRun()
     {
         runManager.StartRun();
@@ -55,8 +60,24 @@ public class GameManager : MonoBehaviour, IDoorHandler
 
     public void EndRun()
     {
+        SaveToDisk();
         sceneLoader.LoadCamp();
         runManager.Reset();
+    }
+
+    public void LoadFromDisk()
+    {
+        BasePlayerStats playerStats = FindAnyObjectByType<BasePlayerStats>();
+        RecipeBook recipeBook = FindAnyObjectByType<RecipeBook>();
+
+        SaveService.Load(playerStats, recipeBook);
+    }
+
+    private void SaveToDisk()
+    {
+        BasePlayerStats playerStats = FindAnyObjectByType<BasePlayerStats>();
+        RecipeBook recipeBook = FindAnyObjectByType<RecipeBook>();
+        SaveService.Save(playerStats, recipeBook);
     }
 
     public void HandleDoor(DoorType type)

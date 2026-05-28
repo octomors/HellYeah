@@ -25,7 +25,7 @@ public class PlayerCombatManager : MonoBehaviour
     
     void Start()
     {
-        stats = GetComponent<BasePlayerStats>();
+        stats = FindAnyObjectByType<BasePlayerStats>();
         if (stats == null)
         {
             Debug.LogError("PlayerCombatManager requires BasePlayerStats on the same GameObject!");
