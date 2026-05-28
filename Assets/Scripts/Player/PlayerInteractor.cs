@@ -14,7 +14,6 @@ public class PlayerInteractor : MonoBehaviour
         if (playerCamera == null)
         {
             playerCamera = Camera.main;
-            Debug.Log($"[PlayerInteractor] Awake camera: {(playerCamera != null ? playerCamera.name : "<null>")}");
         }
     }
 
@@ -37,7 +36,6 @@ public class PlayerInteractor : MonoBehaviour
         if (playerCamera == null)
         {
             playerCamera = Camera.main;
-            Debug.Log($"[PlayerInteractor] Rebind camera: {(playerCamera != null ? playerCamera.name : "<null>")}");
             if (playerCamera == null)
                 return;
         }
@@ -47,17 +45,12 @@ public class PlayerInteractor : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, interactDistance, interactLayer))
         {
-            Debug.Log($"[PlayerInteractor] Ray hit '{hit.collider.name}' (layer {hit.collider.gameObject.layer}).");
             IInteractable interactable = hit.collider.GetComponent<IInteractable>();
 
             if (interactable != null)
             {
                 SetCurrentInteractable(interactable);
                 return;
-            }
-            else
-            {
-                Debug.Log($"[PlayerInteractor] Hit has no IInteractable. Root: '{hit.collider.transform.root.name}'.");
             }
         }
 
@@ -79,7 +72,6 @@ public class PlayerInteractor : MonoBehaviour
         if (outline != null)
             outline.enabled = true;
 
-        Debug.Log($"[PlayerInteractor] Set interactable: '{currentInteractable.GetTransform().name}'.");
     }
 
     void ClearInteractable()
@@ -96,7 +88,6 @@ public class PlayerInteractor : MonoBehaviour
                 outline.enabled = false;
         }
 
-        Debug.Log($"[PlayerInteractor] Cleared interactable: '{currentInteractable.GetTransform().name}'.");
         currentInteractable = null;
         currentInteractableBehaviour = null;
     }
