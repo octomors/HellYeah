@@ -24,7 +24,7 @@ public class RunManager : MonoBehaviour
     public void StartRun()
     {
         IsRunActive = true;
-        CurrentFloor = 1;
+        CurrentFloor = 0;
         Seed = Random.Range(int.MinValue, int.MaxValue);
         Debug.Log($"Run started. Seed={Seed}, Floor={CurrentFloor}");
     }

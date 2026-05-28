@@ -25,13 +25,13 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadCamp()
     {
-        Debug.Log($"Loading camp scene '{campSceneName}'");
+        Debug.Log($"Loading camp scene");
         SceneManager.LoadScene(campSceneName);
     }
 
     public void LoadDungeon()
     {
-        Debug.Log($"Loading dungeon scene '{dungeonSceneName}'");
+        Debug.Log($"Loading dungeon scene");
         SceneManager.LoadScene(dungeonSceneName);
     }
 }
