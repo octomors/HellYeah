@@ -41,6 +41,23 @@ public class RecipeBook : MonoBehaviour
         return knownRecipes.Remove(recipe);
     }
 
+    public void ClearKnownRecipes()
+    {
+        knownRecipes.Clear();
+    }
+
+    public void ReplaceKnownRecipes(IEnumerable<Recipe> recipes)
+    {
+        knownRecipes.Clear();
+        if (recipes == null) return;
+
+        foreach (Recipe recipe in recipes)
+        {
+            if (recipe == null) continue;
+            knownRecipes.Add(recipe);
+        }
+    }
+
     [Serializable]
     private class RecipeBookData
     {
