@@ -17,6 +17,9 @@ public class FloorConfig : ScriptableObject
     public int MinRoomCount;
     public int MaxRoomCount;
     public List<RoomPrefabGroup> RoomPrefabGroups;
+    public List<GameObject> EnemyPrefabs;
+    public int MinEnemiesPerRoom;
+    public int MaxEnemiesPerRoom;
 
     public float CorridorLength;
     public float DoorsToRoomOriginLength;
