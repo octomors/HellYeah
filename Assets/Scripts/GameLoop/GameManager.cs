@@ -37,13 +37,12 @@ public class GameManager : MonoBehaviour, IDoorHandler
     {
         runManager.StartRun();
         sceneLoader.LoadDungeon();
-        Debug.Log(runManager.CurrentFloor);
     }
 
     public void CompleteFloor()
     {
         int nextFloor = runManager.NextFloor();
-        if (nextFloor <= 3)
+        if (nextFloor < 3)
         {
             sceneLoader.LoadDungeon();
         }
@@ -51,7 +50,7 @@ public class GameManager : MonoBehaviour, IDoorHandler
         {
             EndRun();
         }
-        Debug.Log(runManager.CurrentFloor);
+        Debug.Log($"Current floor: {runManager.CurrentFloor}");
     }
 
     public void EndRun()
