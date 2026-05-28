@@ -52,6 +52,7 @@ public class DungeonManager : MonoBehaviour
         }
         Map map = dungeonGenerator.Generate(config);
         RoomSpawner.SpawnRooms(config, map);
+        EnemySpawner.SpawnEnemies(config);
     }
 
     [ContextMenu("Generate Floor (config 0)")]
@@ -135,6 +136,7 @@ public class DungeonManager : MonoBehaviour
         }
         Map map = dungeonGenerator.Generate(config);
         RoomSpawner.SpawnRooms(config, map);
+        EnemySpawner.SpawnEnemies(config);
 
         LODGroup[] lodGroups = FindObjectsByType<LODGroup>(FindObjectsInactive.Include, FindObjectsSortMode.None);
         foreach (LODGroup lodGroup in lodGroups)
