@@ -38,6 +38,22 @@ public class BossController : MonoBehaviour
     [SerializeField] private float clawDamage = 20f;
     private float attackTimer;
 
+    [Header("Taunting")]
+    [SerializeField] private float tauntDuration = 3f;          // How long the taunt lasts
+    [SerializeField] [Range(0f, 1f)] private float sitChance = 0.4f; // Chance to sit (idle02) vs circle-walk
+    [SerializeField] private float circleDistance = 4f;         // How far from player to circle
+    [SerializeField] private float circleSpeed = 1.5f;          // Walking speed while circling
+    private float tauntTimer;
+    private bool isSittingTaunt; // True = sitting (idle02), false = circling
+
+    [Header("Taking damage")]
+    [SerializeField] public float maxHealth = 400f;
+    [SerializeField] [Range(0f, 1f)] private float hitReactChance = 0.5f;   // Chance to flinch when hit
+    [SerializeField] [Range(0f, 1f)] private float blockChance = 0.3f;      // Chance to block when hit
+    [SerializeField] [Range(0f, 1f)] private float blockDamageReduction = 0.5f; // How much damage block prevents
+    [HideInInspector] public float currentHealth;
+    private bool isDead;
+
 
     // Components
     private NavMeshAgent agent;
@@ -66,8 +82,8 @@ public class BossController : MonoBehaviour
 
     private void Start()
     {
-        // Begin in sleeping state
-        TransitionToState(BossState.Sleeping);
+        TransitionToState(BossState.Sleeping); // Begin in sleeping state
+        currentHealth = maxHealth;
     }
 
     private void Update()
@@ -156,7 +172,22 @@ public class BossController : MonoBehaviour
                 break;
 
             case BossState.Taunting:
+                tauntTimer = tauntDuration;
                 agent.enabled = true;
+                 
+                isSittingTaunt = Random.value <= sitChance; // Randomly sit or circle
+
+                if (isSittingTaunt)
+                {
+                    agent.enabled = false; // Don't move while sitting
+                    animator.SetBool(IsTauntingParam, true);
+                }
+                else
+                {
+                    animator.SetBool(IsWalkingParam, true);
+                    agent.speed = circleSpeed;
+                    SetCircleDestination();
+                }
                 break;
 
             case BossState.HitReact:
@@ -193,14 +224,6 @@ public class BossController : MonoBehaviour
                 // Hitbox gets disabled elsewhere, but safety:
                 if (damageHitbox != null)
                     damageHitbox.enabled = false;
-                break;
-
-            case BossState.Blocking:
-                // End damage reduction handled in UpdateBlocking
-                break;
-
-            case BossState.Idle:
-                // Currently nothing
                 break;
         }
     }
@@ -371,22 +394,84 @@ public class BossController : MonoBehaviour
 
     private void UpdateTaunting()
     {
-        // TODO: Circle player or sit (idle02) for duration → TransitionToState(BossState.Idle)
+        tauntTimer -= Time.deltaTime;
+
+        if (isSittingTaunt)
+        {
+            // Sitting: just wait for timer
+            if (tauntTimer <= 0f)
+            {
+                TransitionToState(BossState.Idle);
+            }
+        }
+        else
+        {
+            // Circling: update destination when close to current one
+            if (tauntTimer <= 0f)
+            {
+                TransitionToState(BossState.Idle);
+                return;
+            }
+
+            if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance + 0.3f)
+            {
+                SetCircleDestination();
+            }
+        }
+    }
+
+    // Sets the NavMeshAgent's destination to a random point on a circle around the player.
+    private void SetCircleDestination()
+    {
+        if (player == null) return;
+
+        // Pick a random angle around the player
+        float randomAngle = Random.Range(0f, 360f);
+        Vector3 offset = new Vector3(
+            Mathf.Sin(randomAngle * Mathf.Deg2Rad),
+            0f,
+            Mathf.Cos(randomAngle * Mathf.Deg2Rad)
+        ) * circleDistance;
+
+        Vector3 targetPosition = player.position + offset;
+
+        if (NavMesh.SamplePosition(targetPosition, out NavMeshHit hit, circleDistance * 1.5f, NavMesh.AllAreas))
+        {
+            agent.SetDestination(hit.position);
+        }
     }
 
     private void UpdateHitReact()
     {
-        // TODO: Wait for getHit animation to finish → TransitionToState(BossState.Idle)
+        // Wait for getHit animation to finish, then return to Idle
+        if (IsAnimationFinished())
+        {
+            TransitionToState(BossState.Idle);
+        }
     }
 
     private void UpdateBlocking()
     {
-        // TODO: Wait for Defend animation to finish → TransitionToState(BossState.Idle)
+        // Wait for Defend animation to finish, then return to Idle
+        if (IsAnimationFinished())
+        {
+            TransitionToState(BossState.Idle);
+        }
+    }
+
+    // Checks if the currently playing animation is close to finishing.
+    private bool IsAnimationFinished()
+    {
+        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+        return stateInfo.normalizedTime >= 0.95f && !animator.IsInTransition(0);
     }
 
     private void UpdateDying()
     {
-        // Nothing — boss is dead, fight ends
+        if (IsAnimationFinished())
+        {
+            enabled = false; // Stops Update from running
+        }
     }
 
     // ---------- Public Methods (for Player/Damage system to call) ----------
@@ -396,7 +481,50 @@ public class BossController : MonoBehaviour
     /// </summary>
     public void TakeDamage(float damage)
     {
-        // TODO: Reduce health, check for death, trigger hit react or block
+        if (isDead) return;
+
+        // Check if the boss can react (only in these states)
+        bool canReact = currentState == BossState.Idle ||
+                        currentState == BossState.Repositioning ||
+                        currentState == BossState.Taunting;
+
+        if (!canReact)
+        {
+            // Boss is attacking or already reacting — still take damage but no animation
+            ApplyDamage(damage);
+            return;
+        }
+
+        // Decide reaction: block first, then hit react, else just take it
+        if (Random.value <= blockChance)
+        {
+            TransitionToState(BossState.Blocking);
+            ApplyDamage(damage * (1f - blockDamageReduction));
+        }
+        else if (Random.value <= hitReactChance)
+        {
+            TransitionToState(BossState.HitReact);
+            ApplyDamage(damage);
+        }
+        else
+        {
+            // No reaction animation, just take the hit
+            ApplyDamage(damage);
+        }
+    }
+
+    /// <summary>
+    /// Reduces health and checks for death.
+    /// </summary>
+    private void ApplyDamage(float damage)
+    {
+        currentHealth -= damage;
+
+        if (currentHealth <= 0f && !isDead)
+        {
+            isDead = true;
+            TransitionToState(BossState.Dying);
+        }
     }
 
 }
