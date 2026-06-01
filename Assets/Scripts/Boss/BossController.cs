@@ -39,12 +39,14 @@ public class BossController : MonoBehaviour
     private float attackTimer;
 
     [Header("Taunting")]
-    [SerializeField] private float tauntDuration = 3f;          // How long the taunt lasts
+    [SerializeField] private float tauntDuration = 3f; // How long the taunt lasts
     [SerializeField] [Range(0f, 1f)] private float sitChance = 0.4f; // Chance to sit (idle02) vs circle-walk
-    [SerializeField] private float circleDistance = 4f;         // How far from player to circle
-    [SerializeField] private float circleSpeed = 1.5f;          // Walking speed while circling
+    [SerializeField] private float circleDistance = 4f; // How far from player to circle
+    [SerializeField] private float circleSpeed = 1.5f; // Walking speed while circling
+    [SerializeField] private Transform roomCenter; // Empty GameObject at the center of the room
     private float tauntTimer;
     private bool isSittingTaunt; // True = sitting (idle02), false = circling
+    private float currentCircleAngle;
 
     [Header("Taking damage")]
     [SerializeField] public float maxHealth = 400f;
@@ -186,6 +188,9 @@ public class BossController : MonoBehaviour
                 {
                     animator.SetBool(IsWalkingParam, true);
                     agent.speed = circleSpeed;
+
+                    Vector3 toBoss = transform.position - roomCenter.position;
+                    currentCircleAngle = Mathf.Atan2(toBoss.x, toBoss.z) * Mathf.Rad2Deg;
                     SetCircleDestination();
                 }
                 break;
@@ -423,19 +428,36 @@ public class BossController : MonoBehaviour
     // Sets the NavMeshAgent's destination to a random point on a circle around the player.
     private void SetCircleDestination()
     {
-        if (player == null) return;
+        // if (player == null) return;
 
-        // Pick a random angle around the player
-        float randomAngle = Random.Range(0f, 360f);
+        // // Pick a random angle around the player
+        // float randomAngle = Random.Range(0f, 360f);
+        // Vector3 offset = new Vector3(
+        //     Mathf.Sin(randomAngle * Mathf.Deg2Rad),
+        //     0f,
+        //     Mathf.Cos(randomAngle * Mathf.Deg2Rad)
+        // ) * circleDistance;
+
+        // Vector3 targetPosition = roomCenter.position + offset;
+
+        // if (NavMesh.SamplePosition(targetPosition, out NavMeshHit hit, circleDistance * 1.5f, NavMesh.AllAreas))
+        // {
+        //     agent.SetDestination(hit.position);
+        // }
+        if (roomCenter == null) return;
+
+        // Increment angle to walk clockwise around the circle
+        currentCircleAngle += 60f; // 60 degrees per waypoint (6 points around the circle)
+
         Vector3 offset = new Vector3(
-            Mathf.Sin(randomAngle * Mathf.Deg2Rad),
+            Mathf.Sin(currentCircleAngle * Mathf.Deg2Rad),
             0f,
-            Mathf.Cos(randomAngle * Mathf.Deg2Rad)
+            Mathf.Cos(currentCircleAngle * Mathf.Deg2Rad)
         ) * circleDistance;
 
-        Vector3 targetPosition = player.position + offset;
+        Vector3 targetPosition = roomCenter.position + offset;
 
-        if (NavMesh.SamplePosition(targetPosition, out NavMeshHit hit, circleDistance * 1.5f, NavMesh.AllAreas))
+        if (NavMesh.SamplePosition(targetPosition, out NavMeshHit hit, circleDistance * 2f, NavMesh.AllAreas))
         {
             agent.SetDestination(hit.position);
         }
