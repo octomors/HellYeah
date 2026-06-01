@@ -11,7 +11,8 @@ public class PlayerCombatManager : MonoBehaviour
     public float attackRadius = 0.6f;
     
     [Header("Health")]
-    [SerializeField] private float currentHealth;
+    private static float currentHealth;
+    private static bool hasHealthInitialized;
     private float _lastMaxHealth; // для отслеживания изменений maxHealth
     
     // EVENTS
@@ -25,15 +26,22 @@ public class PlayerCombatManager : MonoBehaviour
     
     void Start()
     {
+        OnPlayerDeath += () => GameManager.Instance.EndRun();
         stats = FindAnyObjectByType<BasePlayerStats>();
         if (stats == null)
         {
             Debug.LogError("PlayerCombatManager requires BasePlayerStats on the same GameObject!");
         }
         else{
-            RestoreHealth();
             attackDamage = stats.AttackDamage;
+            if (!hasHealthInitialized)
+            {
+                currentHealth = stats.Health;
+                hasHealthInitialized = true;
+            }
             _lastMaxHealth = stats.Health;
+            isDead = currentHealth <= 0;
+            OnPlayerHealed?.Invoke(currentHealth, stats.Health);
         }
     }
     

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public static class SaveService
 {
-    public static void Load(BasePlayerStats playerStats, RecipeBook recipeBook)
+    public static void Load(BasePlayerStats playerStats, RecipeBook recipeBook, InventoryManager inventoryManager)
     {
         SavePaths.EnsureSaveDirectory();
 
@@ -28,9 +28,21 @@ public static class SaveService
                 SaveRecipeBookData(BuildRecipeBookData(recipeBook));
             }
         }
+
+        if (inventoryManager != null)
+        {
+            if (TryLoadInventory(out InventoryData inventoryData))
+            {
+                ApplyInventoryData(inventoryManager, inventoryData);
+            }
+            else
+            {
+                SaveInventoryData(BuildInventoryData(inventoryManager));
+            }
+        }
     }
 
-    public static void Save(BasePlayerStats playerStats, RecipeBook recipeBook)
+    public static void Save(BasePlayerStats playerStats, RecipeBook recipeBook, InventoryManager inventoryManager)
     {
         SavePaths.EnsureSaveDirectory();
 
@@ -42,6 +54,11 @@ public static class SaveService
         if (recipeBook != null)
         {
             SaveRecipeBookData(BuildRecipeBookData(recipeBook));
+        }
+
+        if (inventoryManager != null)
+        {
+            SaveInventoryData(BuildInventoryData(inventoryManager));
         }
     }
 
@@ -57,6 +74,11 @@ public static class SaveService
         if (File.Exists(SavePaths.RecipeBookFilePath))
         {
             File.Delete(SavePaths.RecipeBookFilePath);
+        }
+
+        if (File.Exists(SavePaths.InventoryFilePath))
+        {
+            File.Delete(SavePaths.InventoryFilePath);
         }
     }
 
@@ -125,6 +147,78 @@ public static class SaveService
         return lookup;
     }
 
+    private static InventoryData BuildInventoryData(InventoryManager inventoryManager)
+    {
+        InventoryData data = new InventoryData();
+        foreach (KeyValuePair<Ingredient, int> entry in inventoryManager.Ingredients)
+        {
+            Ingredient ingredient = entry.Key;
+            int amount = entry.Value;
+            if (ingredient == null || amount <= 0) continue;
+
+            string ingredientId = string.IsNullOrWhiteSpace(ingredient.ingredientName)
+                ? ingredient.name
+                : ingredient.ingredientName;
+
+            if (!string.IsNullOrWhiteSpace(ingredientId))
+            {
+                data.items.Add(new InventoryItemData { ingredientId = ingredientId, amount = amount });
+            }
+        }
+
+        return data;
+    }
+
+    private static void ApplyInventoryData(InventoryManager inventoryManager, InventoryData data)
+    {
+        Dictionary<string, Ingredient> lookup = BuildIngredientLookup();
+        Dictionary<Ingredient, int> resolved = new Dictionary<Ingredient, int>();
+
+        if (data != null && data.items != null)
+        {
+            foreach (InventoryItemData item in data.items)
+            {
+                if (item == null || string.IsNullOrWhiteSpace(item.ingredientId) || item.amount <= 0) continue;
+                if (lookup.TryGetValue(item.ingredientId, out Ingredient ingredient))
+                {
+                    if (resolved.ContainsKey(ingredient))
+                    {
+                        resolved[ingredient] += item.amount;
+                    }
+                    else
+                    {
+                        resolved.Add(ingredient, item.amount);
+                    }
+                }
+            }
+        }
+
+        inventoryManager.ReplaceInventory(resolved);
+    }
+
+    private static Dictionary<string, Ingredient> BuildIngredientLookup()
+    {
+        Dictionary<string, Ingredient> lookup = new Dictionary<string, Ingredient>(StringComparer.Ordinal);
+        Ingredient[] ingredients = Resources.LoadAll<Ingredient>(string.Empty);
+
+        foreach (Ingredient ingredient in ingredients)
+        {
+            if (ingredient == null) continue;
+
+            if (!string.IsNullOrWhiteSpace(ingredient.ingredientName))
+            {
+                lookup[ingredient.ingredientName] = ingredient;
+            }
+
+            if (!string.IsNullOrWhiteSpace(ingredient.name))
+            {
+                lookup[ingredient.name] = ingredient;
+            }
+        }
+
+        return lookup;
+    }
+
     private static bool TryLoadStats(BasePlayerStats playerStats)
     {
         if (!File.Exists(SavePaths.StatsFilePath)) return false;
@@ -164,6 +258,26 @@ public static class SaveService
         }
     }
 
+    private static bool TryLoadInventory(out InventoryData data)
+    {
+        data = null;
+        if (!File.Exists(SavePaths.InventoryFilePath)) return false;
+
+        try
+        {
+            string json = File.ReadAllText(SavePaths.InventoryFilePath);
+            if (string.IsNullOrWhiteSpace(json)) return false;
+
+            data = JsonUtility.FromJson<InventoryData>(json);
+            return data != null;
+        }
+        catch (Exception ex)
+        {
+            Debug.LogWarning($"Failed to read save file {SavePaths.InventoryFilePath}: {ex.Message}");
+            return false;
+        }
+    }
+    
     private static void SaveStatsData(BasePlayerStats playerStats)
     {
         SaveJson(SavePaths.StatsFilePath, playerStats);
@@ -172,6 +286,11 @@ public static class SaveService
     private static void SaveRecipeBookData(RecipeBookData data)
     {
         SaveJson(SavePaths.RecipeBookFilePath, data);
+    }
+
+    private static void SaveInventoryData(InventoryData data)
+    {
+        SaveJson(SavePaths.InventoryFilePath, data);
     }
 
     private static void SaveJson<T>(string filePath, T data)
