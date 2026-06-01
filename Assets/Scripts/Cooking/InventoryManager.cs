@@ -7,10 +7,7 @@ public class InventoryManager : MonoBehaviour
     public static InventoryManager Instance; // Синглтон для доступа из любого места
     public Dictionary<Ingredient, int> ingredients = new Dictionary<Ingredient, int>();
     public event Action OnInventoryChanged; // Событие для обновления UI
-
-    [Header("Test Settings")]
-    [SerializeField] private bool addTestIngredients = true;
-    [SerializeField] private int testAmount = 10;
+    public IReadOnlyDictionary<Ingredient, int> Ingredients => ingredients;
 
     private void Awake()
     {
@@ -18,30 +15,13 @@ public class InventoryManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            SaveService.Load(null, null, this);
         }
         else 
         {
             Destroy(gameObject);
             return;
         }
-        
-        if (addTestIngredients)
-        {
-            AddTestIngredients();
-        }
-    }
-    
-    private void AddTestIngredients()
-    {
-        // Загружаем все ингредиенты из папки Resources
-        Ingredient[] allIngredients = Resources.LoadAll<Ingredient>("Ingredients");
-        
-        foreach (Ingredient ing in allIngredients)
-        {
-            ingredients[ing] = testAmount;
-        }
-        
-        OnInventoryChanged?.Invoke();
     }
 
     public void AddIngredient(Ingredient ingredient, int amount)
@@ -72,5 +52,26 @@ public class InventoryManager : MonoBehaviour
             return ingredients[ingredient] >= amount;
         }
         return false;
+    }
+
+    public void ClearInventory()
+    {
+        ingredients.Clear();
+        OnInventoryChanged?.Invoke();
+    }
+
+    public void ReplaceInventory(Dictionary<Ingredient, int> newInventory)
+    {
+        ingredients.Clear();
+        if (newInventory != null)
+        {
+            foreach (KeyValuePair<Ingredient, int> entry in newInventory)
+            {
+                if (entry.Key == null || entry.Value <= 0) continue;
+                ingredients[entry.Key] = entry.Value;
+            }
+        }
+
+        OnInventoryChanged?.Invoke();
     }
 }

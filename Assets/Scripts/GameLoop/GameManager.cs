@@ -69,15 +69,17 @@ public class GameManager : MonoBehaviour, IDoorHandler
     {
         BasePlayerStats playerStats = FindAnyObjectByType<BasePlayerStats>();
         RecipeBook recipeBook = FindAnyObjectByType<RecipeBook>();
+        InventoryManager inventoryManager = FindAnyObjectByType<InventoryManager>();
 
-        SaveService.Load(playerStats, recipeBook);
+        SaveService.Load(playerStats, recipeBook, inventoryManager);
     }
 
     private void SaveToDisk()
     {
         BasePlayerStats playerStats = FindAnyObjectByType<BasePlayerStats>();
         RecipeBook recipeBook = FindAnyObjectByType<RecipeBook>();
-        SaveService.Save(playerStats, recipeBook);
+        InventoryManager inventoryManager = FindAnyObjectByType<InventoryManager>();
+        SaveService.Save(playerStats, recipeBook, inventoryManager);
     }
 
     public void HandleDoor(DoorType type)
