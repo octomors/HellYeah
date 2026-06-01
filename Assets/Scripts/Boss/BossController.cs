@@ -12,13 +12,11 @@ public class BossController : MonoBehaviour
     [Header("References")]
     [SerializeField] private Transform player;
     [SerializeField] private Collider damageHitbox; // The boss's attack hitbox (enabled during active frames)
-
-    [Header("Sleeping")]
-    [SerializeField] private float wakeUpDistance = 13f; // How close the player must be to wake the boss
     
     [Header("WakingUp")]
-    [SerializeField] private float screamDuration = 3.33f; // How long the Scream animation lasts
+    private float screamDuration = 3.33f; // How long the Scream animation lasts
     private float wakeUpTimer;
+    private bool playerInRoom;
 
     [Header("Idle / Decision")]
     [SerializeField] private float idlePauseDuration = 0.8f;  // How long the boss pauses before choosing next action
@@ -98,9 +96,6 @@ public class BossController : MonoBehaviour
         // Route to the logic for the current state
         switch (currentState)
         {
-            case BossState.Sleeping:
-                UpdateSleeping();
-                break;
             case BossState.WakingUp:
                 UpdateWakingUp();
                 break;
@@ -238,25 +233,6 @@ public class BossController : MonoBehaviour
     }
 
     // ---------- State Update Methods ----------
-
-    private void UpdateSleeping()
-    {
-        // Only wake if player exists and is within range
-        if (player == null) return;
-
-        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-
-        if (distanceToPlayer <= wakeUpDistance)
-        {
-            TransitionToState(BossState.WakingUp);
-        }
-    }
-
-    private void EnterWakingUp()
-    {
-        // Called manually from EnterState
-        wakeUpTimer = screamDuration;
-    }
 
     private void UpdateWakingUp()
     {
@@ -432,22 +408,6 @@ public class BossController : MonoBehaviour
     // Sets the NavMeshAgent's destination to a random point on a circle around the player.
     private void SetCircleDestination()
     {
-        // if (player == null) return;
-
-        // // Pick a random angle around the player
-        // float randomAngle = Random.Range(0f, 360f);
-        // Vector3 offset = new Vector3(
-        //     Mathf.Sin(randomAngle * Mathf.Deg2Rad),
-        //     0f,
-        //     Mathf.Cos(randomAngle * Mathf.Deg2Rad)
-        // ) * circleDistance;
-
-        // Vector3 targetPosition = roomCenter.position + offset;
-
-        // if (NavMesh.SamplePosition(targetPosition, out NavMeshHit hit, circleDistance * 1.5f, NavMesh.AllAreas))
-        // {
-        //     agent.SetDestination(hit.position);
-        // }
         if (roomCenter == null) return;
 
         // Increment angle to walk clockwise around the circle
@@ -551,6 +511,60 @@ public class BossController : MonoBehaviour
             isDead = true;
             TransitionToState(BossState.Dying);
         }
+    }
+
+    /// <summary>
+    /// Called by RoomTrigger when the player enters the room.
+    /// </summary>
+    public void OnPlayerEnterRoom()
+    {
+        playerInRoom = true;
+
+        // If boss is sleeping, wake up
+        if (currentState == BossState.Sleeping)
+        {
+            TransitionToState(BossState.WakingUp);
+        }
+    }
+
+    /// <summary>
+    /// Called by RoomTrigger when the player leaves the room.
+    /// </summary>
+    public void OnPlayerExitRoom()
+    {
+        playerInRoom = false;
+
+        // If boss is awake and player left, go back to sleep
+        if (currentState != BossState.Sleeping && currentState != BossState.Dying)
+        {
+            ReturnToSleep();
+        }
+    }
+
+    /// <summary>
+    /// Puts the boss back to sleep. Interrupts whatever it's doing.
+    /// </summary>
+    private void ReturnToSleep()
+    {
+        // Stop moving
+        if (agent.enabled)
+            agent.ResetPath();
+
+        agent.enabled = false;
+
+        // Reset all animation parameters
+        animator.SetBool(IsWalkingParam, false);
+        animator.SetBool(IsTauntingParam, false);
+        animator.ResetTrigger(OnAttackParam);
+        animator.ResetTrigger(OnHitReactParam);
+        animator.ResetTrigger(OnBlockParam);
+
+        // Disable damage hitbox if active
+        if (damageHitbox != null)
+            damageHitbox.gameObject.SetActive(false);
+
+        TransitionToState(BossState.Sleeping);
+        currentHealth = maxHealth;
     }
 
 }
