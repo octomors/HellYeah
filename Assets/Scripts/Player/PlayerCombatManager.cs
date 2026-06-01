@@ -90,11 +90,19 @@ public class PlayerCombatManager : MonoBehaviour
         if (Physics.SphereCast(origin, attackRadius, transform.forward, out hit, attackRange))
         {
             Debug.Log($"Congrats, you hit something");
+
             Ai enemyAi = hit.collider.GetComponent<Ai>();
             if (enemyAi != null && enemyAi.lifeState == Ai.LIFE_STATE.IsAlive)
             {
                 enemyAi.Health -= attackDamage;
                 Debug.Log($"Player hit {hit.collider.name}! Enemy HP: {enemyAi.Health}");
+            }
+
+            BossController boss = hit.collider.GetComponentInParent<BossController>();
+            if (boss != null)
+            {
+                boss.TakeDamage(attackDamage);
+                Debug.Log($"Player hit the boss! Boss HP: {boss.CurrentHealth}");
             }
         }
     }
