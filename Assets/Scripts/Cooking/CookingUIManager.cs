@@ -256,9 +256,19 @@ public class CookingUIManager : MonoBehaviour
             Destroy(child.gameObject);
         recipeUIs.Clear();
 
+        RecipeBook recipeBook = RecipeBook.Instance;
+        if (recipeBook == null)
+        {
+            Debug.LogWarning("[CookingUI] RecipeBook not found in scene.");
+            return;
+        }
+
         Recipe[] recipes = Resources.LoadAll<Recipe>("Recipes");
         foreach (Recipe recipe in recipes)
         {
+            if (!recipeBook.IsKnown(recipe))
+                continue;
+
             GameObject obj = Instantiate(recipePrefab, recipesContent);
             RecipeUI ui = obj.GetComponent<RecipeUI>();
             ui.Setup(recipe);
@@ -428,9 +438,14 @@ public class CookingUIManager : MonoBehaviour
     // Возвращает рецепт с точно такими же ингредиентами и их количеством как в котле, если такой существует
     private Recipe CheckExactRecipe()
     {
-        Recipe[] recipes = Resources.LoadAll<Recipe>("Recipes");
+        RecipeBook recipeBook = RecipeBook.Instance;
+        if (recipeBook == null)
+        {
+            Debug.LogWarning("[CookingUI] RecipeBook not found in scene.");
+            return null;
+        }
 
-        foreach (Recipe recipe in recipes)
+        foreach (Recipe recipe in recipeBook.KnownRecipes)
         {
             if (currentPotIngredients.Count != recipe.ingredients.Count)
                 continue;
@@ -498,7 +513,7 @@ public class CookingUIManager : MonoBehaviour
         }
 
 
-        BasePlayerStats stats = FindObjectsOfType<BasePlayerStats>(true).FirstOrDefault();
+        BasePlayerStats stats = FindAnyObjectByType<BasePlayerStats>();
         if (stats == null)
         {
             Debug.LogWarning("[CookingUI] BasePlayerStats not found in scene.");

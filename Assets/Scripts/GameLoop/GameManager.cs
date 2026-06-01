@@ -33,17 +33,21 @@ public class GameManager : MonoBehaviour, IDoorHandler
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
+    private void Start()
+    {
+        LoadFromDisk();
+    }
+
     public void StartRun()
     {
         runManager.StartRun();
         sceneLoader.LoadDungeon();
-        Debug.Log(runManager.CurrentFloor);
     }
 
     public void CompleteFloor()
     {
         int nextFloor = runManager.NextFloor();
-        if (nextFloor <= 3)
+        if (nextFloor < 3)
         {
             sceneLoader.LoadDungeon();
         }
@@ -51,13 +55,31 @@ public class GameManager : MonoBehaviour, IDoorHandler
         {
             EndRun();
         }
-        Debug.Log(runManager.CurrentFloor);
+        Debug.Log($"Current floor: {runManager.CurrentFloor}");
     }
 
     public void EndRun()
     {
+        SaveToDisk();
         sceneLoader.LoadCamp();
         runManager.Reset();
+    }
+
+    public void LoadFromDisk()
+    {
+        BasePlayerStats playerStats = FindAnyObjectByType<BasePlayerStats>();
+        RecipeBook recipeBook = FindAnyObjectByType<RecipeBook>();
+        InventoryManager inventoryManager = FindAnyObjectByType<InventoryManager>();
+
+        SaveService.Load(playerStats, recipeBook, inventoryManager);
+    }
+
+    private void SaveToDisk()
+    {
+        BasePlayerStats playerStats = FindAnyObjectByType<BasePlayerStats>();
+        RecipeBook recipeBook = FindAnyObjectByType<RecipeBook>();
+        InventoryManager inventoryManager = FindAnyObjectByType<InventoryManager>();
+        SaveService.Save(playerStats, recipeBook, inventoryManager);
     }
 
     public void HandleDoor(DoorType type)

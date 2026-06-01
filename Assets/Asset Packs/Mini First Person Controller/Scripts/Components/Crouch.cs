@@ -28,7 +28,7 @@ public class Crouch : MonoBehaviour
 
     void Awake()
     {
-        basePlayerStats = GetComponent<BasePlayerStats>();
+        basePlayerStats = FindAnyObjectByType<BasePlayerStats>();
     }
     void Reset()
     {

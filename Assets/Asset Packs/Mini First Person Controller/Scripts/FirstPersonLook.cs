@@ -21,6 +21,7 @@ public class FirstPersonLook : MonoBehaviour
     {
         // Lock the mouse cursor to the game screen.
         Cursor.lockState = CursorLockMode.Locked;
+        InitializeLookFromTransforms();
     }
 
     void Update()
@@ -36,5 +37,31 @@ public class FirstPersonLook : MonoBehaviour
         // Rotate camera up-down and controller left-right from velocity.
         transform.localRotation = Quaternion.AngleAxis(-velocity.y, Vector3.right);
         character.localRotation = Quaternion.AngleAxis(velocity.x, Vector3.up);
+    }
+
+    void InitializeLookFromTransforms()
+    {
+        if (character == null)
+        {
+            var movement = GetComponentInParent<FirstPersonMovement>();
+            if (movement != null)
+            {
+                character = movement.transform;
+            }
+        }
+
+        if (character == null) return;
+
+        // Derive the internal look state from current prefab rotation.
+        float initialYaw = NormalizeAngle(character.localEulerAngles.y);
+        float initialPitch = NormalizeAngle(transform.localEulerAngles.x);
+
+        velocity = new Vector2(initialYaw, -initialPitch);
+        frameVelocity = Vector2.zero;
+    }
+
+    static float NormalizeAngle(float angle)
+    {
+        return Mathf.DeltaAngle(0f, angle);
     }
 }
