@@ -25,6 +25,7 @@ public class PlayerCombatManager : MonoBehaviour
     
     void Start()
     {
+        OnPlayerDeath += () => GameManager.Instance.EndRun();
         stats = FindAnyObjectByType<BasePlayerStats>();
         if (stats == null)
         {
