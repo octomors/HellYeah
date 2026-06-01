@@ -49,12 +49,16 @@ public class BossController : MonoBehaviour
     private float currentCircleAngle;
 
     [Header("Taking damage")]
-    [SerializeField] public float maxHealth = 400f;
+    [SerializeField] private float maxHealth = 400f;
     [SerializeField] [Range(0f, 1f)] private float hitReactChance = 0.5f;   // Chance to flinch when hit
     [SerializeField] [Range(0f, 1f)] private float blockChance = 0.3f;      // Chance to block when hit
     [SerializeField] [Range(0f, 1f)] private float blockDamageReduction = 0.5f; // How much damage block prevents
-    [HideInInspector] public float currentHealth;
+    [HideInInspector] private float currentHealth;
     private bool isDead;
+
+    public float MaxHealth => maxHealth;
+    public float CurrentHealth => currentHealth;
+    public BossState CurrentState => currentState;
 
 
     // Components

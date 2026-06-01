@@ -94,7 +94,7 @@ public class PlayerCombatManager : MonoBehaviour
             if (boss != null)
             {
                 boss.TakeDamage(attackDamage);
-                Debug.Log($"Player hit the boss! Boss HP: {boss.currentHealth}");
+                Debug.Log($"Player hit the boss! Boss HP: {boss.CurrentHealth}");
             }
         }
     }
