@@ -53,7 +53,7 @@ public class PlayerAnimationController : MonoBehaviour
     
     void HandleDeath()
     {
-        // Если будет анимация смерти — добавь сюда
+        // Если будет анимация смерти - добавить сюда
         anim.SetBool(IsWalking, false);
         anim.SetBool(IsDashing, false);
     }

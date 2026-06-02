@@ -70,7 +70,8 @@ public class PauseMenu : MonoBehaviour
     private bool IsAnyUIOpen()
     {
         if (inventoryUI != null && inventoryUI.IsOpen) return true;
-        if (cookingUIManager != null && cookingUIManager.gameObject.activeSelf) return true;
+        CookingUIManager cooking = FindObjectOfType<CookingUIManager>();
+        if (cooking != null && CookingUIManager.IsOpen) return true;
         return false;
     }
 

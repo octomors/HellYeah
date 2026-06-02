@@ -27,10 +27,12 @@ public class EnemyCombat : MonoBehaviour
     private float nextAttackTime;
     private bool deathHandled;
     private Transform player;
+    private EnemyLoot enemyLoot;
     
     void Start()
     {
         ai = GetComponent<Ai>();
+        enemyLoot = GetComponent<EnemyLoot>();
         if (ai == null)
         {
             Debug.LogError("EnemyCombat requires Ai component on the same GameObject!");
@@ -149,6 +151,12 @@ public class EnemyCombat : MonoBehaviour
         
         Rigidbody rb = GetComponent<Rigidbody>();
         if (rb != null) rb.isKinematic = true;
+
+        // Дроп лута
+        if (enemyLoot != null)
+        {
+            enemyLoot.DropLoot();
+        }
         
         Debug.Log($"{gameObject.name} died!");
         
