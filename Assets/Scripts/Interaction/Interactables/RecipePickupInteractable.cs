@@ -38,8 +38,8 @@ public class RecipePickupInteractable : MonoBehaviour, IInteractable
             }
         }
 
-        
-        chosen = possibleRecipes[Random.Range(0, possibleRecipes.Count)];
+        if (possibleRecipes != null && possibleRecipes.Count > 0)
+            chosen = possibleRecipes[Random.Range(0, possibleRecipes.Count)];
 
         if (chosen == null)
             Destroy(gameObject);
