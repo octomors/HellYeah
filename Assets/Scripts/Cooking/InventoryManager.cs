@@ -7,11 +7,7 @@ public class InventoryManager : MonoBehaviour
     public static InventoryManager Instance; // Синглтон для доступа из любого места
     public Dictionary<Ingredient, int> ingredients = new Dictionary<Ingredient, int>();
     public event Action OnInventoryChanged; // Событие для обновления UI
-
-    [Header("Test Settings")]
-    [SerializeField] private bool addTestIngredients = true;
-    [SerializeField] private List<Ingredient> testIngredients = new List<Ingredient>();
-    [SerializeField] private int testAmount = 10;
+    public IReadOnlyDictionary<Ingredient, int> Ingredients => ingredients;
 
     private void Awake()
     {
@@ -19,46 +15,13 @@ public class InventoryManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            SaveService.Load(null, null, this);
         }
         else 
         {
             Destroy(gameObject);
             return;
         }
-        
-        // Добавляем тестовые ингредиенты
-        if (addTestIngredients)
-        {
-            AddTestIngredients();
-        }
-    }
-    
-    private void AddTestIngredients()
-    {
-        // Способ 1: Загрузить ВСЕ ингредиенты из папки Resources
-        Ingredient[] allIngredients = Resources.LoadAll<Ingredient>("Ingredients");
-        
-        foreach (Ingredient ing in allIngredients)
-        {
-            ingredients[ing] = testAmount;
-            Debug.Log($"Добавлен тестовый ингредиент: {ing.ingredientName} x{testAmount}");
-        }
-        
-        /* Способ 2: Использовать список из инспектора
-        foreach (Ingredient ing in testIngredients)
-        {
-            if (ing != null)
-            {
-                ingredients[ing] = testAmount;
-                Debug.Log($"Добавлен ингредиент из списка: {ing.ingredientName} x{testAmount}");
-            }
-        }
-        */
-        
-        Debug.Log($"Всего добавлено {ingredients.Count} ингредиентов");
-        
-        // Вызываем событие обновления
-        OnInventoryChanged?.Invoke();
     }
 
     public void AddIngredient(Ingredient ingredient, int amount)
@@ -78,7 +41,6 @@ public class InventoryManager : MonoBehaviour
             
         ingredients[ingredient] -= amount;
         
-        // Вызываем событие обновления
         OnInventoryChanged?.Invoke();
         return true;
     }
@@ -90,5 +52,26 @@ public class InventoryManager : MonoBehaviour
             return ingredients[ingredient] >= amount;
         }
         return false;
+    }
+
+    public void ClearInventory()
+    {
+        ingredients.Clear();
+        OnInventoryChanged?.Invoke();
+    }
+
+    public void ReplaceInventory(Dictionary<Ingredient, int> newInventory)
+    {
+        ingredients.Clear();
+        if (newInventory != null)
+        {
+            foreach (KeyValuePair<Ingredient, int> entry in newInventory)
+            {
+                if (entry.Key == null || entry.Value <= 0) continue;
+                ingredients[entry.Key] = entry.Value;
+            }
+        }
+
+        OnInventoryChanged?.Invoke();
     }
 }

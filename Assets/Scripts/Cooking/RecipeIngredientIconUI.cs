@@ -13,21 +13,20 @@ public class RecipeIngredientIconUI : MonoBehaviour
     [Header("Colors")]
     [SerializeField] private Color availableColor = Color.white;
     [SerializeField] private Color unavailableColor = new Color(0.5f, 0.5f, 0.5f, 0.5f);
+    [SerializeField] private Color availableTextColor = Color.white;
+    [SerializeField] private Color unavailableTextColor = new Color(0.5f, 0.5f, 0.5f, 0.5f);
 
     public void Setup(Ingredient ingredient, int amount)
     {
         Ingredient = ingredient;
         RequiredAmount = amount;
-        
-        Debug.Log($"RecipeIngredientIconUI.Setup called: {ingredient.ingredientName} x{amount}");
-        
+                
         if (iconImage != null)
         {
             if (ingredient.icon != null)
             {
                 iconImage.sprite = ingredient.icon;
                 iconImage.color = availableColor;
-                Debug.Log($"Sprite set to: {ingredient.icon.name}");
             }
             else
             {
@@ -42,7 +41,6 @@ public class RecipeIngredientIconUI : MonoBehaviour
         if (amountText != null)
         {
             amountText.text = amount.ToString();
-            Debug.Log($"Amount set to: {amount}");
         }
         else
         {
@@ -59,7 +57,7 @@ public class RecipeIngredientIconUI : MonoBehaviour
         
         if (amountText != null)
         {
-            amountText.color = available ? Color.white : Color.red;
+            amountText.color = available ? availableTextColor : unavailableTextColor;
         }
     }
 }

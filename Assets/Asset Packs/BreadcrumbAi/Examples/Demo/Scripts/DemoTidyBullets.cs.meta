@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 4bf3f3fb129ea7545a69edf293c81e5d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 18364
+  packageName: Breadcrumb Ai
+  packageVersion: 1.2.2
+  assetPath: Assets/BreadcrumbAi/Examples/Demo/Scripts/DemoTidyBullets.cs
+  uploadId: 42648

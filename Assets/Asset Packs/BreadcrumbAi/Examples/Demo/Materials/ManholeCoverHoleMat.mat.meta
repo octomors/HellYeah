@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6fcd562638eb026448a2b80d483126c6
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 18364
+  packageName: Breadcrumb Ai
+  packageVersion: 1.2.2
+  assetPath: Assets/BreadcrumbAi/Examples/Demo/Materials/ManholeCoverHoleMat.mat
+  uploadId: 42648

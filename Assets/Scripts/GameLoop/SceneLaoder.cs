@@ -7,9 +7,11 @@ public class SceneLoader : MonoBehaviour
 
     [SerializeField] private string campSceneName = "Camp";
     [SerializeField] private string dungeonSceneName = "Dungeon";
+    [SerializeField] private string bossSceneName = "Boss";
 
     public string CampSceneName => campSceneName;
     public string DungeonSceneName => dungeonSceneName;
+    public string BossSceneName => bossSceneName;
 
     private void Awake()
     {
@@ -25,13 +27,19 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadCamp()
     {
-        Debug.Log($"Loading camp scene '{campSceneName}'");
+        Debug.Log($"Loading camp scene");
         SceneManager.LoadScene(campSceneName);
     }
 
     public void LoadDungeon()
     {
-        Debug.Log($"Loading dungeon scene '{dungeonSceneName}'");
+        Debug.Log($"Loading dungeon scene");
         SceneManager.LoadScene(dungeonSceneName);
+    }
+
+    public void LoadBoss()
+    {
+        Debug.Log("Loading boss scene");
+        SceneManager.LoadScene(bossSceneName);
     }
 }

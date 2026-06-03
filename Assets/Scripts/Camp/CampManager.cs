@@ -6,7 +6,12 @@ public class CampManager : MonoBehaviour
 
 	private void Start()
 	{
-		SpawnPlayerInCamp();
+		//SpawnPlayerInCamp();
+		PlayerCombatManager combatManager = FindAnyObjectByType<PlayerCombatManager>();
+		if (combatManager != null)
+		{
+			combatManager.RestoreHealth();
+		}
 	}
 	
 

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 7cbc28f6c5b798d43892fd5e55bea3e8
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 18364
+  packageName: Breadcrumb Ai
+  packageVersion: 1.2.2
+  assetPath: Assets/BreadcrumbAi/Examples/Demo/Scripts/DemoGrenadeExplode.cs
+  uploadId: 42648

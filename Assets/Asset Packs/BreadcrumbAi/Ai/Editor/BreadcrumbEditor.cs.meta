@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: d64e47f6a22523247b01f1f240fafb07
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 18364
+  packageName: Breadcrumb Ai
+  packageVersion: 1.2.2
+  assetPath: Assets/BreadcrumbAi/Ai/Editor/BreadcrumbEditor.cs
+  uploadId: 42648

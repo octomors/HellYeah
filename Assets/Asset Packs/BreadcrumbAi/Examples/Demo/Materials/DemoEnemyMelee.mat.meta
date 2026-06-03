@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f36384f79b1adae4abf76d7eb0731dbf
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 18364
+  packageName: Breadcrumb Ai
+  packageVersion: 1.2.2
+  assetPath: Assets/BreadcrumbAi/Examples/Demo/Materials/DemoEnemyMelee.mat
+  uploadId: 42648

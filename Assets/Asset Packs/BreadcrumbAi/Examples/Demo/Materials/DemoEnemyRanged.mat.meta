@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 08b764af0295b3e479bd2892f153197c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 18364
+  packageName: Breadcrumb Ai
+  packageVersion: 1.2.2
+  assetPath: Assets/BreadcrumbAi/Examples/Demo/Materials/DemoEnemyRanged.mat
+  uploadId: 42648

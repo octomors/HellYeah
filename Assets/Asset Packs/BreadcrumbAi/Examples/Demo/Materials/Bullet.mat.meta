@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5ce1edb895cc2084982877a8ef6458aa
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 18364
+  packageName: Breadcrumb Ai
+  packageVersion: 1.2.2
+  assetPath: Assets/BreadcrumbAi/Examples/Demo/Materials/Bullet.mat
+  uploadId: 42648

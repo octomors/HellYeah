@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ba70332b5f72abb489797ff81b7865c5
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 18364
+  packageName: Breadcrumb Ai
+  packageVersion: 1.2.2
+  assetPath: Assets/BreadcrumbAi/Examples/Demo/Prefabs/ParticlePrefabs/PlayerBloodPool.prefab
+  uploadId: 42648

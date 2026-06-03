@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d28a628e0e3e2c343ad72c8b6bb06677
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 112000000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 154517
+  packageName: Mesh Optimizer
+  packageVersion: 1.1
+  assetPath: Assets/Mesh Optimizer/OptimizeMesh Example/LightingData.asset
+  uploadId: 773945

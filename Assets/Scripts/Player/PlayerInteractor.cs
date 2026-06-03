@@ -7,6 +7,7 @@ public class PlayerInteractor : MonoBehaviour
     private Camera playerCamera;
 
     private IInteractable currentInteractable;
+    private MonoBehaviour currentInteractableBehaviour;
 
     void Awake()
     {
@@ -18,16 +19,27 @@ public class PlayerInteractor : MonoBehaviour
 
     void Update()
     {
+        if (currentInteractableBehaviour == null && currentInteractable != null)
+            ClearInteractable();
+
         CheckInteraction();
 
         if (currentInteractable != null && Input.GetKeyDown(KeyCode.E))
         {
             currentInteractable.Interact();
+            ClearInteractable();
         }
     }
 
     void CheckInteraction()
     {
+        if (playerCamera == null)
+        {
+            playerCamera = Camera.main;
+            if (playerCamera == null)
+                return;
+        }
+
         Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
         RaycastHit hit;
 
@@ -51,6 +63,7 @@ public class PlayerInteractor : MonoBehaviour
 
         ClearInteractable();
         currentInteractable = newInteractable;
+        currentInteractableBehaviour = newInteractable as MonoBehaviour;
 
         if (UIManager.Instance != null)
             UIManager.Instance.ShowTextHint(currentInteractable.GetInteractText());
@@ -58,6 +71,7 @@ public class PlayerInteractor : MonoBehaviour
         Outline outline = currentInteractable.GetOutline();
         if (outline != null)
             outline.enabled = true;
+
     }
 
     void ClearInteractable()
@@ -67,10 +81,14 @@ public class PlayerInteractor : MonoBehaviour
         if (UIManager.Instance != null)
             UIManager.Instance.HideTextHint();
 
-        Outline outline = currentInteractable.GetOutline();
-        if (outline != null)
-            outline.enabled = false;
+        if (currentInteractableBehaviour != null)
+        {
+            Outline outline = currentInteractable.GetOutline();
+            if (outline != null)
+                outline.enabled = false;
+        }
 
         currentInteractable = null;
+        currentInteractableBehaviour = null;
     }
 }

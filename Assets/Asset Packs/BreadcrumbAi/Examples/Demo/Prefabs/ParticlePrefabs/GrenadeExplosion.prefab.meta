@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4e49b88402a9fc645a04451ea8cd767e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 18364
+  packageName: Breadcrumb Ai
+  packageVersion: 1.2.2
+  assetPath: Assets/BreadcrumbAi/Examples/Demo/Prefabs/ParticlePrefabs/GrenadeExplosion.prefab
+  uploadId: 42648

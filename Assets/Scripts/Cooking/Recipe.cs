@@ -8,10 +8,18 @@ public class Recipe : ScriptableObject
     public Sprite recipeIcon;
     [TextArea(3, 5)]
     public string description;
-    public List<IngredientRequirement> ingredients; // Список ингредиентов
+    public List<IngredientRequirement> ingredients;
     [TextArea(2, 4)]
-    public string buffDescription; // Описание баффа
-    public CookingResult cookingResult; // Ссылка на результат приготовления
+    public string buffDescription;
+    public List<Buff> buffs = new List<Buff>();
+    public CookingResult cookingResult;
+}
+
+[System.Serializable]
+public class Buff
+{
+    public string statName;
+    public float amount;
 }
 
 [System.Serializable]

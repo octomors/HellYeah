@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c51c8f20a701fbf4cbf0df328fec4893
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 18364
+  packageName: Breadcrumb Ai
+  packageVersion: 1.2.2
+  assetPath: Assets/BreadcrumbAi/Examples/Demo/Animators/DemoPlayerBottomAnimator.controller
+  uploadId: 42648
