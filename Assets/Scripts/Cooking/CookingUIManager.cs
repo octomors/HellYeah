@@ -77,13 +77,24 @@ public class CookingUIManager : MonoBehaviour
     private bool _fireEverLit = false;
     private bool _initialized = false; //защита от повторной инициализации
     private bool _isDetailScreenOpen = false;
+    public static bool IsOpen { get; private set; }
+    
+    private void OnEnable()
+    {
+        IsOpen = true;
+    }
+
+    private void OnDisable()
+    {
+        IsOpen = false;
+    }
 
     private void Start()
     {
         Initialize();
     }
 
-    // Инициализация — вызывается один раз
+    // Инициализация - вызывается один раз
     private void Initialize()
     {
         if (_initialized) return;
@@ -145,7 +156,7 @@ public class CookingUIManager : MonoBehaviour
 
             if (ui == null)
             {
-                Debug.LogError($"[CookingUI] Prefab '{ingredientPrefab.name}' не содержит компонент IngredientUI! Проверь префаб.");
+                Debug.LogError($"[CookingUI] Префаб '{ingredientPrefab.name}' не содержит компонент IngredientUI!");
                 continue;
             }
 
@@ -725,6 +736,8 @@ public class CookingUIManager : MonoBehaviour
         gameObject.SetActive(true);
 
         HUDController.Instance?.Hide();
+
+        if (UIManager.Instance != null) UIManager.Instance.HideTextHint();
 
         if (cookingScreenCanvasGroup != null)
             cookingScreenCanvasGroup.alpha = 1f;

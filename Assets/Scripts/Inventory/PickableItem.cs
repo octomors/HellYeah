@@ -24,10 +24,37 @@ public class PickableItem : MonoBehaviour, IInteractable
     [SerializeField] private Outline _outline;
 
     private Vector3 _startPos;
+    private SpriteRenderer _spriteRenderer; //ссылка на компонент отображения картинки
 
     private void Start()
     {
         _startPos = transform.position;
+
+        // Автоматически ищем SpriteRenderer в дочерних объектах
+        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+
+        // Если нашли и ингредиент назначен, подставляем иконку
+        if (_spriteRenderer != null && ingredient != null)
+        {
+            _spriteRenderer.sprite = ingredient.icon; //берем иконку из ScriptableObject
+
+            // Сбрасываем масштаб в дефолтный 1,1,1 для точного расчета
+            _spriteRenderer.transform.localScale = Vector3.one;
+
+            // Желаемый размер иконки в игровом мире (например, 0.3 юнита в ширину/высоту)
+            float targetSize = 0.3f; 
+
+            // Получаем текущие физические размеры спрайта в мире
+            float spriteWidth = _spriteRenderer.bounds.size.x;
+            float spriteHeight = _spriteRenderer.bounds.size.y;
+
+            // Высчитываем коэффициент масштабирования, чтобы сохранить пропорции
+            float maxDimension = Mathf.Max(spriteWidth, spriteHeight);
+            float scaleFactor = targetSize / maxDimension;
+
+            // Применяем одинаковый масштаб по X и Y, чтобы картинку не перекосило
+            _spriteRenderer.transform.localScale = new Vector3(scaleFactor, scaleFactor, 1f);
+        }
     }
 
     private void Update()
