@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour, IDoorHandler
         }
         else
         {
-            EndRun();
+            sceneLoader.LoadBoss();
         }
         Debug.Log($"Current floor: {runManager.CurrentFloor}");
     }

@@ -7,6 +7,7 @@ public class RecipeBook : MonoBehaviour
     public static RecipeBook Instance { get; private set; }
 
     private readonly HashSet<Recipe> knownRecipes = new HashSet<Recipe>();
+    [SerializeField] private List<Recipe> startingRecipes = new List<Recipe>();
 
     public IReadOnlyCollection<Recipe> KnownRecipes => knownRecipes;
 
@@ -21,6 +22,18 @@ public class RecipeBook : MonoBehaviour
         Instance = this;
 
         DontDestroyOnLoad(gameObject);
+    }
+
+    private void Start()
+    {
+        if (startingRecipes == null || startingRecipes.Count == 0)
+            return;
+
+        foreach (Recipe recipe in startingRecipes)
+        {
+            if (recipe == null || IsKnown(recipe)) continue;
+            knownRecipes.Add(recipe);
+        }
     }
 
     public bool IsKnown(Recipe recipe)
