@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -51,6 +52,8 @@ public class BossController : MonoBehaviour
     [SerializeField] [Range(0f, 1f)] private float hitReactChance = 0.5f;   // Chance to flinch when hit
     [SerializeField] [Range(0f, 1f)] private float blockChance = 0.3f;      // Chance to block when hit
     [SerializeField] [Range(0f, 1f)] private float blockDamageReduction = 0.5f; // How much damage block prevents
+    [SerializeField] private float onDeathDelaySeconds = 0.064f;
+    [SerializeField] private GameObject exitGameObject;
     [HideInInspector] private float currentHealth;
     private bool isDead;
 
@@ -207,6 +210,7 @@ public class BossController : MonoBehaviour
             case BossState.Dying:
                 agent.enabled = false;
                 animator.SetTrigger(OnDieParam);
+                StartCoroutine(InvokeOnDeathAfterDelay());
                 break;
         }
     }
@@ -457,7 +461,20 @@ public class BossController : MonoBehaviour
         if (IsAnimationFinished())
         {
             enabled = false; // Stops Update from running
+            
         }
+    }
+
+    private IEnumerator InvokeOnDeathAfterDelay()
+    {
+        yield return new WaitForSeconds(onDeathDelaySeconds);
+        OnDeath();
+    }
+
+    private void OnDeath()
+    {
+        if (exitGameObject != null)
+            exitGameObject.SetActive(true);
     }
 
     // ---------- Public Methods (for Player/Damage system to call) ----------
