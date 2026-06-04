@@ -12,7 +12,6 @@ public class PlayerCombatManager : MonoBehaviour
     
     [Header("Health")]
     private static float currentHealth;
-    private static bool hasHealthInitialized;
     private float _lastMaxHealth; // для отслеживания изменений maxHealth
     
     // EVENTS
@@ -26,32 +25,46 @@ public class PlayerCombatManager : MonoBehaviour
     
     void Start()
     {
+        OnPlayerDeath = null;
         OnPlayerDeath += () => GameManager.Instance.EndRun();
         stats = FindAnyObjectByType<BasePlayerStats>();
         if (stats == null)
         {
             Debug.LogError("PlayerCombatManager requires BasePlayerStats on the same GameObject!");
+            return;
         }
-        else{
-            attackDamage = stats.AttackDamage;
-            if (!hasHealthInitialized)
-            {
-                currentHealth = stats.Health;
-                hasHealthInitialized = true;
-            }
-            _lastMaxHealth = stats.Health;
-            isDead = currentHealth <= 0;
+        attackDamage = stats.AttackDamage;
+        if (currentHealth <= 0)
+        {
+            currentHealth = stats.Health;
+            isDead = false;
+        }
+        
+        _lastMaxHealth = stats.Health;
+        
+        StartCoroutine(SendInitialHUDUpdate());
+    }
+
+    private System.Collections.IEnumerator SendInitialHUDUpdate()
+    {
+        yield return new WaitForEndOfFrame();
+        if (stats != null)
+        {
             OnPlayerHealed?.Invoke(currentHealth, stats.Health);
         }
     }
     
     public void RestoreHealth()
     {
-        currentHealth = stats.Health;
-        _lastMaxHealth = stats.Health;
-        isDead = false;
-        OnPlayerHealed?.Invoke(currentHealth, stats.Health);
-        Debug.Log($"Health restored: {currentHealth}/{stats.Health}");
+        if (stats == null) stats = FindAnyObjectByType<BasePlayerStats>();
+        if (stats != null)
+        {
+            currentHealth = stats.Health;
+            _lastMaxHealth = stats.Health;
+            isDead = false;
+            OnPlayerHealed?.Invoke(currentHealth, stats.Health);
+            Debug.Log($"Health restored: {currentHealth}/{stats.Health}");
+        }
     }
     
     void Update()
@@ -61,13 +74,12 @@ public class PlayerCombatManager : MonoBehaviour
         // Отслеживаем изменение maxHealth (после баффа рецепта)
         if (stats != null && stats.Health != _lastMaxHealth)
         {
+            Debug.Log($"[CombatManager] Обнаружено изменение максимального ХП! Было: {_lastMaxHealth}, Стало: {stats.Health}. Обновляем HUD.");
             // При увеличении maxHealth - сразу восстанавливаем текущее хп до максимума
             if (stats.Health > _lastMaxHealth)
                 currentHealth = stats.Health;
-            // если maxHealth уменьшился - currentHealth не превышает новый максимум. По идее у нас нет дебаффов, но на всякий случай
-            else
-                currentHealth = Mathf.Min(currentHealth, stats.Health);
             _lastMaxHealth = stats.Health;
+            isDead = currentHealth <= 0;
             OnPlayerHealed?.Invoke(currentHealth, stats.Health);
         }
 
