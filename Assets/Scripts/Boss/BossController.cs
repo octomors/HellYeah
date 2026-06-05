@@ -56,6 +56,7 @@ public class BossController : MonoBehaviour
     [SerializeField] private GameObject exitGameObject;
     [HideInInspector] private float currentHealth;
     private bool isDead;
+    private EnemyLoot enemyLoot;
 
     public float MaxHealth => maxHealth;
     public float CurrentHealth => currentHealth;
@@ -91,6 +92,7 @@ public class BossController : MonoBehaviour
     {
         TransitionToState(BossState.Sleeping); // Begin in sleeping state
         currentHealth = maxHealth;
+        enemyLoot = GetComponent<EnemyLoot>();
     }
 
     private void Update()
@@ -469,12 +471,20 @@ public class BossController : MonoBehaviour
     {
         yield return new WaitForSeconds(onDeathDelaySeconds);
         OnDeath();
+
     }
 
     private void OnDeath()
     {
         if (exitGameObject != null)
             exitGameObject.SetActive(true);
+        // Дроп лута
+        if (enemyLoot != null)
+        {
+            Debug.Log("Not null");
+            enemyLoot.DropLoot();
+        }
+        gameObject.SetActive(false);
     }
 
     // ---------- Public Methods (for Player/Damage system to call) ----------
