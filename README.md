@@ -103,7 +103,7 @@
 <table align="center">
 <tr>
 
-<td align="center" width="250" valign="top">
+<td align="center" width="270" valign="top">
 <a href="https://github.com/dianakonushkina">
 <img src="https://github.com/dianakonushkina.png" width="110"><br>
 <b>tongzhi</b>
@@ -121,7 +121,7 @@
 
 </td>
 
-<td align="center" width="250" valign="top">
+<td align="center" width="270" valign="top">
 <a href="https://github.com/octomors">
 <img src="https://github.com/octomors.png" width="110"><br>
 <b>octomors</b>
@@ -140,7 +140,7 @@
 
 </td>
 
-<td align="center" width="250" valign="top">
+<td align="center" width="270" valign="top">
 <a href="https://github.com/lubaaabul">
 <img src="https://github.com/lubaaabul.png" width="110"><br>
 <b>lubaaabul</b>
@@ -158,7 +158,7 @@
 
 </td>
 
-<td align="center" width="250" valign="top">
+<td align="center" width="270" valign="top">
 <a href="https://github.com/bigmage123">
 <img src="https://github.com/bigmage123.png" width="110"><br>
 <b>bigmage123</b>
