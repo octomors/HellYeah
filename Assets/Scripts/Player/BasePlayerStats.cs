@@ -57,7 +57,7 @@ public class BasePlayerStats : MonoBehaviour
         public float DashChargeRecoveryTime
         {
             get => dashChargeRecoveryTime;
-            set => dashChargeRecoveryTime = value > maxDashChargeRecoveryTime ? maxDashChargeRecoveryTime : value;
+            set => dashChargeRecoveryTime = value < maxDashChargeRecoveryTime ? maxDashChargeRecoveryTime : value;
         }
 
         public float DashSpeed

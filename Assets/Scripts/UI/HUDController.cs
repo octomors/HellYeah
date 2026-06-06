@@ -110,6 +110,25 @@ public class HUDController : MonoBehaviour
 
     private void Start()
     {
+        Instance = this;
+        PlayerCombatManager playerCombat = FindAnyObjectByType<PlayerCombatManager>();
+        
+        if (playerCombat != null)
+        {
+            // Загружаем реальные значения из менеджера
+            _maxHealth = playerCombat.GetMaxHealth();
+            _currentHealth = playerCombat.GetCurrentHealth();
+        }
+        else
+        {
+            // Резервный вариант, если боевой менеджер еще не проснулся
+            BasePlayerStats stats = FindAnyObjectByType<BasePlayerStats>();
+            if (stats != null)
+            {
+                _maxHealth = stats.Health;
+                _currentHealth = stats.Health;
+            }
+        }
         RefreshHealth();
     }
 
